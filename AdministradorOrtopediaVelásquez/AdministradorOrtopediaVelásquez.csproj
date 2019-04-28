@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E824504-A00C-4D96-88D3-9483CFA47A5B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AdministradorOrtopediaVelásquez</RootNamespace>
+    <AssemblyName>AdministradorOrtopediaVelásquez</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LogoOrtopedia.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="consulta.cs">
+      <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\PanelDesign.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="detalle_consulta.cs">
+      <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\EditarTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\EditarTipo.Designer.cs">
+      <DependentUpon>EditarTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\EditarProducto .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\EditarProducto .Designer.cs">
+      <DependentUpon>EditarProducto .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\AgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AgregarProducto.Designer.cs">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\AgregarTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AgregarTipo.Designer.cs">
+      <DependentUpon>AgregarTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Administradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Administradores.Designer.cs">
+      <DependentUpon>Administradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Medicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Medicos.Designer.cs">
+      <DependentUpon>Medicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Tipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Tipo.Designer.cs">
+      <DependentUpon>Tipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Catalogo.Designer.cs">
+      <DependentUpon>Catalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Cuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Cuenta.designer.cs">
+      <DependentUpon>Cuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Horarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Horarios.Designer.cs">
+      <DependentUpon>Horarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShowConfirmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowConfirmDialog.designer.cs">
+      <DependentUpon>ShowConfirmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ortesis.cs">
+      <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrtopediaVelásquez.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrtopediaVelásquez.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrtopediaVelásquez.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrtopediaVelásquez.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrtopediaVelásquez.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="protesis.cs">
+      <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\CatalogoServicio.cs" />
+    <Compile Include="Servicios\SesionServicio.cs" />
+    <Compile Include="tipoOrtesis.cs">
+      <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tipoProtesis.cs">
+      <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoUsuario.cs">
+      <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usuario.cs">
+      <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomControls\PanelDesign.resx">
+      <DependentUpon>PanelDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\EditarTipo.resx">
+      <DependentUpon>EditarTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\EditarProducto .resx">
+      <DependentUpon>EditarProducto .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AgregarProducto.resx">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AgregarTipo.resx">
+      <DependentUpon>AgregarTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PartialForms\Administradores.resx">
+      <DependentUpon>Administradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PartialForms\Medicos.resx">
+      <DependentUpon>Medicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PartialForms\Tipo.resx">
+      <DependentUpon>Tipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PartialForms\Catalogo.resx">
+      <DependentUpon>Catalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PartialForms\Cuenta.resx">
+      <DependentUpon>Cuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PartialForms\Horarios.resx">
+      <DependentUpon>Horarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowConfirmDialog.resx">
+      <DependentUpon>ShowConfirmDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Fonts\Lato-Regular.ttf" />
+    <EntityDeploy Include="OrtopediaVelásquez.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrtopediaVelásquez.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="OrtopediaVelásquez.edmx.diagram">
+      <DependentUpon>OrtopediaVelásquez.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoOrtopedia.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ajustes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-secured-letter-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LogoOrtopedia.ico" />
+    <Content Include="OrtopediaVelásquez.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrtopediaVelásquez.edmx</DependentUpon>
+      <LastGenOutput>OrtopediaVelásquez.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OrtopediaVelásquez.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrtopediaVelásquez.edmx</DependentUpon>
+      <LastGenOutput>OrtopediaVelásquez.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\CerrarSesion.png" />
+    <None Include="Resources\Medicos.png" />
+    <None Include="Resources\Reload3.png" />
+    <None Include="Resources\Reload.png" />
+    <None Include="Resources\Reload2.png" />
+    <None Include="Resources\Reload1.png" />
+    <None Include="Resources\Contraseña.png" />
+    <None Include="Resources\UserName.png" />
+    <None Include="Resources\Experencia.png" />
+    <None Include="Resources\precio.png" />
+    <None Include="Resources\Upload.png" />
+    <None Include="Resources\imagen.png" />
+    <None Include="Resources\Editar.png" />
+    <None Include="Resources\NoResult.png" />
+    <None Include="Resources\Empty.png" />
+    <None Include="Resources\Error.png" />
+    <None Include="Resources\Editar3.png" />
+    <None Include="Resources\Editar2.png" />
+    <None Include="Resources\Editar1.png" />
+    <None Include="Resources\Eliminar2.png" />
+    <None Include="Resources\Eliminar1.png" />
+    <None Include="Resources\Eliminar.png" />
+    <None Include="Resources\Descripcion.png" />
+    <None Include="Resources\Protesis.png" />
+    <None Include="Resources\Nombre_Objeto.png" />
+    <None Include="Resources\Codigo.png" />
+    <None Include="Resources\AñadirTipo.png" />
+    <None Include="Resources\AddCategory.png" />
+    <None Include="Resources\Agregar.png" />
+    <None Include="Resources\Categoria.png" />
+    <None Include="Resources\salario.png" />
+    <None Include="Resources\Cargo.png" />
+    <None Include="Resources\Telefono.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\dui.png" />
+    <None Include="Resources\Nombre.png" />
+    <None Include="Resources\name.png" />
+    <None Include="Resources\edad.png" />
+    <None Include="Resources\Loading.gif" />
+    <None Include="Resources\Horarios.png" />
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

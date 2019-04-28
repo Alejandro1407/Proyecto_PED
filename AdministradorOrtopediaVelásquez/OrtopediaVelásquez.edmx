@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OrtopediaVelásquezModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="consulta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="8" StoreGeneratedPattern="Computed" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="idCliente" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="detalle_consulta">
+          <Key>
+            <PropertyRef Name="idMedico" />
+          </Key>
+          <Property Name="idProtesis" Type="int" />
+          <Property Name="idOrtesis" Type="int" />
+          <Property Name="idMedico" Type="int" Nullable="false" />
+          <Property Name="idConsulta" Type="int" />
+        </EntityType>
+        <EntityType Name="ortesis">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="10" StoreGeneratedPattern="Computed" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="tipo" Type="int" />
+          <Property Name="descripcion" Type="varchar" MaxLength="75" />
+          <Property Name="foto" Type="image" />
+          <Property Name="precio" Type="money" />
+        </EntityType>
+        <EntityType Name="protesis">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="10" StoreGeneratedPattern="Computed" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="tipo" Type="int" />
+          <Property Name="descripcion" Type="varchar" MaxLength="75" />
+          <Property Name="foto" Type="image" />
+          <Property Name="precio" Type="money" />
+        </EntityType>
+        <EntityType Name="tipoOrtesis">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="35" />
+          <Property Name="descripcion" Type="varchar" MaxLength="75" />
+        </EntityType>
+        <EntityType Name="tipoProtesis">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="35" />
+          <Property Name="descripcion" Type="varchar" MaxLength="75" />
+        </EntityType>
+        <EntityType Name="TipoUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipoUsuario" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="codigoUsuario" Type="varchar" MaxLength="20" />
+          <Property Name="tipoUsuario" Type="int" />
+          <Property Name="contrasenya" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="sexo" Type="char" MaxLength="1" />
+          <Property Name="fechaNacimiento" Type="date" />
+          <Property Name="alergias" Type="varchar" MaxLength="500" />
+          <Property Name="especialidad" Type="varchar" MaxLength="500" />
+          <Property Name="experiencia" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK__consulta__idClie__4BAC3F29">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalle_c__idCon__5070F446">
+          <End Role="consulta" Type="Self.consulta" Multiplicity="0..1" />
+          <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_consulta">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalle_c__idMed__4F7CD00D">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_consulta">
+              <PropertyRef Name="idMedico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalle_c__idOrt__4E88ABD4">
+          <End Role="ortesis" Type="Self.ortesis" Multiplicity="0..1" />
+          <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ortesis">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_consulta">
+              <PropertyRef Name="idOrtesis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalle_c__idPro__4D94879B">
+          <End Role="protesis" Type="Self.protesis" Multiplicity="0..1" />
+          <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="protesis">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_consulta">
+              <PropertyRef Name="idProtesis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ortesis__tipo__4316F928">
+          <End Role="tipoOrtesis" Type="Self.tipoOrtesis" Multiplicity="0..1" />
+          <End Role="ortesis" Type="Self.ortesis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoOrtesis">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ortesis">
+              <PropertyRef Name="tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__protesis__tipo__47DBAE45">
+          <End Role="tipoProtesis" Type="Self.tipoProtesis" Multiplicity="0..1" />
+          <End Role="protesis" Type="Self.protesis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoProtesis">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="protesis">
+              <PropertyRef Name="tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__usuario__tipoUsu__3B75D760">
+          <End Role="TipoUsuario" Type="Self.TipoUsuario" Multiplicity="0..1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoUsuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="tipoUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OrtopediaVelásquezModelStoreContainer">
+          <EntitySet Name="consulta" EntityType="Self.consulta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ortesis" EntityType="Self.ortesis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="protesis" EntityType="Self.protesis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoOrtesis" EntityType="Self.tipoOrtesis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoProtesis" EntityType="Self.tipoProtesis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="detalle_consulta" EntityType="Self.detalle_consulta" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[detalle_consulta].[idProtesis] AS [idProtesis], 
+[detalle_consulta].[idOrtesis] AS [idOrtesis], 
+[detalle_consulta].[idMedico] AS [idMedico], 
+[detalle_consulta].[idConsulta] AS [idConsulta]
+FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__consulta__idClie__4BAC3F29" Association="Self.FK__consulta__idClie__4BAC3F29">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalle_c__idCon__5070F446" Association="Self.FK__detalle_c__idCon__5070F446">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalle_c__idMed__4F7CD00D" Association="Self.FK__detalle_c__idMed__4F7CD00D">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalle_c__idOrt__4E88ABD4" Association="Self.FK__detalle_c__idOrt__4E88ABD4">
+            <End Role="ortesis" EntitySet="ortesis" />
+            <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalle_c__idPro__4D94879B" Association="Self.FK__detalle_c__idPro__4D94879B">
+            <End Role="protesis" EntitySet="protesis" />
+            <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ortesis__tipo__4316F928" Association="Self.FK__ortesis__tipo__4316F928">
+            <End Role="tipoOrtesis" EntitySet="tipoOrtesis" />
+            <End Role="ortesis" EntitySet="ortesis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__protesis__tipo__47DBAE45" Association="Self.FK__protesis__tipo__47DBAE45">
+            <End Role="tipoProtesis" EntitySet="tipoProtesis" />
+            <End Role="protesis" EntitySet="protesis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__usuario__tipoUsu__3B75D760" Association="Self.FK__usuario__tipoUsu__3B75D760">
+            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OrtopediaVelásquezModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="consulta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="8" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.FK__consulta__idClie__4BAC3F29" FromRole="consulta" ToRole="usuario" />
+          <NavigationProperty Name="detalle_consulta" Relationship="Self.FK__detalle_c__idCon__5070F446" FromRole="consulta" ToRole="detalle_consulta" />
+        </EntityType>
+        <EntityType Name="ortesis">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tipo" Type="Int32" />
+          <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="detalle_consulta" Relationship="Self.FK__detalle_c__idOrt__4E88ABD4" FromRole="ortesis" ToRole="detalle_consulta" />
+          <NavigationProperty Name="tipoOrtesis" Relationship="Self.FK__ortesis__tipo__4316F928" FromRole="ortesis" ToRole="tipoOrtesis" />
+        </EntityType>
+        <EntityType Name="protesis">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tipo" Type="Int32" />
+          <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="detalle_consulta" Relationship="Self.FK__detalle_c__idPro__4D94879B" FromRole="protesis" ToRole="detalle_consulta" />
+          <NavigationProperty Name="tipoProtesis" Relationship="Self.FK__protesis__tipo__47DBAE45" FromRole="protesis" ToRole="tipoProtesis" />
+        </EntityType>
+        <EntityType Name="tipoOrtesis">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ortesis" Relationship="Self.FK__ortesis__tipo__4316F928" FromRole="tipoOrtesis" ToRole="ortesis" />
+        </EntityType>
+        <EntityType Name="tipoProtesis">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="protesis" Relationship="Self.FK__protesis__tipo__47DBAE45" FromRole="tipoProtesis" ToRole="protesis" />
+        </EntityType>
+        <EntityType Name="TipoUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipoUsuario1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.FK__usuario__tipoUsu__3B75D760" FromRole="TipoUsuario" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tipoUsuario" Type="Int32" />
+          <Property Name="contrasenya" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sexo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="fechaNacimiento" Type="DateTime" Precision="0" />
+          <Property Name="alergias" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="especialidad" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="experiencia" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="consulta" Relationship="Self.FK__consulta__idClie__4BAC3F29" FromRole="usuario" ToRole="consulta" />
+          <NavigationProperty Name="TipoUsuario1" Relationship="Self.FK__usuario__tipoUsu__3B75D760" FromRole="usuario" ToRole="TipoUsuario" />
+          <NavigationProperty Name="detalle_consulta" Relationship="Self.FK__detalle_c__idMed__4F7CD00D" FromRole="usuario" ToRole="detalle_consulta" />
+        </EntityType>
+        <EntityType Name="detalle_consulta">
+          <Key>
+            <PropertyRef Name="idMedico" />
+          </Key>
+          <Property Name="idProtesis" Type="Int32" />
+          <Property Name="idOrtesis" Type="Int32" />
+          <Property Name="idMedico" Type="Int32" Nullable="false" />
+          <Property Name="idConsulta" Type="Int32" />
+          <NavigationProperty Name="consulta" Relationship="Self.FK__detalle_c__idCon__5070F446" FromRole="detalle_consulta" ToRole="consulta" />
+          <NavigationProperty Name="ortesis" Relationship="Self.FK__detalle_c__idOrt__4E88ABD4" FromRole="detalle_consulta" ToRole="ortesis" />
+          <NavigationProperty Name="protesis" Relationship="Self.FK__detalle_c__idPro__4D94879B" FromRole="detalle_consulta" ToRole="protesis" />
+          <NavigationProperty Name="usuario" Relationship="Self.FK__detalle_c__idMed__4F7CD00D" FromRole="detalle_consulta" ToRole="usuario" />
+        </EntityType>
+        <Association Name="FK__consulta__idClie__4BAC3F29">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="consulta">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalle_c__idCon__5070F446">
+          <End Role="consulta" Type="Self.consulta" Multiplicity="0..1" />
+          <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="consulta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_consulta">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalle_c__idOrt__4E88ABD4">
+          <End Role="ortesis" Type="Self.ortesis" Multiplicity="0..1" />
+          <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ortesis">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_consulta">
+              <PropertyRef Name="idOrtesis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ortesis__tipo__4316F928">
+          <End Role="tipoOrtesis" Type="Self.tipoOrtesis" Multiplicity="0..1" />
+          <End Role="ortesis" Type="Self.ortesis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoOrtesis">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ortesis">
+              <PropertyRef Name="tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalle_c__idPro__4D94879B">
+          <End Role="protesis" Type="Self.protesis" Multiplicity="0..1" />
+          <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="protesis">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_consulta">
+              <PropertyRef Name="idProtesis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__protesis__tipo__47DBAE45">
+          <End Role="tipoProtesis" Type="Self.tipoProtesis" Multiplicity="0..1" />
+          <End Role="protesis" Type="Self.protesis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoProtesis">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="protesis">
+              <PropertyRef Name="tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__usuario__tipoUsu__3B75D760">
+          <End Role="TipoUsuario" Type="Self.TipoUsuario" Multiplicity="0..1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoUsuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="tipoUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalle_c__idMed__4F7CD00D">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_consulta">
+              <PropertyRef Name="idMedico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OrtopediaVelásquezEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="consulta" EntityType="Self.consulta" />
+          <EntitySet Name="ortesis" EntityType="Self.ortesis" />
+          <EntitySet Name="protesis" EntityType="Self.protesis" />
+          <EntitySet Name="tipoOrtesis" EntityType="Self.tipoOrtesis" />
+          <EntitySet Name="tipoProtesis" EntityType="Self.tipoProtesis" />
+          <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <EntitySet Name="detalle_consulta" EntityType="Self.detalle_consulta" />
+          <AssociationSet Name="FK__consulta__idClie__4BAC3F29" Association="Self.FK__consulta__idClie__4BAC3F29">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="consulta" EntitySet="consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalle_c__idCon__5070F446" Association="Self.FK__detalle_c__idCon__5070F446">
+            <End Role="consulta" EntitySet="consulta" />
+            <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalle_c__idOrt__4E88ABD4" Association="Self.FK__detalle_c__idOrt__4E88ABD4">
+            <End Role="ortesis" EntitySet="ortesis" />
+            <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ortesis__tipo__4316F928" Association="Self.FK__ortesis__tipo__4316F928">
+            <End Role="tipoOrtesis" EntitySet="tipoOrtesis" />
+            <End Role="ortesis" EntitySet="ortesis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalle_c__idPro__4D94879B" Association="Self.FK__detalle_c__idPro__4D94879B">
+            <End Role="protesis" EntitySet="protesis" />
+            <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__protesis__tipo__47DBAE45" Association="Self.FK__protesis__tipo__47DBAE45">
+            <End Role="tipoProtesis" EntitySet="tipoProtesis" />
+            <End Role="protesis" EntitySet="protesis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__usuario__tipoUsu__3B75D760" Association="Self.FK__usuario__tipoUsu__3B75D760">
+            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalle_c__idMed__4F7CD00D" Association="Self.FK__detalle_c__idMed__4F7CD00D">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OrtopediaVelásquezModelStoreContainer" CdmEntityContainer="OrtopediaVelásquezEntities">
+          <EntitySetMapping Name="consulta">
+            <EntityTypeMapping TypeName="OrtopediaVelásquezModel.consulta">
+              <MappingFragment StoreEntitySet="consulta">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ortesis">
+            <EntityTypeMapping TypeName="OrtopediaVelásquezModel.ortesis">
+              <MappingFragment StoreEntitySet="ortesis">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="protesis">
+            <EntityTypeMapping TypeName="OrtopediaVelásquezModel.protesis">
+              <MappingFragment StoreEntitySet="protesis">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoOrtesis">
+            <EntityTypeMapping TypeName="OrtopediaVelásquezModel.tipoOrtesis">
+              <MappingFragment StoreEntitySet="tipoOrtesis">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoProtesis">
+            <EntityTypeMapping TypeName="OrtopediaVelásquezModel.tipoProtesis">
+              <MappingFragment StoreEntitySet="tipoProtesis">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoUsuario">
+            <EntityTypeMapping TypeName="OrtopediaVelásquezModel.TipoUsuario">
+              <MappingFragment StoreEntitySet="TipoUsuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tipoUsuario1" ColumnName="tipoUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="OrtopediaVelásquezModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="codigoUsuario" ColumnName="codigoUsuario" />
+                <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
+                <ScalarProperty Name="contrasenya" ColumnName="contrasenya" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="alergias" ColumnName="alergias" />
+                <ScalarProperty Name="especialidad" ColumnName="especialidad" />
+                <ScalarProperty Name="experiencia" ColumnName="experiencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalle_consulta">
+            <EntityTypeMapping TypeName="OrtopediaVelásquezModel.detalle_consulta">
+              <MappingFragment StoreEntitySet="detalle_consulta">
+                <ScalarProperty Name="idProtesis" ColumnName="idProtesis" />
+                <ScalarProperty Name="idOrtesis" ColumnName="idOrtesis" />
+                <ScalarProperty Name="idMedico" ColumnName="idMedico" />
+                <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
