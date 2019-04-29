@@ -7,30 +7,19 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="codigo" Type="varchar" MaxLength="8" StoreGeneratedPattern="Computed" />
     <Property Name="fecha" Type="date" />
-    <Property Name="idHorario" Type="int" Nullable="false" />
-    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="idCliente" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="detalle_consulta">
+    <Key>
+      <PropertyRef Name="idMedico" />
+    </Key>
     <Property Name="idProtesis" Type="int" />
     <Property Name="idOrtesis" Type="int" />
-    <Property Name="idMedico" Type="int" />
-  </EntityType>
-  <EntityType Name="horarios">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="horai" Type="time" Precision="7" />
-    <Property Name="horaf" Type="time" Precision="7" />
-  </EntityType>
-  <EntityType Name="medico">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombres" Type="varchar" MaxLength="50" />
-    <Property Name="apellidos" Type="varchar" MaxLength="50" />
-    <Property Name="experiencia" Type="varchar" MaxLength="75" />
-    <Property Name="especialidad" Type="varchar" MaxLength="50" />
-    <Property Name="userName" Type="varchar" MaxLength="10" StoreGeneratedPattern="Computed" />
+    <Property Name="idMedico" Type="int" Nullable="false" />
+    <Property Name="idConsulta" Type="int" />
   </EntityType>
   <EntityType Name="ortesis">
     <Key>
@@ -56,23 +45,6 @@
     <Property Name="foto" Type="image" />
     <Property Name="precio" Type="money" />
   </EntityType>
-  <EntityType Name="rol">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nombre" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="tipoOrtesis">
     <Key>
       <PropertyRef Name="id" />
@@ -89,68 +61,31 @@
     <Property Name="nombre" Type="varchar" MaxLength="35" />
     <Property Name="descripcion" Type="varchar" MaxLength="75" />
   </EntityType>
+  <EntityType Name="TipoUsuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipoUsuario" Type="varchar" MaxLength="20" />
+  </EntityType>
   <EntityType Name="usuario">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="contrasenya" Type="varchar" MaxLength="25" />
     <Property Name="nombres" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="codigoUsuario" Type="varchar" MaxLength="20" />
+    <Property Name="tipoUsuario" Type="int" />
+    <Property Name="contrasenya" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="sexo" Type="char" MaxLength="1" />
-    <Property Name="edad" Type="int" Nullable="false" />
-    <Property Name="idRol" Type="int" />
+    <Property Name="fechaNacimiento" Type="date" />
+    <Property Name="alergias" Type="varchar" MaxLength="500" />
+    <Property Name="especialidad" Type="varchar" MaxLength="500" />
+    <Property Name="experiencia" Type="varchar" MaxLength="500" />
   </EntityType>
-  <Association Name="FK__consulta__idHora__5535A963">
-    <End Role="horarios" Type="Self.horarios" Multiplicity="1" />
-    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="horarios">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="consulta">
-        <PropertyRef Name="idHorario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__consulta__idMedi__59063A47">
-    <End Role="medico" Type="Self.medico" Multiplicity="0..1" />
-    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="medico">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="consulta">
-        <PropertyRef Name="idMedico" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__consulta__idOrte__5812160E">
-    <End Role="ortesis" Type="Self.ortesis" Multiplicity="0..1" />
-    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ortesis">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="consulta">
-        <PropertyRef Name="idOrtesis" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__consulta__idProt__571DF1D5">
-    <End Role="protesis" Type="Self.protesis" Multiplicity="0..1" />
-    <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="protesis">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="consulta">
-        <PropertyRef Name="idProtesis" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__consulta__idUsua__5629CD9C">
+  <Association Name="FK__consulta__idClie__4BAC3F29">
     <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
     <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
     <ReferentialConstraint>
@@ -158,11 +93,59 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="consulta">
-        <PropertyRef Name="idUsuario" />
+        <PropertyRef Name="idCliente" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ortesis__tipo__3C69FB99">
+  <Association Name="FK__detalle_c__idCon__5070F446">
+    <End Role="consulta" Type="Self.consulta" Multiplicity="0..1" />
+    <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="consulta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="detalle_consulta">
+        <PropertyRef Name="idConsulta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__detalle_c__idMed__4F7CD00D">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="detalle_consulta">
+        <PropertyRef Name="idMedico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__detalle_c__idOrt__4E88ABD4">
+    <End Role="ortesis" Type="Self.ortesis" Multiplicity="0..1" />
+    <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ortesis">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="detalle_consulta">
+        <PropertyRef Name="idOrtesis" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__detalle_c__idPro__4D94879B">
+    <End Role="protesis" Type="Self.protesis" Multiplicity="0..1" />
+    <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="protesis">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="detalle_consulta">
+        <PropertyRef Name="idProtesis" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ortesis__tipo__4316F928">
     <End Role="tipoOrtesis" Type="Self.tipoOrtesis" Multiplicity="0..1" />
     <End Role="ortesis" Type="Self.ortesis" Multiplicity="*" />
     <ReferentialConstraint>
@@ -174,7 +157,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__protesis__tipo__412EB0B6">
+  <Association Name="FK__protesis__tipo__47DBAE45">
     <End Role="tipoProtesis" Type="Self.tipoProtesis" Multiplicity="0..1" />
     <End Role="protesis" Type="Self.protesis" Multiplicity="*" />
     <ReferentialConstraint>
@@ -186,59 +169,64 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__usuario__idRol__4AB81AF0">
-    <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+  <Association Name="FK__usuario__tipoUsu__3B75D760">
+    <End Role="TipoUsuario" Type="Self.TipoUsuario" Multiplicity="0..1" />
     <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="rol">
+      <Principal Role="TipoUsuario">
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="usuario">
-        <PropertyRef Name="idRol" />
+        <PropertyRef Name="tipoUsuario" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="OrtopediaVelásquezModelStoreContainer">
     <EntitySet Name="consulta" EntityType="Self.consulta" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="horarios" EntityType="Self.horarios" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="medico" EntityType="Self.medico" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ortesis" EntityType="Self.ortesis" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="protesis" EntityType="Self.protesis" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="rol" EntityType="Self.rol" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipoOrtesis" EntityType="Self.tipoOrtesis" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipoProtesis" EntityType="Self.tipoProtesis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__consulta__idHora__5535A963" Association="Self.FK__consulta__idHora__5535A963">
-      <End Role="horarios" EntitySet="horarios" />
-      <End Role="consulta" EntitySet="consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK__consulta__idMedi__59063A47" Association="Self.FK__consulta__idMedi__59063A47">
-      <End Role="medico" EntitySet="medico" />
-      <End Role="consulta" EntitySet="consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK__consulta__idOrte__5812160E" Association="Self.FK__consulta__idOrte__5812160E">
-      <End Role="ortesis" EntitySet="ortesis" />
-      <End Role="consulta" EntitySet="consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK__consulta__idProt__571DF1D5" Association="Self.FK__consulta__idProt__571DF1D5">
-      <End Role="protesis" EntitySet="protesis" />
-      <End Role="consulta" EntitySet="consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK__consulta__idUsua__5629CD9C" Association="Self.FK__consulta__idUsua__5629CD9C">
+    <EntitySet Name="detalle_consulta" EntityType="Self.detalle_consulta" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[detalle_consulta].[idProtesis] AS [idProtesis], 
+[detalle_consulta].[idOrtesis] AS [idOrtesis], 
+[detalle_consulta].[idMedico] AS [idMedico], 
+[detalle_consulta].[idConsulta] AS [idConsulta]
+FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__consulta__idClie__4BAC3F29" Association="Self.FK__consulta__idClie__4BAC3F29">
       <End Role="usuario" EntitySet="usuario" />
       <End Role="consulta" EntitySet="consulta" />
     </AssociationSet>
-    <AssociationSet Name="FK__ortesis__tipo__3C69FB99" Association="Self.FK__ortesis__tipo__3C69FB99">
+    <AssociationSet Name="FK__detalle_c__idCon__5070F446" Association="Self.FK__detalle_c__idCon__5070F446">
+      <End Role="consulta" EntitySet="consulta" />
+      <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__detalle_c__idMed__4F7CD00D" Association="Self.FK__detalle_c__idMed__4F7CD00D">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__detalle_c__idOrt__4E88ABD4" Association="Self.FK__detalle_c__idOrt__4E88ABD4">
+      <End Role="ortesis" EntitySet="ortesis" />
+      <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__detalle_c__idPro__4D94879B" Association="Self.FK__detalle_c__idPro__4D94879B">
+      <End Role="protesis" EntitySet="protesis" />
+      <End Role="detalle_consulta" EntitySet="detalle_consulta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ortesis__tipo__4316F928" Association="Self.FK__ortesis__tipo__4316F928">
       <End Role="tipoOrtesis" EntitySet="tipoOrtesis" />
       <End Role="ortesis" EntitySet="ortesis" />
     </AssociationSet>
-    <AssociationSet Name="FK__protesis__tipo__412EB0B6" Association="Self.FK__protesis__tipo__412EB0B6">
+    <AssociationSet Name="FK__protesis__tipo__47DBAE45" Association="Self.FK__protesis__tipo__47DBAE45">
       <End Role="tipoProtesis" EntitySet="tipoProtesis" />
       <End Role="protesis" EntitySet="protesis" />
     </AssociationSet>
-    <AssociationSet Name="FK__usuario__idRol__4AB81AF0" Association="Self.FK__usuario__idRol__4AB81AF0">
-      <End Role="rol" EntitySet="rol" />
+    <AssociationSet Name="FK__usuario__tipoUsu__3B75D760" Association="Self.FK__usuario__tipoUsu__3B75D760">
+      <End Role="TipoUsuario" EntitySet="TipoUsuario" />
       <End Role="usuario" EntitySet="usuario" />
     </AssociationSet>
   </EntityContainer>

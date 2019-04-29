@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="RdoProtesis.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 10pt</value>
+    <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="RdoProtesis.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -160,7 +160,7 @@
     <value>True</value>
   </data>
   <data name="RdoOrtesis.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 10pt</value>
+    <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="RdoOrtesis.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -196,7 +196,7 @@
     <value>610, 16</value>
   </data>
   <data name="txtBusqueda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 23</value>
+    <value>137, 23</value>
   </data>
   <data name="txtBusqueda.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -309,17 +309,60 @@
   <data name="btnReload.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="btnReload.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="btnReload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="btnReload.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnReload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnReload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>355, 311</value>
+    <value>327, 322</value>
   </data>
   <data name="btnReload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 44</value>
+    <value>150, 53</value>
   </data>
   <data name="btnReload.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="btnReload.Text" xml:space="preserve">
-    <value>button1</value>
+    <value>Reintentar</value>
+  </data>
+  <data name="btnReload.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;btnReload.Name" xml:space="preserve">
     <value>btnReload</value>
@@ -337,10 +380,10 @@
     <value>NoControl</value>
   </data>
   <data name="Status.Location" type="System.Drawing.Point, System.Drawing">
-    <value>341, 187</value>
+    <value>342, 166</value>
   </data>
   <data name="Status.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 99</value>
+    <value>114, 111</value>
   </data>
   <data name="Status.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -364,16 +407,16 @@
     <value>True</value>
   </data>
   <data name="lblStatus.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 11pt</value>
+    <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="lblStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>354, 289</value>
+    <value>360, 292</value>
   </data>
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 19</value>
+    <value>85, 18</value>
   </data>
   <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -420,6 +463,9 @@
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>634, 36</value>
   </data>
@@ -448,7 +494,7 @@
     <value>True</value>
   </data>
   <data name="materialLabel3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 11pt</value>
+    <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="materialLabel3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -457,7 +503,7 @@
     <value>67, 65</value>
   </data>
   <data name="materialLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 19</value>
+    <value>135, 18</value>
   </data>
   <data name="materialLabel3.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -644,207 +690,6 @@
   </data>
   <data name="&gt;&gt;panelDesign3.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="materialLabel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="materialLabel2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 11pt</value>
-  </data>
-  <data name="materialLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="materialLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 64</value>
-  </data>
-  <data name="materialLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 19</value>
-  </data>
-  <data name="materialLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="materialLabel2.Text" xml:space="preserve">
-    <value>Lo que dijo dennise</value>
-  </data>
-  <data name="&gt;&gt;materialLabel2.Name" xml:space="preserve">
-    <value>materialLabel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel2.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel2.Parent" xml:space="preserve">
-    <value>panelDesign2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="richTextBox2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="richTextBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 64</value>
-  </data>
-  <data name="richTextBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 59</value>
-  </data>
-  <data name="richTextBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="richTextBox2.Text" xml:space="preserve">
-    <value>Material Resistente para la ultima calidad</value>
-  </data>
-  <data name="&gt;&gt;richTextBox2.Name" xml:space="preserve">
-    <value>richTextBox2</value>
-  </data>
-  <data name="&gt;&gt;richTextBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;richTextBox2.Parent" xml:space="preserve">
-    <value>panelDesign2</value>
-  </data>
-  <data name="&gt;&gt;richTextBox2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 8.25pt, style=Bold</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 32</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Descripcion:</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panelDesign2</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 8.25pt, style=Bold</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 34</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Nombre:</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>panelDesign2</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 34</value>
-  </data>
-  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 48</value>
-  </data>
-  <data name="pictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
-    <value>panelDesign2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="pictureBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 34</value>
-  </data>
-  <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 48</value>
-  </data>
-  <data name="pictureBox3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pictureBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Name" xml:space="preserve">
-    <value>pictureBox3</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
-    <value>panelDesign2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="panelDesign2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 366</value>
-  </data>
-  <data name="panelDesign2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>744, 143</value>
-  </data>
-  <data name="panelDesign2.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;panelDesign2.Name" xml:space="preserve">
-    <value>panelDesign2</value>
-  </data>
-  <data name="&gt;&gt;panelDesign2.Type" xml:space="preserve">
-    <value>AdministradorOrtopediaVelásquez.CustomControls.PanelDesign, AdministradorOrtopediaVelásquez, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;panelDesign2.Parent" xml:space="preserve">
-    <value>pnelContenedor</value>
-  </data>
-  <data name="&gt;&gt;panelDesign2.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="pnelContenedor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

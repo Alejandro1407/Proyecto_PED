@@ -36,6 +36,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.pnelContenedor = new System.Windows.Forms.Panel();
+            this.Status = new System.Windows.Forms.PictureBox();
+            this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
             this.btnReload = new System.Windows.Forms.Button();
             this.panelDesign3 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,24 +48,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.panelDesign2 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.Status = new System.Windows.Forms.PictureBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.BarraSuperior.SuspendLayout();
             this.pnelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
             this.panelDesign3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panelDesign2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // RdoProtesis
@@ -93,7 +83,7 @@
             // txtBusqueda
             // 
             this.txtBusqueda.Depth = 0;
-            this.txtBusqueda.Hint = "Busqueda";
+            this.txtBusqueda.Hint = "Busqueda (Nombre)";
             resources.ApplyResources(this.txtBusqueda, "txtBusqueda");
             this.txtBusqueda.MaxLength = 32767;
             this.txtBusqueda.MouseState = MaterialSkin.MouseState.HOVER;
@@ -139,15 +129,32 @@
             this.pnelContenedor.Controls.Add(this.Status);
             this.pnelContenedor.Controls.Add(this.lblStatus);
             this.pnelContenedor.Controls.Add(this.panelDesign3);
-            this.pnelContenedor.Controls.Add(this.panelDesign2);
             this.pnelContenedor.Name = "pnelContenedor";
+            // 
+            // Status
+            // 
+            this.Status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
+            resources.ApplyResources(this.Status, "Status");
+            this.Status.Name = "Status";
+            this.Status.TabStop = false;
+            // 
+            // lblStatus
+            // 
+            resources.ApplyResources(this.lblStatus, "lblStatus");
+            this.lblStatus.Depth = 0;
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblStatus.Name = "lblStatus";
             // 
             // btnReload
             // 
+            this.btnReload.BackColor = System.Drawing.Color.White;
             this.btnReload.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btnReload, "btnReload");
+            this.btnReload.ForeColor = System.Drawing.Color.Gray;
             this.btnReload.Name = "btnReload";
-            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.UseVisualStyleBackColor = false;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // panelDesign3
             // 
@@ -212,70 +219,6 @@
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.TabStop = false;
             // 
-            // panelDesign2
-            // 
-            this.panelDesign2.Controls.Add(this.materialLabel2);
-            this.panelDesign2.Controls.Add(this.richTextBox2);
-            this.panelDesign2.Controls.Add(this.label1);
-            this.panelDesign2.Controls.Add(this.label3);
-            this.panelDesign2.Controls.Add(this.pictureBox2);
-            this.panelDesign2.Controls.Add(this.pictureBox3);
-            resources.ApplyResources(this.panelDesign2, "panelDesign2");
-            this.panelDesign2.Name = "panelDesign2";
-            // 
-            // materialLabel2
-            // 
-            resources.ApplyResources(this.materialLabel2, "materialLabel2");
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            // 
-            // Status
-            // 
-            this.Status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
-            resources.ApplyResources(this.Status, "Status");
-            this.Status.Name = "Status";
-            this.Status.TabStop = false;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.richTextBox2, "richTextBox2");
-            this.richTextBox2.Name = "richTextBox2";
-            // 
-            // lblStatus
-            // 
-            resources.ApplyResources(this.lblStatus, "lblStatus");
-            this.lblStatus.Depth = 0;
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblStatus.Name = "lblStatus";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Descripcion;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Nombre_Objeto;
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            // 
             // Tipo
             // 
             resources.ApplyResources(this, "$this");
@@ -289,15 +232,11 @@
             this.BarraSuperior.PerformLayout();
             this.pnelContenedor.ResumeLayout(false);
             this.pnelContenedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
             this.panelDesign3.ResumeLayout(false);
             this.panelDesign3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panelDesign2.ResumeLayout(false);
-            this.panelDesign2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,15 +259,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private CustomControls.PanelDesign panelDesign2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReload;
     }
 }

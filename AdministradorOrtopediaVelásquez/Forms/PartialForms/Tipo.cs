@@ -26,6 +26,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             pnelContenedor.Controls.Add(lblStatus);
             pnelContenedor.Controls.Add(Status);
             pnelContenedor.Refresh();
+            lblStatus.Location = new Point(360, 292);
             lblStatus.Text = "Cargando...";
             if (ToShow == "protesis")
             {
@@ -40,13 +41,15 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             if (TProtesis == null || TOrtesis == null)
             {
                 Status.Image = Properties.Resources.Error;
+                lblStatus.Location = new Point(338, 292);
                 lblStatus.Text = "Ha Ocurrido un error";
-                //btnReload.Visible = true;
+                btnReload.Visible = true;
                 return;
             }
             if ((TProtesis.Count == 0 && TOrtesis.Count == 0) && !IsSearch)
             {
                 Status.Image = Properties.Resources.Empty;
+                lblStatus.Location = new Point(310, 291);
                 lblStatus.Text = "¡Oh No, Aun no hay Tipos!";
                 btnReload.Visible = true;
                 return;
@@ -55,6 +58,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             if ((TProtesis.Count == 0 && TOrtesis.Count == 0) && IsSearch)
             {
                 Status.Image = Properties.Resources.NoResult;
+                lblStatus.Location = new Point(307, 292);
                 lblStatus.Text = "No hay resultado para " + param;
                 return;
             }
@@ -239,5 +243,11 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             MostrarData(Ischecked);
         }
 
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            string Ischecked = RdoProtesis.Checked ? "protesis" : "ortesis";
+            txtBusqueda.Text = "";
+            MostrarData(Ischecked);
+        }
     }
 }

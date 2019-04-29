@@ -113,6 +113,16 @@ namespace AdministradorOrtopediaVelásquez.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Apellidos {
+            get {
+                object obj = ResourceManager.GetObject("Apellidos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancelar {
             get {
                 object obj = ResourceManager.GetObject("Cancelar", resourceCulture);
@@ -176,6 +186,16 @@ namespace AdministradorOrtopediaVelásquez.Properties {
         internal static System.Drawing.Bitmap Contraseña {
             get {
                 object obj = ResourceManager.GetObject("Contraseña", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cumpleanios {
+            get {
+                object obj = ResourceManager.GetObject("cumpleanios", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +286,16 @@ namespace AdministradorOrtopediaVelásquez.Properties {
         internal static System.Drawing.Bitmap Experencia {
             get {
                 object obj = ResourceManager.GetObject("Experencia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Genero {
+            get {
+                object obj = ResourceManager.GetObject("Genero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,6 +396,16 @@ namespace AdministradorOrtopediaVelásquez.Properties {
         internal static System.Drawing.Bitmap Nombre_Objeto {
             get {
                 object obj = ResourceManager.GetObject("Nombre_Objeto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nombres {
+            get {
+                object obj = ResourceManager.GetObject("Nombres", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

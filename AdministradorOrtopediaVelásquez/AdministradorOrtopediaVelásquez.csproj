@@ -69,6 +69,12 @@
     <Compile Include="detalle_consulta.cs">
       <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Modals\AgregarAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AgregarAdministrador.Designer.cs">
+      <DependentUpon>AgregarAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Modals\EditarTipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     <EmbeddedResource Include="CustomControls\PanelDesign.resx">
       <DependentUpon>PanelDesign.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AgregarAdministrador.resx">
+      <DependentUpon>AgregarAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\EditarTipo.resx">
       <DependentUpon>EditarTipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +314,11 @@
       <DependentUpon>OrtopediaVelásquez.edmx</DependentUpon>
       <LastGenOutput>OrtopediaVelásquez.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\email.png" />
+    <None Include="Resources\cumpleanios.png" />
+    <None Include="Resources\Genero.png" />
+    <None Include="Resources\Apellidos.png" />
+    <None Include="Resources\Nombres.png" />
     <None Include="Resources\CerrarSesion.png" />
     <None Include="Resources\Medicos.png" />
     <None Include="Resources\Reload3.png" />
@@ -338,7 +352,6 @@
     <None Include="Resources\salario.png" />
     <None Include="Resources\Cargo.png" />
     <None Include="Resources\Telefono.png" />
-    <None Include="Resources\email.png" />
     <None Include="Resources\dui.png" />
     <None Include="Resources\Nombre.png" />
     <None Include="Resources\name.png" />

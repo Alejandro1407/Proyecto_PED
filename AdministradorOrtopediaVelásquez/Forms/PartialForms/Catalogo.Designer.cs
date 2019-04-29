@@ -465,8 +465,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox Status;
-        private MaterialSkin.Controls.MaterialLabel lblStatus;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btnReload;
+        private MaterialSkin.Controls.MaterialLabel lblStatus;
     }
 }

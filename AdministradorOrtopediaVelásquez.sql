@@ -1,18 +1,66 @@
-create database OrtopediaVelásquez
+USE master
+GO
+-- Create the new database if it does not exist already
+IF NOT EXISTS (
+    SELECT name
+        FROM sys.databases
+        WHERE name = N'ProyectoADS'
+)
+CREATE DATABASE OrtopediaVelásquez
 GO
 
-use OrtopediaVelásquez
-GO
+USE OrtopediaVelásquez;
 
-create table horarios(
-	id int identity primary key,
-	horai time,
-	horaf time
+CREATE TABLE TipoUsuario
+(
+    id INT NOT NULL PRIMARY KEY IDENTITY,
+    tipoUsuario varchar(20),
 );
 GO
 
-alter table horarios
-add constraint ck_horas check (horaf > horai);
+insert into TipoUsuario 
+values	
+(
+	'Administrador'
+),
+(	
+	'Ortopedista'
+),
+(
+	'Paciente'
+);
+
+CREATE TABLE usuario
+(
+    id int primary key identity,
+	nombres varchar(50) not null,
+	apellidos varchar(50) not null,
+	email varchar(50) unique not null,
+	codigoUsuario varchar(20) unique,
+	tipoUsuario int foreign key references TipoUsuario(id),
+	contrasenya varchar(30) not null,
+	sexo char(1) check (sexo = 'M' OR sexo = 'F'),
+	fechaNacimiento date check (fechaNacimiento < getdate()),
+	alergias varchar(500) null,
+	especialidad varchar(500) null,
+	experiencia varchar(500) null
+);
+GO
+
+create trigger AsignarCodigo on usuario after insert
+as
+begin
+	declare @tipo int;
+	declare @tipoS varchar(20);
+	declare @id int;
+	set @id = (select id from inserted);
+	select @tipo = tipoUsuario from inserted;
+	select @tipoS = tipoUsuario from TipoUsuario where id = @tipo;
+	update usuario set codigoUsuario = CONCAT(UPPER(SUBSTRING(@tipoS,1,3)),FORMAT(@id,'####'));
+end;
+GO
+
+INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Alejandro','Alejo','alejandroalejo714@gmail.com',1,'password','M','14-jul-2000')
 GO
 
 create table tipoOrtesis(
@@ -50,51 +98,23 @@ create table protesis(
 	precio money
 );
 GO
-create table medico(
-	id int primary key identity,
-	nombres varchar(50),
-	apellidos varchar(50),
-	experiencia varchar(75),
-	especialidad varchar(50),
-	userName as 'MED' + substring(nombres,1,1) + substring(apellidos,1,1) + cast(id as varchar(5))
-);
-GO
-
-create table rol(
-	id INT PRIMARY KEY IDENTITY,
-	Nombre VARCHAR(50)
-);
-GO
-
-INSERT INTO rol VALUES ('Administrador'),
-					   ('Paciente'),
-					   ('Doctor')
-GO
-
-create table usuario (
-	id int primary key identity,
-	email varchar(50) not null unique,
-	contrasenya varchar(25) check (LEN(contrasenya) >= 8),
-	nombres varchar(50) not null,
-	apellidos varchar(50) not null,
-	sexo CHAR(1),
-	edad int not null CHECK(edad > 0 AND edad <= 100),
-	idRol INT FOREIGN KEY REFERENCES rol(id)
-);
-GO
-
-INSERT INTO usuario  VALUES ('alejandroalejo714@gmail.com','password','Alejandro','Alejo','M',18,1)
 
 create table consulta(
 	id int primary key identity,
 	codigo as 'CON' + cast(id as varchar(5)),
-	fecha date,
-	idHorario int not null foreign key references horarios(id),
-	idUsuario int not null foreign key references usuario(id),
-	idProtesis int foreign key references protesis (id),
-	idOrtesis int foreign key references ortesis (id),
-	idMedico int foreign key references medico (id),
+	fecha date default getdate(),
+	idCliente int not null foreign key references usuario(id),
+	descripcion varchar(500)
 );
 GO
 
+create table detalle_consulta(
+	idProtesis int foreign key references protesis (id),
+	idOrtesis int foreign key references ortesis (id),
+	idMedico int foreign key references usuario(id) not null,
+);
+GO
 
+alter table detalle_consulta
+add idConsulta int foreign key references consulta(id);
+GO

@@ -16,7 +16,7 @@ namespace AdministradorOrtopediaVelásquez.Servicios
                 {
                     try {
                         List<usuario> p = (from usuarios in db.usuario
-                                           where usuarios.email.Equals(user) && usuarios.contrasenya.Equals(contrasenia) && usuarios.idRol.Value.Equals(1)
+                                           where usuarios.email.Equals(user) && usuarios.contrasenya.Equals(contrasenia) && usuarios.tipoUsuario.Value.Equals(1)
                                            select usuarios).ToList();
                         return p;
                     }
@@ -27,6 +27,28 @@ namespace AdministradorOrtopediaVelásquez.Servicios
             });
         }//LoguearseAsync
 
+        public Task<bool> AgregarAdministrador(usuario u)
+        {
+            return Task.Run(() =>
+            {
+                using (OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities())
+                {
+                    try
+                    {
+
+                        db.usuario.Add(u);
+                        db.SaveChanges();
+                        return true;
+                    }
+                    catch (Exception e)
+                    {
+                        return false;
+                    }
+
+                }
+            });
+        }
+
         public Task<List<usuario>> ObtenerAdministradoresAsync()
         {
             return Task.Run(() =>
@@ -35,7 +57,7 @@ namespace AdministradorOrtopediaVelásquez.Servicios
                 try
                 {
                     List<usuario> administradores = (from usuarios in db.usuario
-                                                     where usuarios.idRol.Equals(1)
+                                                     where usuarios.tipoUsuario.Value.Equals(1)
                                                      select usuarios).ToList();
                     return administradores;
                 }
@@ -53,7 +75,7 @@ namespace AdministradorOrtopediaVelásquez.Servicios
                 try
                 {
                     List<usuario> administradores = (from usuarios in db.usuario
-                                                     where usuarios.idRol.Equals(1) && usuarios.id.Equals(id)
+                                                     where usuarios.tipoUsuario.Equals(1) && usuarios.id.Equals(id)
                                                      select usuarios).ToList();
                     return administradores;
                 }
