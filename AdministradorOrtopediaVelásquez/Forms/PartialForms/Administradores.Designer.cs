@@ -31,50 +31,46 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administradores));
             this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
             this.BarraSuperior = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtBusqueda = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.pnelContenedor = new System.Windows.Forms.Panel();
+            this.Status = new System.Windows.Forms.PictureBox();
             this.panelDesign1 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.button1 = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.Status = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnReload = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.BarraSuperior.SuspendLayout();
             this.pnelContenedor.SuspendLayout();
-            this.panelDesign1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
+            this.panelDesign1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Depth = 0;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblStatus.Location = new System.Drawing.Point(360, 292);
             this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(85, 18);
+            this.lblStatus.Size = new System.Drawing.Size(85, 19);
             this.lblStatus.TabIndex = 3;
             this.lblStatus.Text = "Cargando...";
             // 
@@ -88,6 +84,22 @@
             this.BarraSuperior.Name = "BarraSuperior";
             this.BarraSuperior.Size = new System.Drawing.Size(824, 49);
             this.BarraSuperior.TabIndex = 22;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Agregar;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnAdd.Location = new System.Drawing.Point(506, 6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(93, 40);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtBusqueda
             // 
@@ -106,6 +118,19 @@
             this.txtBusqueda.TabStop = false;
             this.txtBusqueda.UseSystemPasswordChar = false;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::AdministradorOrtopediaVelásquez.Properties.Resources.Search;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSearch.Location = new System.Drawing.Point(753, 6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(39, 38);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
             // pnelContenedor
             // 
             this.pnelContenedor.Controls.Add(this.Status);
@@ -117,6 +142,16 @@
             this.pnelContenedor.Name = "pnelContenedor";
             this.pnelContenedor.Size = new System.Drawing.Size(824, 502);
             this.pnelContenedor.TabIndex = 23;
+            // 
+            // Status
+            // 
+            this.Status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
+            this.Status.Location = new System.Drawing.Point(342, 166);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(114, 111);
+            this.Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Status.TabIndex = 2;
+            this.Status.TabStop = false;
             // 
             // panelDesign1
             // 
@@ -133,13 +168,21 @@
             this.panelDesign1.Controls.Add(this.pictureBox3);
             this.panelDesign1.Controls.Add(this.label2);
             this.panelDesign1.Controls.Add(this.pictureBox2);
-            this.panelDesign1.Controls.Add(this.label1);
-            this.panelDesign1.Controls.Add(this.materialLabel1);
-            this.panelDesign1.Controls.Add(this.pictureBox1);
             this.panelDesign1.Location = new System.Drawing.Point(39, 24);
             this.panelDesign1.Name = "panelDesign1";
             this.panelDesign1.Size = new System.Drawing.Size(744, 181);
             this.panelDesign1.TabIndex = 22;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Eliminar;
+            this.button1.Location = new System.Drawing.Point(649, 64);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(59, 61);
+            this.button1.TabIndex = 17;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // richTextBox2
             // 
@@ -158,7 +201,7 @@
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(85, 135);
+            this.richTextBox1.Location = new System.Drawing.Point(80, 54);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(126, 33);
@@ -169,12 +212,12 @@
             // 
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(472, 95);
+            this.materialLabel5.Location = new System.Drawing.Point(77, 133);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(82, 18);
+            this.materialLabel5.Size = new System.Drawing.Size(81, 19);
             this.materialLabel5.TabIndex = 14;
             this.materialLabel5.Text = "2000-07-14";
             // 
@@ -182,22 +225,32 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(472, 68);
+            this.label5.Location = new System.Drawing.Point(77, 106);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(152, 18);
             this.label5.TabIndex = 13;
             this.label5.Text = "Fecha de Nacimiento:";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.cumpleanios;
+            this.pictureBox5.Location = new System.Drawing.Point(23, 106);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
             // materialLabel4
             // 
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel4.Location = new System.Drawing.Point(286, 135);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(76, 18);
+            this.materialLabel4.Size = new System.Drawing.Size(79, 19);
             this.materialLabel4.TabIndex = 11;
             this.materialLabel4.Text = "Masculino";
             // 
@@ -211,80 +264,6 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Sexo:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(287, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 18);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Apellidos:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(82, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 18);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Nombre:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(82, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Codigo:";
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(81, 55);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(49, 18);
-            this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "ADM1";
-            // 
-            // Status
-            // 
-            this.Status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
-            this.Status.Location = new System.Drawing.Point(342, 166);
-            this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(114, 111);
-            this.Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Status.TabIndex = 2;
-            this.Status.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Eliminar;
-            this.button1.Location = new System.Drawing.Point(650, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 61);
-            this.button1.TabIndex = 17;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.cumpleanios;
-            this.pictureBox5.Location = new System.Drawing.Point(418, 68);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Genero;
@@ -294,6 +273,16 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(287, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 18);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Apellidos:";
             // 
             // pictureBox3
             // 
@@ -305,25 +294,25 @@
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(77, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 18);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Nombre:";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Nombres;
-            this.pictureBox2.Location = new System.Drawing.Point(27, 107);
+            this.pictureBox2.Location = new System.Drawing.Point(23, 26);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Codigo;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btnReload
             // 
@@ -344,35 +333,6 @@
             this.btnReload.UseVisualStyleBackColor = false;
             this.btnReload.Visible = false;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Agregar;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAdd.Location = new System.Drawing.Point(506, 6);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(93, 40);
-            this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "Agregar";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = global::AdministradorOrtopediaVelásquez.Properties.Resources.Search;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSearch.Location = new System.Drawing.Point(753, 6);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(39, 38);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
             // Administradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,14 +347,13 @@
             this.BarraSuperior.ResumeLayout(false);
             this.pnelContenedor.ResumeLayout(false);
             this.pnelContenedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
             this.panelDesign1.ResumeLayout(false);
             this.panelDesign1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -423,8 +382,5 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

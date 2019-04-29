@@ -76,7 +76,6 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
     <Property Name="nombres" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="apellidos" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="codigoUsuario" Type="varchar" MaxLength="20" />
     <Property Name="tipoUsuario" Type="int" />
     <Property Name="contrasenya" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="sexo" Type="char" MaxLength="1" />
@@ -85,7 +84,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
     <Property Name="especialidad" Type="varchar" MaxLength="500" />
     <Property Name="experiencia" Type="varchar" MaxLength="500" />
   </EntityType>
-  <Association Name="FK__consulta__idClie__4BAC3F29">
+  <Association Name="FK__consulta__idClie__49C3F6B7">
     <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
     <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
     <ReferentialConstraint>
@@ -97,7 +96,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__detalle_c__idCon__5070F446">
+  <Association Name="FK__detalle_c__idCon__4E88ABD4">
     <End Role="consulta" Type="Self.consulta" Multiplicity="0..1" />
     <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
     <ReferentialConstraint>
@@ -109,7 +108,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__detalle_c__idMed__4F7CD00D">
+  <Association Name="FK__detalle_c__idMed__4D94879B">
     <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
     <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -121,7 +120,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__detalle_c__idOrt__4E88ABD4">
+  <Association Name="FK__detalle_c__idOrt__4CA06362">
     <End Role="ortesis" Type="Self.ortesis" Multiplicity="0..1" />
     <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
     <ReferentialConstraint>
@@ -133,7 +132,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__detalle_c__idPro__4D94879B">
+  <Association Name="FK__detalle_c__idPro__4BAC3F29">
     <End Role="protesis" Type="Self.protesis" Multiplicity="0..1" />
     <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
     <ReferentialConstraint>
@@ -145,7 +144,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ortesis__tipo__4316F928">
+  <Association Name="FK__ortesis__tipo__412EB0B6">
     <End Role="tipoOrtesis" Type="Self.tipoOrtesis" Multiplicity="0..1" />
     <End Role="ortesis" Type="Self.ortesis" Multiplicity="*" />
     <ReferentialConstraint>
@@ -157,7 +156,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__protesis__tipo__47DBAE45">
+  <Association Name="FK__protesis__tipo__45F365D3">
     <End Role="tipoProtesis" Type="Self.tipoProtesis" Multiplicity="0..1" />
     <End Role="protesis" Type="Self.protesis" Multiplicity="*" />
     <ReferentialConstraint>
@@ -169,7 +168,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__usuario__tipoUsu__3B75D760">
+  <Association Name="FK__usuario__tipoUsu__3A81B327">
     <End Role="TipoUsuario" Type="Self.TipoUsuario" Multiplicity="0..1" />
     <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
     <ReferentialConstraint>
@@ -197,35 +196,35 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
 [detalle_consulta].[idConsulta] AS [idConsulta]
 FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK__consulta__idClie__4BAC3F29" Association="Self.FK__consulta__idClie__4BAC3F29">
+    <AssociationSet Name="FK__consulta__idClie__49C3F6B7" Association="Self.FK__consulta__idClie__49C3F6B7">
       <End Role="usuario" EntitySet="usuario" />
       <End Role="consulta" EntitySet="consulta" />
     </AssociationSet>
-    <AssociationSet Name="FK__detalle_c__idCon__5070F446" Association="Self.FK__detalle_c__idCon__5070F446">
+    <AssociationSet Name="FK__detalle_c__idCon__4E88ABD4" Association="Self.FK__detalle_c__idCon__4E88ABD4">
       <End Role="consulta" EntitySet="consulta" />
       <End Role="detalle_consulta" EntitySet="detalle_consulta" />
     </AssociationSet>
-    <AssociationSet Name="FK__detalle_c__idMed__4F7CD00D" Association="Self.FK__detalle_c__idMed__4F7CD00D">
+    <AssociationSet Name="FK__detalle_c__idMed__4D94879B" Association="Self.FK__detalle_c__idMed__4D94879B">
       <End Role="usuario" EntitySet="usuario" />
       <End Role="detalle_consulta" EntitySet="detalle_consulta" />
     </AssociationSet>
-    <AssociationSet Name="FK__detalle_c__idOrt__4E88ABD4" Association="Self.FK__detalle_c__idOrt__4E88ABD4">
+    <AssociationSet Name="FK__detalle_c__idOrt__4CA06362" Association="Self.FK__detalle_c__idOrt__4CA06362">
       <End Role="ortesis" EntitySet="ortesis" />
       <End Role="detalle_consulta" EntitySet="detalle_consulta" />
     </AssociationSet>
-    <AssociationSet Name="FK__detalle_c__idPro__4D94879B" Association="Self.FK__detalle_c__idPro__4D94879B">
+    <AssociationSet Name="FK__detalle_c__idPro__4BAC3F29" Association="Self.FK__detalle_c__idPro__4BAC3F29">
       <End Role="protesis" EntitySet="protesis" />
       <End Role="detalle_consulta" EntitySet="detalle_consulta" />
     </AssociationSet>
-    <AssociationSet Name="FK__ortesis__tipo__4316F928" Association="Self.FK__ortesis__tipo__4316F928">
+    <AssociationSet Name="FK__ortesis__tipo__412EB0B6" Association="Self.FK__ortesis__tipo__412EB0B6">
       <End Role="tipoOrtesis" EntitySet="tipoOrtesis" />
       <End Role="ortesis" EntitySet="ortesis" />
     </AssociationSet>
-    <AssociationSet Name="FK__protesis__tipo__47DBAE45" Association="Self.FK__protesis__tipo__47DBAE45">
+    <AssociationSet Name="FK__protesis__tipo__45F365D3" Association="Self.FK__protesis__tipo__45F365D3">
       <End Role="tipoProtesis" EntitySet="tipoProtesis" />
       <End Role="protesis" EntitySet="protesis" />
     </AssociationSet>
-    <AssociationSet Name="FK__usuario__tipoUsu__3B75D760" Association="Self.FK__usuario__tipoUsu__3B75D760">
+    <AssociationSet Name="FK__usuario__tipoUsu__3A81B327" Association="Self.FK__usuario__tipoUsu__3A81B327">
       <End Role="TipoUsuario" EntitySet="TipoUsuario" />
       <End Role="usuario" EntitySet="usuario" />
     </AssociationSet>

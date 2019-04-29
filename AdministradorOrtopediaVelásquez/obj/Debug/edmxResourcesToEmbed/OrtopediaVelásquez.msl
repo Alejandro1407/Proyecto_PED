@@ -71,7 +71,6 @@
           <ScalarProperty Name="nombres" ColumnName="nombres" />
           <ScalarProperty Name="apellidos" ColumnName="apellidos" />
           <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="codigoUsuario" ColumnName="codigoUsuario" />
           <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
           <ScalarProperty Name="contrasenya" ColumnName="contrasenya" />
           <ScalarProperty Name="sexo" ColumnName="sexo" />

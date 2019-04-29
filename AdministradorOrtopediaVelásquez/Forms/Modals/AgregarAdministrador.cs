@@ -95,10 +95,11 @@ namespace AdministradorOrtopediaVelásquez.Forms.Modals
             u.nombres = txtNombre.Text;
             u.apellidos = txtApellidos.Text;
             u.email = txtEmail.Text;
-            u.contrasenya = txtEmail.Text;
+            u.contrasenya = "administrador";
             u.sexo = cmbGenero.SelectedIndex == 0 ? "M" : "F";
             u.tipoUsuario = 1;
             u.fechaNacimiento = FNacimiento.Value;
+
             bool Answer = await sesionServicio.AgregarAdministrador(u);
             if (Answer) {
                 MessageBox.Show("Se Agrego Correctamente");

@@ -23,7 +23,6 @@ namespace AdministradorOrtopediaVelásquez
         public string nombres { get; set; }
         public string apellidos { get; set; }
         public string email { get; set; }
-        public string codigoUsuario { get; set; }
         public Nullable<int> tipoUsuario { get; set; }
         public string contrasenya { get; set; }
         public string sexo { get; set; }

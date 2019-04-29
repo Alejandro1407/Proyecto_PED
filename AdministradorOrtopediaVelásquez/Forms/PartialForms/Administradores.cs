@@ -63,33 +63,15 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 pnel.Size = new Size(744, 181);
                 pnel.Location = new Point(40,Y);
 
-                /* Codigo */
-                PictureBox CodigoImg = new PictureBox();
-                CodigoImg.Image = Properties.Resources.Codigo;
-                CodigoImg.Location = new Point(27, 26);
-                CodigoImg.Size = new Size(48, 48);
-                CodigoImg.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                Label lblCodigoTitle = new Label();
-                lblCodigoTitle.Location = new Point(82, 26);
-                lblCodigoTitle.AutoSize = true;
-                lblCodigoTitle.Text = "Codigo: ";
-                //lblCodigoTitle.ForeColor = Color.Gray;
-                lblCodigoTitle.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
-
-                MaterialLabel lblCodigo = new MaterialLabel();
-                lblCodigo.Location = new Point(81,55);
-                lblCodigo.Text = x.codigoUsuario;
-
                 /* Nombre */
                 PictureBox NombreImg = new PictureBox();
                 NombreImg.Image = Properties.Resources.Nombres;
-                NombreImg.Location = new Point(27, 107);
+                NombreImg.Location = new Point(23, 26);
                 NombreImg.Size = new Size(48, 48);
                 NombreImg.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 Label lblNombreTitle = new Label();
-                lblNombreTitle.Location = new Point(82, 107);
+                lblNombreTitle.Location = new Point(77, 26);
                 lblNombreTitle.AutoSize = true;
                 lblNombreTitle.Text = "Nombres: ";
                 //lblNombreTitle.ForeColor = Color.Gray;
@@ -99,7 +81,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 lblNombre.ReadOnly = true;
                 lblNombre.BackColor = Color.White;
                 lblNombre.BorderStyle = BorderStyle.None;
-                lblNombre.Location = new Point(85, 135);
+                lblNombre.Location = new Point(80, 54);
                 lblNombre.Size = new Size(126, 33);
                 lblNombre.Text = x.nombres;
                 lblNombre.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
@@ -150,22 +132,26 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
 
                 PictureBox FNacimientoImg = new PictureBox();
                 FNacimientoImg.Image = Properties.Resources.cumpleanios;
-                FNacimientoImg.Location = new Point(418, 68);
+                FNacimientoImg.Location = new Point(23, 106);
                 FNacimientoImg.Size = new Size(48, 48);
                 FNacimientoImg.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 Label lblFNacimientoTitle = new Label();
-                lblFNacimientoTitle.Location = new Point(472, 68);
+                lblFNacimientoTitle.Location = new Point(77, 106);
                 lblFNacimientoTitle.AutoSize = true;
                 lblFNacimientoTitle.Text = "Fecha Nacimiento: ";
                 //lblTitle.ForeColor = Color.Gray;
                 lblFNacimientoTitle.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
 
                 MaterialLabel lblFNacimiento = new MaterialLabel();
-                lblFNacimiento.Location = new Point(472, 95);
+                lblFNacimiento.Location = new Point(77, 133);
                 lblFNacimiento.Text = x.fechaNacimiento.ToString();
 
-                pnel.Controls.AddRange(new Control[] { CodigoImg, lblCodigoTitle, lblCodigo, NombreImg, lblNombreTitle,lblNombre, ApellidosImg, lblApellidosTitle, lblApellidos, GeneroImg, lblGeneroTitle, lblGenero, FNacimientoImg,lblFNacimientoTitle ,lblFNacimiento });
+                Button btnBorrar = new Button();
+                btnBorrar.Image = Properties.Resources.Eliminar;
+                btnBorrar.Location = new Point(649, 64);
+
+                pnel.Controls.AddRange(new Control[] {btnBorrar, NombreImg, lblNombreTitle,lblNombre, ApellidosImg, lblApellidosTitle, lblApellidos, GeneroImg, lblGeneroTitle, lblGenero, FNacimientoImg,lblFNacimientoTitle ,lblFNacimiento });
                 pnelContenedor.Controls.Add(pnel);
 
                 Y += 200;
