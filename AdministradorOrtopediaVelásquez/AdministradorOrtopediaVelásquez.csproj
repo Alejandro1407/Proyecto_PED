@@ -135,6 +135,12 @@
     <Compile Include="Forms\PartialForms\Horarios.Designer.cs">
       <DependentUpon>Horarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ShowInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowInputDialog.designer.cs">
+      <DependentUpon>ShowInputDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ShowDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,9 +194,6 @@
       <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
     </Compile>
     <Compile Include="Servicios\CatalogoServicio.cs" />
-    <Compile Include="Servicios\DropShadown.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Servicios\SesionServicio.cs" />
     <Compile Include="tipoOrtesis.cs">
       <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
@@ -239,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PartialForms\Horarios.resx">
       <DependentUpon>Horarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowInputDialog.resx">
+      <DependentUpon>ShowInputDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ShowDialog.resx">
       <DependentUpon>ShowDialog.cs</DependentUpon>
@@ -326,6 +332,7 @@
       <DependentUpon>OrtopediaVelásquez.edmx</DependentUpon>
       <LastGenOutput>OrtopediaVelásquez.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\CerrarSesion.png" />
     <None Include="Resources\ChangePass.png" />
     <None Include="Resources\Success.png" />
     <None Include="Resources\Information.png" />
@@ -336,7 +343,6 @@
     <None Include="Resources\Genero.png" />
     <None Include="Resources\Apellidos.png" />
     <None Include="Resources\Nombres.png" />
-    <None Include="Resources\CerrarSesion.png" />
     <None Include="Resources\Medicos.png" />
     <None Include="Resources\Reload3.png" />
     <None Include="Resources\Reload.png" />

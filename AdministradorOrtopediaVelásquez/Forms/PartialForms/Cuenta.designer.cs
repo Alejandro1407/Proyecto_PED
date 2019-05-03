@@ -30,8 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cuenta));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnReload = new System.Windows.Forms.Button();
+            this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
             this.status = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelDesign1 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
             this.txtEmail = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,8 +54,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
-            this.btnReload = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.status)).BeginInit();
             this.panelDesign1.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnLogOut);
             this.panel2.Controls.Add(this.btnReload);
             this.panel2.Controls.Add(this.lblStatus);
             this.panel2.Controls.Add(this.status);
@@ -77,7 +79,48 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(824, 551);
             this.panel2.TabIndex = 42;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnReload
+            // 
+            this.btnReload.BackColor = System.Drawing.Color.White;
+            this.btnReload.FlatAppearance.BorderSize = 0;
+            this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReload.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnReload.ForeColor = System.Drawing.Color.Gray;
+            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
+            this.btnReload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnReload.Location = new System.Drawing.Point(327, 322);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(150, 53);
+            this.btnReload.TabIndex = 53;
+            this.btnReload.Text = "Reintentar";
+            this.btnReload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReload.UseVisualStyleBackColor = false;
+            this.btnReload.Visible = false;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Depth = 0;
+            this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblStatus.Location = new System.Drawing.Point(360, 292);
+            this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(85, 19);
+            this.lblStatus.TabIndex = 52;
+            this.lblStatus.Text = "Cargando...";
+            // 
+            // status
+            // 
+            this.status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
+            this.status.Location = new System.Drawing.Point(342, 166);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(114, 111);
+            this.status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.status.TabIndex = 45;
+            this.status.TabStop = false;
             // 
             // label1
             // 
@@ -89,16 +132,6 @@
             this.label1.Size = new System.Drawing.Size(183, 25);
             this.label1.TabIndex = 31;
             this.label1.Text = "Datos del Usuario";
-            // 
-            // status
-            // 
-            this.status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
-            this.status.Location = new System.Drawing.Point(342, 166);
-            this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(114, 111);
-            this.status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.status.TabIndex = 45;
-            this.status.TabStop = false;
             // 
             // panelDesign1
             // 
@@ -168,6 +201,7 @@
             this.btnChangePass.Size = new System.Drawing.Size(21, 24);
             this.btnChangePass.TabIndex = 61;
             this.btnChangePass.UseVisualStyleBackColor = true;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // txtPass
             // 
@@ -332,37 +366,17 @@
             this.pictureBox5.TabIndex = 41;
             this.pictureBox5.TabStop = false;
             // 
-            // lblStatus
+            // btnLogOut
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Depth = 0;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(360, 292);
-            this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(85, 18);
-            this.lblStatus.TabIndex = 52;
-            this.lblStatus.Text = "Cargando...";
-            // 
-            // btnReload
-            // 
-            this.btnReload.BackColor = System.Drawing.Color.White;
-            this.btnReload.FlatAppearance.BorderSize = 0;
-            this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReload.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnReload.ForeColor = System.Drawing.Color.Gray;
-            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
-            this.btnReload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReload.Location = new System.Drawing.Point(327, 322);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(150, 53);
-            this.btnReload.TabIndex = 53;
-            this.btnReload.Text = "Reintentar";
-            this.btnReload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReload.UseVisualStyleBackColor = false;
-            this.btnReload.Visible = false;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.CerrarSesion;
+            this.btnLogOut.Location = new System.Drawing.Point(718, 12);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(63, 54);
+            this.btnLogOut.TabIndex = 54;
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // Cuenta
             // 
@@ -416,5 +430,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private MaterialSkin.Controls.MaterialLabel lblStatus;
         private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

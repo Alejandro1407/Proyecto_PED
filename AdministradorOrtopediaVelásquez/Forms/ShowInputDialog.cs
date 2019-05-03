@@ -1,82 +1,35 @@
-﻿using AdministradorOrtopediaVelásquez.Forms;
-using AdministradorOrtopediaVelásquez.Servicios;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Drawing;
 
-namespace AdministradorOrtopediaVelásquez
+namespace AdministradorOrtopediaVelásquez.Forms
 {
-    public partial class LoginForm : Form
+    public partial class ShowInputDialog : Form
     {
-        SesionServicio sesionServicio = new SesionServicio();
-       
+       public string data { get; set; }
 
-        public LoginForm()
+        public ShowInputDialog(String Mensaje, String Title = "Ingreso de Datos", String placeholder = "", String type = "text")
         {
             InitializeComponent();
-            this.Region = Region.FromHrgn(CreateRoundRectRgn(0,0, Width, Height, 20, 20));
+            lblMensaje.Text = Mensaje;
+            lblTitle.Text = Title;
+            txtData.Hint = placeholder;
+            if (type == "password") {
+                txtData.PasswordChar = '*';
+            }
         }
-        //Listener para btnCerrar
+   
+        //Si se dio click en btnAceptar se devuelve el DialogResult como OK
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.data = txtData.Text;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
-        {   //Se invoca a ShowConfirmDialog para que muestre al usario un mensaje y dos botones para cerrar y otro para cancelar
-            ShowConfirmDialog showConfirm = new ShowConfirmDialog("¿Seguro que desea Salir?", this.Height, this.Width); //Se instancia el formulario
-            this.Enabled = false;//Se desabilita el formulario actual
-            if (showConfirm.ShowDialog(this) == DialogResult.OK) //Se usa ShowDialog ya que este devuelve lo que se asigne a DialogResult, luego se compara
-            {
-                Application.Exit(); //Si dio aceptar se finaliza el programa
-            }
-            else
-            {
-                this.Enabled = true; //Si cancelo se habilita el formulario actual
-            }
-
-        }
-
-        //Listener para minimizar el formulario
-        private void btnMin_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
-        }//Listener
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BarraSuperior_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private async void btnIniciar_Click(object sender, EventArgs e)
-        {
-            btnIniciar.Visible = false;
-            Status.Image = Properties.Resources.Loading;
-            Status.Visible = true;
-            usuario p = await sesionServicio.LoguearseAsync(txtUser.Text, txtPassword.Text);
-            if (p == null)
-            {
-                MessageBox.Show("Usuario y/o contraseña incorecto");
-                btnIniciar.Visible = true;
-                Status.Visible = false;
-                return;
-            }
-            else if (p.nombres == "Exception")
-            {
-                Status.Image = Properties.Resources.Error;
-                Status.Visible = true;
-                MessageBox.Show("Ocurrio un error");
-            }
-            else {
-                MainForm mf = new MainForm();
-                mf.id = p.id;
-                mf.nombre = p.nombres;
-                mf.email = p.email;
-                mf.Show();
-                this.Close();
-               
-            }
+            this.DialogResult = DialogResult.Abort;
         }
         /* Codigo para las sombras y redondeo */
         //No comprendo como funciona pero lo hace
@@ -175,6 +128,5 @@ namespace AdministradorOrtopediaVelásquez
             }
         }
         private void BarraSuperior_MouseUp(object sender, MouseEventArgs e) { Drag = false; }
-
-    }//Clase
-}//NameSpace
+    }
+}

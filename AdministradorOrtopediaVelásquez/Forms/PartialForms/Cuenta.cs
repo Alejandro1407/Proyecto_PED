@@ -72,9 +72,51 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private async void btnChangePass_Click(object sender, EventArgs e)
         {
+            ShowInputDialog sid = new ShowInputDialog("Ingrese contraseña actual","Cambiar Contraseña","********","password");
+            var result = sid.ShowDialog();
+            if (result == DialogResult.OK) {
+                string oldpass = sid.data;
+                usuario u = await sesionServicio.LoguearseAsync(this.email, oldpass);
+                if (u == null)
+                {
+                    ShowDialog swd = new ShowDialog("Contraseña no coincide", "Error");
+                    swd.ShowDialog();
+                }
+                else if (u.nombres == "Exception")
+                {
+                    ShowDialog swd = new ShowDialog("Ocurrio un error", "Error");
+                    swd.ShowDialog();
+                }
+                else {
+                    ShowInputDialog sd = new ShowInputDialog("Ingrese nueva contraseña", "Cambiar Contraseña", "********", "password");
+                    var rs = sd.ShowDialog();
+                    if (rs == DialogResult.OK) {
+                        string newpass = sd.data;
+                        bool answer = await sesionServicio.ChangePass(this.id,newpass);
+                        if (answer)
+                        {
+                            ShowDialog swd = new ShowDialog("Contraseña actualizada", "Success");
+                            swd.ShowDialog();
+                        }
+                        else {
+                            ShowDialog swd = new ShowDialog("Ocurrio un error", "Error");
+                            swd.ShowDialog();
+                        }
+                    }
+                }
+            }//result
+        }//btnChange
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            ShowConfirmDialog shcd = new ShowConfirmDialog("¿Cerrar Sesión?",this.Height,this.Width);
+            var result = shcd.ShowDialog();
+            if (result == DialogResult.OK) {
+                Application.Restart();
+            }
 
         }
-    }
-}
+    }//Clase
+}//NameSpace

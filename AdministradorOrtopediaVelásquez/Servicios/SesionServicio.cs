@@ -9,19 +9,21 @@ namespace AdministradorOrtopediaVelásquez.Servicios
 {
     class SesionServicio
     {
-        public Task<List<usuario>> LoguearseAsync(String user, String contrasenia) {
+        public Task<usuario> LoguearseAsync(String user, String contrasenia) {
             return Task.Run(() =>
             {
                 using (OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities())
                 {
                     try {
-                        List<usuario> p = (from usuarios in db.usuario
+                       usuario p = (from usuarios in db.usuario
                                            where usuarios.email.Equals(user) && usuarios.contrasenya.Equals(contrasenia) && usuarios.tipoUsuario.Value.Equals(1)
-                                           select usuarios).ToList();
+                                           select usuarios).FirstOrDefault();
                         return p;
                     }
                     catch (Exception e) {
-                        return null;
+                        usuario p = new usuario();
+                        p.nombres = "Exception";
+                        return p;
                     }
                 }
             });
@@ -62,6 +64,24 @@ namespace AdministradorOrtopediaVelásquez.Servicios
                 }
                 catch (Exception e) {
                     return false;
+                }
+            });
+        }
+
+        public Task<bool> ChangePass(int id,String newPass) {
+            return Task.Run(() =>
+            {
+                using (OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities()) {
+                    try
+                    {
+                        usuario u = db.usuario.Find(id);
+                        u.contrasenya = newPass;
+                        db.SaveChanges();
+                        return true;
+                    }
+                    catch (Exception e) {
+                        return false;
+                    }
                 }
             });
         }
