@@ -16,13 +16,12 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
 
         public Cuenta()
         {
-      
             InitializeComponent();
         }
 
         private void CuentaForm_Load(object sender, EventArgs e)
         {
-           // MostrarData();
+           MostrarData();
         }
 
         
@@ -40,9 +39,12 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             }
             foreach(usuario x in administradores) { 
                 //panel2.Location = new Point(32, 38);
-                txtUserName.Text = x.email;
-                txtNombre.Text = x.nombres;
+                txtNames.Text = x.nombres;
+                txtApe.Text = x.apellidos;
+                txtBirthDay.Text = x.fechaNacimiento.ToString();
+                txtEmail.Text = x.email;
                 txtPass.Text = "**********";
+                txtGenero.Text = x.sexo == "M" ? "Masculino" :"Femenino";
                 status.Visible = false;
                 lblStatus.Visible = false;
                 btnReload.Visible = false;
@@ -51,12 +53,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
         }
         private void btnReload_Click(object sender, EventArgs e)
         {
-            //MostrarData();
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
+            MostrarData();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -73,6 +70,11 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             {
                 this.Enabled = true; //Si cancelo se habilita el formulario actual
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

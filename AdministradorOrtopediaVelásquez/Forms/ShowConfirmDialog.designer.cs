@@ -31,7 +31,7 @@
             this.lblMensaje = new MaterialSkin.Controls.MaterialLabel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.Contenedor = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.Contenedor = new System.Windows.Forms.Panel();
             this.Contenedor.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +91,9 @@
             this.Contenedor.Name = "Contenedor";
             this.Contenedor.Size = new System.Drawing.Size(309, 173);
             this.Contenedor.TabIndex = 8;
+            this.Contenedor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseDown);
+            this.Contenedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseMove);
+            this.Contenedor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseUp);
             // 
             // ShowConfirmDialog
             // 
@@ -107,6 +110,9 @@
             this.Text = "ShowConfirmDialog";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.DarkRed;
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseUp);
             this.Contenedor.ResumeLayout(false);
             this.Contenedor.PerformLayout();
             this.ResumeLayout(false);
@@ -117,6 +123,6 @@
         private MaterialSkin.Controls.MaterialLabel lblMensaje;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private AdministradorOrtopediaVelásquez.CustomControls.PanelDesign Contenedor;
+        private System.Windows.Forms.Panel Contenedor;
     }
 }

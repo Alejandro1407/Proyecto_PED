@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.panelDesign1 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.panelDesign1 = new System.Windows.Forms.Panel();
             this.Status = new System.Windows.Forms.PictureBox();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.txtPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -37,7 +37,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtUser = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelDesign2 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.panelDesign2 = new System.Windows.Forms.Panel();
             this.title = new MaterialSkin.Controls.MaterialLabel();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -73,7 +73,6 @@
             this.Status.TabIndex = 6;
             this.Status.TabStop = false;
             this.Status.Visible = false;
-            this.Status.Click += new System.EventHandler(this.Status_Click);
             // 
             // btnIniciar
             // 
@@ -158,11 +157,14 @@
             this.panelDesign2.Controls.Add(this.title);
             this.panelDesign2.Controls.Add(this.btnMin);
             this.panelDesign2.Controls.Add(this.btnCerrar);
-            this.panelDesign2.Location = new System.Drawing.Point(1, 0);
+            this.panelDesign2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDesign2.Location = new System.Drawing.Point(0, 0);
             this.panelDesign2.Name = "panelDesign2";
-            this.panelDesign2.Size = new System.Drawing.Size(347, 46);
+            this.panelDesign2.Size = new System.Drawing.Size(348, 44);
             this.panelDesign2.TabIndex = 13;
             this.panelDesign2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseDown);
+            this.panelDesign2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseMove);
+            this.panelDesign2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseUp);
             // 
             // title
             // 
@@ -231,9 +233,9 @@
         #endregion
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnMin;
-        private CustomControls.PanelDesign panelDesign1;
+        private System.Windows.Forms.Panel panelDesign1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private CustomControls.PanelDesign panelDesign2;
+        private System.Windows.Forms.Panel panelDesign2;
         private MaterialSkin.Controls.MaterialLabel title;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtUser;

@@ -92,7 +92,7 @@ namespace AdministradorOrtopediaVelásquez.Servicios
                 try
                 {
                     List<usuario> administradores = (from usuarios in db.usuario
-                                                     where usuarios.tipoUsuario.Equals(1) && usuarios.id.Equals(id)
+                                                     where usuarios.tipoUsuario.Value.Equals(1) && usuarios.id.Equals(id)
                                                      select usuarios).ToList();
                     return administradores;
                 }

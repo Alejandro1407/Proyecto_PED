@@ -65,17 +65,17 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             foreach (usuario x in administradores) {
                 PanelDesign pnel = new PanelDesign();
                 pnel.Size = new Size(744, 181);
-                pnel.Location = new Point(40,Y);
+                pnel.Location = new Point(39,Y);
 
                 /* Nombre */
                 PictureBox NombreImg = new PictureBox();
                 NombreImg.Image = Properties.Resources.Nombres;
-                NombreImg.Location = new Point(23, 26);
+                NombreImg.Location = new Point(27, 28);
                 NombreImg.Size = new Size(48, 48);
                 NombreImg.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 Label lblNombreTitle = new Label();
-                lblNombreTitle.Location = new Point(77, 26);
+                lblNombreTitle.Location = new Point(81, 28);
                 lblNombreTitle.AutoSize = true;
                 lblNombreTitle.Text = "Nombres: ";
                 //lblNombreTitle.ForeColor = Color.Gray;
@@ -85,7 +85,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 lblNombre.ReadOnly = true;
                 lblNombre.BackColor = Color.White;
                 lblNombre.BorderStyle = BorderStyle.None;
-                lblNombre.Location = new Point(80, 54);
+                lblNombre.Location = new Point(84, 56);
                 lblNombre.Size = new Size(126, 33);
                 lblNombre.Text = x.nombres;
                 lblNombre.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
@@ -93,12 +93,12 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 /* Apellidos */
                 PictureBox ApellidosImg = new PictureBox();
                 ApellidosImg.Image = Properties.Resources.Apellidos;
-                ApellidosImg.Location = new Point(232, 26);
+                ApellidosImg.Location = new Point(222, 28);
                 ApellidosImg.Size = new Size(48, 48);
                 ApellidosImg.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 Label lblApellidosTitle = new Label();
-                lblApellidosTitle.Location = new Point(287, 26);
+                lblApellidosTitle.Location = new Point(276, 28);
                 lblApellidosTitle.AutoSize = true;
                 lblApellidosTitle.Text = "Apellidos: ";
                 //lblApellidosTitle.ForeColor = Color.Gray;
@@ -108,7 +108,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 lblApellidos.ReadOnly = true;
                 lblApellidos.BackColor = Color.White;
                 lblApellidos.BorderStyle = BorderStyle.None;
-                lblApellidos.Location = new Point(290, 54);
+                lblApellidos.Location = new Point(280, 55);
                 lblApellidos.Size = new Size(126, 33);
                 lblApellidos.Text = x.apellidos;
                 lblApellidos.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
@@ -117,50 +117,93 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
 
                 PictureBox GeneroImg = new PictureBox();
                 GeneroImg.Image = Properties.Resources.Genero;
-                GeneroImg.Location = new Point(232, 107);
+                GeneroImg.Location = new Point(222, 109);
                 GeneroImg.Size = new Size(48, 48);
                 GeneroImg.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 Label lblGeneroTitle = new Label();
-                lblGeneroTitle.Location = new Point(287, 107);
+                lblGeneroTitle.Location = new Point(277, 109);
                 lblGeneroTitle.AutoSize = true;
                 lblGeneroTitle.Text = "Sexo: ";
                 //lblGeneroTitle.ForeColor = Color.Gray;
                 lblGeneroTitle.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
 
                 MaterialLabel lblGenero = new MaterialLabel();
-                lblGenero.Location = new Point(286, 135);
+                lblGenero.Location = new Point(276,137);
                 lblGenero.Text = x.sexo == "M" ? "Masculino":"Femenino";
 
                 /* Fecha Nacimiento */
 
                 PictureBox FNacimientoImg = new PictureBox();
                 FNacimientoImg.Image = Properties.Resources.cumpleanios;
-                FNacimientoImg.Location = new Point(23, 106);
+                FNacimientoImg.Location = new Point(27, 108);
                 FNacimientoImg.Size = new Size(48, 48);
                 FNacimientoImg.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 Label lblFNacimientoTitle = new Label();
-                lblFNacimientoTitle.Location = new Point(77, 106);
+                lblFNacimientoTitle.Location = new Point(81, 108);
                 lblFNacimientoTitle.AutoSize = true;
-                lblFNacimientoTitle.Text = "Fecha Nacimiento: ";
+                lblFNacimientoTitle.Text = "Cumpleaños: ";
                 //lblTitle.ForeColor = Color.Gray;
                 lblFNacimientoTitle.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
 
                 MaterialLabel lblFNacimiento = new MaterialLabel();
-                lblFNacimiento.Location = new Point(77, 133);
+                lblFNacimiento.Location = new Point(81, 135);
                 lblFNacimiento.Text = x.fechaNacimiento.ToString();
+
+                /* Email */
+
+                PictureBox EmailImg = new PictureBox();
+                EmailImg.Image = Properties.Resources.email;
+                EmailImg.Location = new Point(419, 28);
+                EmailImg.Size = new Size(48, 48);
+                EmailImg.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                Label lblEmailTitle = new Label();
+                lblEmailTitle.Location = new Point(473, 28);
+                lblEmailTitle.AutoSize = true;
+                lblEmailTitle.Text = "Email: ";
+                //lblTitle.ForeColor = Color.Gray;
+                lblEmailTitle.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
+
+                RichTextBox lblEmail = new RichTextBox();
+                lblEmail.ReadOnly = true;
+                lblEmail.BackColor = Color.White;
+                lblEmail.BorderStyle = BorderStyle.None;
+                lblEmail.Location = new Point(473, 55);
+                lblEmail.Size = new Size(126, 33);
+                lblEmail.Text = x.email;
+                lblEmail.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
+
+                /* Contraseña */
+
+                PictureBox ContraseñaImg = new PictureBox();
+                ContraseñaImg.Image = Properties.Resources.Contraseña;
+                ContraseñaImg.Location = new Point(419, 108);
+                ContraseñaImg.Size = new Size(48, 48);
+                ContraseñaImg.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                Label lblContraseñaTitle = new Label();
+                lblContraseñaTitle.Location = new Point(473, 108);
+                lblContraseñaTitle.AutoSize = true;
+                lblContraseñaTitle.Text = "Constraseña: ";
+                //lblTitle.ForeColor = Color.Gray;
+                lblContraseñaTitle.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
+
+                MaterialLabel lblContraseña = new MaterialLabel();
+                lblContraseña.Location = new Point(473, 138);
+                lblContraseña.Text = "*******";
 
                 Button btnBorrar = new Button();
                 btnBorrar.Image = Properties.Resources.Eliminar;
-                btnBorrar.Location = new Point(649, 64);
+                btnBorrar.Location = new Point(649, 59);
                 btnBorrar.FlatStyle = FlatStyle.Flat;
                 btnBorrar.FlatAppearance.BorderSize = 0;
                 btnBorrar.Size = new Size(59,61);
                 btnBorrar.Name = x.id.ToString();
                 btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
 
-                pnel.Controls.AddRange(new Control[] {NombreImg, lblNombreTitle,lblNombre, ApellidosImg, lblApellidosTitle, lblApellidos, GeneroImg, lblGeneroTitle, lblGenero, FNacimientoImg,lblFNacimientoTitle ,lblFNacimiento, btnBorrar });
+                pnel.Controls.AddRange(new Control[] {NombreImg, lblNombreTitle,lblNombre, ApellidosImg, lblApellidosTitle, lblApellidos, GeneroImg, lblGeneroTitle, lblGenero, FNacimientoImg,lblFNacimientoTitle ,lblFNacimiento, btnBorrar, EmailImg, lblEmailTitle, lblEmail, ContraseñaImg, lblContraseñaTitle, lblContraseña });
                 pnelContenedor.Controls.Add(pnel);
 
                 Y += 200;

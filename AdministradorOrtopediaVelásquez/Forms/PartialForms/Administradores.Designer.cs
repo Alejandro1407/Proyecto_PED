@@ -51,6 +51,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnReload = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtPass = new MaterialSkin.Controls.MaterialLabel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.BarraSuperior.SuspendLayout();
             this.pnelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
@@ -59,6 +65,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -67,7 +75,7 @@
             this.lblStatus.Depth = 0;
             this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(360, 292);
+            this.lblStatus.Location = new System.Drawing.Point(355, 387);
             this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(85, 19);
@@ -147,7 +155,7 @@
             // Status
             // 
             this.Status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
-            this.Status.Location = new System.Drawing.Point(342, 166);
+            this.Status.Location = new System.Drawing.Point(337, 261);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(114, 111);
             this.Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -156,6 +164,12 @@
             // 
             // panelDesign1
             // 
+            this.panelDesign1.Controls.Add(this.txtEmail);
+            this.panelDesign1.Controls.Add(this.label7);
+            this.panelDesign1.Controls.Add(this.pictureBox1);
+            this.panelDesign1.Controls.Add(this.txtPass);
+            this.panelDesign1.Controls.Add(this.label6);
+            this.panelDesign1.Controls.Add(this.pictureBox6);
             this.panelDesign1.Controls.Add(this.button1);
             this.panelDesign1.Controls.Add(this.richTextBox2);
             this.panelDesign1.Controls.Add(this.richTextBox1);
@@ -179,7 +193,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Eliminar;
-            this.button1.Location = new System.Drawing.Point(649, 64);
+            this.button1.Location = new System.Drawing.Point(649, 59);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(59, 61);
             this.button1.TabIndex = 17;
@@ -190,10 +204,10 @@
             this.richTextBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(290, 53);
+            this.richTextBox2.Location = new System.Drawing.Point(280, 55);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(122, 33);
+            this.richTextBox2.Size = new System.Drawing.Size(126, 33);
             this.richTextBox2.TabIndex = 16;
             this.richTextBox2.Text = "Alejo Gálvez";
             // 
@@ -202,7 +216,7 @@
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(80, 54);
+            this.richTextBox1.Location = new System.Drawing.Point(84, 56);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(126, 33);
@@ -215,7 +229,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(77, 133);
+            this.materialLabel5.Location = new System.Drawing.Point(81, 135);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(81, 19);
@@ -226,16 +240,16 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(77, 106);
+            this.label5.Location = new System.Drawing.Point(81, 108);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(152, 18);
+            this.label5.Size = new System.Drawing.Size(96, 18);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Fecha de Nacimiento:";
+            this.label5.Text = "Cumpleaños:";
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.cumpleanios;
-            this.pictureBox5.Location = new System.Drawing.Point(23, 106);
+            this.pictureBox5.Location = new System.Drawing.Point(27, 108);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(48, 48);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -248,7 +262,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(286, 135);
+            this.materialLabel4.Location = new System.Drawing.Point(276, 137);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(79, 19);
@@ -259,7 +273,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(287, 107);
+            this.label4.Location = new System.Drawing.Point(277, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 18);
             this.label4.TabIndex = 10;
@@ -268,7 +282,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Genero;
-            this.pictureBox4.Location = new System.Drawing.Point(232, 107);
+            this.pictureBox4.Location = new System.Drawing.Point(222, 109);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(48, 48);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -279,7 +293,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(287, 26);
+            this.label3.Location = new System.Drawing.Point(276, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 18);
             this.label3.TabIndex = 6;
@@ -288,7 +302,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Apellidos;
-            this.pictureBox3.Location = new System.Drawing.Point(232, 26);
+            this.pictureBox3.Location = new System.Drawing.Point(222, 28);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(48, 48);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -299,7 +313,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(77, 26);
+            this.label2.Location = new System.Drawing.Point(81, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 18);
             this.label2.TabIndex = 4;
@@ -308,7 +322,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Nombres;
-            this.pictureBox2.Location = new System.Drawing.Point(23, 26);
+            this.pictureBox2.Location = new System.Drawing.Point(27, 28);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -325,7 +339,7 @@
             this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
             this.btnReload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReload.Location = new System.Drawing.Point(327, 322);
+            this.btnReload.Location = new System.Drawing.Point(322, 417);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(150, 53);
             this.btnReload.TabIndex = 20;
@@ -334,6 +348,71 @@
             this.btnReload.UseVisualStyleBackColor = false;
             this.btnReload.Visible = false;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(473, 55);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(138, 42);
+            this.txtEmail.TabIndex = 71;
+            this.txtEmail.Text = "alejandroalejo714@gmail.com";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(473, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 18);
+            this.label7.TabIndex = 70;
+            this.label7.Text = "Email:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.email;
+            this.pictureBox1.Location = new System.Drawing.Point(419, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 69;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtPass
+            // 
+            this.txtPass.AutoSize = true;
+            this.txtPass.Depth = 0;
+            this.txtPass.Font = new System.Drawing.Font("Roboto", 11F);
+            this.txtPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtPass.Location = new System.Drawing.Point(473, 138);
+            this.txtPass.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(57, 19);
+            this.txtPass.TabIndex = 67;
+            this.txtPass.Text = "********";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(473, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 18);
+            this.label6.TabIndex = 66;
+            this.label6.Text = "Contraseña:";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Contraseña;
+            this.pictureBox6.Location = new System.Drawing.Point(419, 108);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 65;
+            this.pictureBox6.TabStop = false;
             // 
             // Administradores
             // 
@@ -356,6 +435,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -384,5 +465,11 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.RichTextBox txtEmail;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MaterialSkin.Controls.MaterialLabel txtPass;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
