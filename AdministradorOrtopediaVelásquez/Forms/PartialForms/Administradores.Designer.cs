@@ -37,6 +37,12 @@
             this.pnelContenedor = new System.Windows.Forms.Panel();
             this.Status = new System.Windows.Forms.PictureBox();
             this.panelDesign1 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.txtEmail = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtPass = new MaterialSkin.Controls.MaterialLabel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -51,22 +57,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnReload = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtPass = new MaterialSkin.Controls.MaterialLabel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.BarraSuperior.SuspendLayout();
             this.pnelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
             this.panelDesign1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -188,6 +188,71 @@
             this.panelDesign1.Size = new System.Drawing.Size(744, 181);
             this.panelDesign1.TabIndex = 22;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(473, 55);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(138, 42);
+            this.txtEmail.TabIndex = 71;
+            this.txtEmail.Text = "alejandroalejo714@gmail.com";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(473, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 18);
+            this.label7.TabIndex = 70;
+            this.label7.Text = "Email:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.email;
+            this.pictureBox1.Location = new System.Drawing.Point(419, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 69;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtPass
+            // 
+            this.txtPass.AutoSize = true;
+            this.txtPass.Depth = 0;
+            this.txtPass.Font = new System.Drawing.Font("Roboto", 11F);
+            this.txtPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtPass.Location = new System.Drawing.Point(473, 138);
+            this.txtPass.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(57, 19);
+            this.txtPass.TabIndex = 67;
+            this.txtPass.Text = "********";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(473, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 18);
+            this.label6.TabIndex = 66;
+            this.label6.Text = "Contraseña:";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Contraseña;
+            this.pictureBox6.Location = new System.Drawing.Point(419, 108);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 65;
+            this.pictureBox6.TabStop = false;
+            // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
@@ -198,6 +263,7 @@
             this.button1.Size = new System.Drawing.Size(59, 61);
             this.button1.TabIndex = 17;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // richTextBox2
             // 
@@ -349,71 +415,6 @@
             this.btnReload.Visible = false;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(473, 55);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(138, 42);
-            this.txtEmail.TabIndex = 71;
-            this.txtEmail.Text = "alejandroalejo714@gmail.com";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(473, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 18);
-            this.label7.TabIndex = 70;
-            this.label7.Text = "Email:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.email;
-            this.pictureBox1.Location = new System.Drawing.Point(419, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 69;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txtPass
-            // 
-            this.txtPass.AutoSize = true;
-            this.txtPass.Depth = 0;
-            this.txtPass.Font = new System.Drawing.Font("Roboto", 11F);
-            this.txtPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtPass.Location = new System.Drawing.Point(473, 138);
-            this.txtPass.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(57, 19);
-            this.txtPass.TabIndex = 67;
-            this.txtPass.Text = "********";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(473, 108);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 18);
-            this.label6.TabIndex = 66;
-            this.label6.Text = "Contraseña:";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Contraseña;
-            this.pictureBox6.Location = new System.Drawing.Point(419, 108);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 65;
-            this.pictureBox6.TabStop = false;
-            // 
             // Administradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,12 +432,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
             this.panelDesign1.ResumeLayout(false);
             this.panelDesign1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -1,12 +1,8 @@
 ﻿using AdministradorOrtopediaVelásquez.Servicios;
+using AdministradorOrtopediaVelásquez.Forms.Modals;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
@@ -371,6 +367,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             btnEliminar.Size = new System.Drawing.Size(59, 61);
             btnEliminar.TabIndex = 17;
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += new EventHandler(this.btnEliminar_Click);
 
             pnel.Controls.AddRange(new Control[] {NombreImg, lblTitleNombre, lblNombre, ApellidosImg, lblTitleApellidos, lblApellidos, EmailImg, lblEmailTitle, lblEmail, EspecialidadImg, lblTitleEspecialidad, lblEspecialidad, CumpleañosImg, lblTitleCumpleaños, lblCumpleaños, GeneroImg, lblGeneroTitle, lblGenero, ContraseñaImg, lblContraseñaTitle, lblContraseña, ExperenciaImg, lblExperenciaTitle, lblExperencia, btnEliminar});
             this.pnelContenedor.Controls.Add(pnel);
@@ -380,6 +377,43 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             }//ForEach
         }//MostrarData
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AgregarMedico ag = new AgregarMedico();
+            ag.FormClosed += new FormClosedEventHandler(this.btnReload_Click);
+            ag.Show();
+        }
 
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            MostrarData();
+        }
+
+        private async void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(((Button)sender).Name);
+            ShowConfirmDialog showConfirm = new ShowConfirmDialog("¿Seguro que desea Eliminar?", this.Height, this.Width); //Se instancia el formulario
+            this.Enabled = false;//Se desabilita el formulario actual
+            if (showConfirm.ShowDialog(this) == DialogResult.OK) //Se usa ShowDialog ya que este devuelve lo que se asigne a DialogResult, luego se compara
+            {
+                if (await sesionServicio.EliminarAdministrador(id))
+                {
+                    ShowDialog swd = new ShowDialog("Eliminado Exitosamente", "Success");
+                    swd.ShowDialog(this);
+                    this.Enabled = true;
+                    MostrarData();
+                }
+                else
+                {
+                    ShowDialog swd = new ShowDialog("Ocurrio un error :c", "Error");
+                    swd.ShowDialog(this);
+                    this.Enabled = true;
+                }
+            }
+            else
+            {
+                this.Enabled = true; //Si cancelo se habilita el formulario actual
+            }
+        }
     }//Clase
 }//NameSpace

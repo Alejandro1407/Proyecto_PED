@@ -49,7 +49,7 @@ namespace AdministradorOrtopediaVelásquez.Servicios
 
                 }
             });
-        }
+        }//AgregarAdministrador
         public Task<bool> EliminarAdministrador(int id) {
             return Task.Run(() =>
             {

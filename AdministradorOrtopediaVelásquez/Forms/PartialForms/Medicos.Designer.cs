@@ -35,8 +35,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.pnelContenedor = new System.Windows.Forms.Panel();
             this.Status = new System.Windows.Forms.PictureBox();
-            this.btnReload = new System.Windows.Forms.Button();
-            this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
             this.pnel = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
             this.lblExperencia = new System.Windows.Forms.RichTextBox();
             this.lblExperenciaTitle = new System.Windows.Forms.Label();
@@ -63,6 +61,8 @@
             this.ApellidosImg = new System.Windows.Forms.PictureBox();
             this.lblTitleNombre = new System.Windows.Forms.Label();
             this.NombreImg = new System.Windows.Forms.PictureBox();
+            this.btnReload = new System.Windows.Forms.Button();
+            this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
             this.BarraSuperior.SuspendLayout();
             this.pnelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
@@ -102,6 +102,7 @@
             this.btnAdd.Text = "Agregar";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtBusqueda
             // 
@@ -154,38 +155,6 @@
             this.Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Status.TabIndex = 21;
             this.Status.TabStop = false;
-            // 
-            // btnReload
-            // 
-            this.btnReload.BackColor = System.Drawing.Color.White;
-            this.btnReload.FlatAppearance.BorderSize = 0;
-            this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReload.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnReload.ForeColor = System.Drawing.Color.Gray;
-            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
-            this.btnReload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReload.Location = new System.Drawing.Point(327, 322);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(150, 53);
-            this.btnReload.TabIndex = 23;
-            this.btnReload.Text = "Reintentar";
-            this.btnReload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReload.UseVisualStyleBackColor = false;
-            this.btnReload.Visible = false;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Depth = 0;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(360, 292);
-            this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(85, 18);
-            this.lblStatus.TabIndex = 22;
-            this.lblStatus.Text = "Cargando...";
             // 
             // pnel
             // 
@@ -273,6 +242,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(59, 61);
             this.btnEliminar.TabIndex = 17;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblTitleEspecialidad
             // 
@@ -488,6 +458,39 @@
             this.NombreImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.NombreImg.TabIndex = 3;
             this.NombreImg.TabStop = false;
+            // 
+            // btnReload
+            // 
+            this.btnReload.BackColor = System.Drawing.Color.White;
+            this.btnReload.FlatAppearance.BorderSize = 0;
+            this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReload.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnReload.ForeColor = System.Drawing.Color.Gray;
+            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
+            this.btnReload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnReload.Location = new System.Drawing.Point(327, 322);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(150, 53);
+            this.btnReload.TabIndex = 23;
+            this.btnReload.Text = "Reintentar";
+            this.btnReload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReload.UseVisualStyleBackColor = false;
+            this.btnReload.Visible = false;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Depth = 0;
+            this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblStatus.Location = new System.Drawing.Point(360, 292);
+            this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(85, 19);
+            this.lblStatus.TabIndex = 22;
+            this.lblStatus.Text = "Cargando...";
             // 
             // Medicos
             // 

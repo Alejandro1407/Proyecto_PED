@@ -253,6 +253,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                     ShowDialog swd = new ShowDialog("Eliminado Exitosamente", "Success");
                     swd.ShowDialog(this);
                     this.Enabled = true;
+                    MostrarData();
                 }
                 else {
                     ShowDialog swd = new ShowDialog("Ocurrio un error :c", "Error");
@@ -271,6 +272,10 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             MostrarData();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }//Clase
 }//NameSpace
 

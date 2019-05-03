@@ -29,8 +29,6 @@ namespace AdministradorOrtopediaVelásquez.Forms
                     InfoImg.Image = Properties.Resources.Information;
                     break;
             }
-            lblMensaje.Left = (this.Width - lblMensaje.Width) / 2;
-            lblMensaje.Top = (this.Height - lblMensaje.Height) / 2;
         }
    
         //Si se dio click en btnAceptar se devuelve el DialogResult como OK
