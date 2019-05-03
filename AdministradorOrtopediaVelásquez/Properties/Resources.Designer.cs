@@ -293,9 +293,19 @@ namespace AdministradorOrtopediaVelásquez.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Experencia {
+        internal static System.Drawing.Bitmap Especialidad {
             get {
-                object obj = ResourceManager.GetObject("Experencia", resourceCulture);
+                object obj = ResourceManager.GetObject("Especialidad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Experience {
+            get {
+                object obj = ResourceManager.GetObject("Experience", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

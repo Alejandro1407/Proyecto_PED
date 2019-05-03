@@ -16,5 +16,6 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
         {
             InitializeComponent();
         }
+
     }
 }

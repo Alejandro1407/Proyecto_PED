@@ -332,6 +332,8 @@
       <DependentUpon>OrtopediaVelásquez.edmx</DependentUpon>
       <LastGenOutput>OrtopediaVelásquez.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Experience.png" />
+    <None Include="Resources\Especialidad.png" />
     <None Include="Resources\CerrarSesion.png" />
     <None Include="Resources\ChangePass.png" />
     <None Include="Resources\Success.png" />
