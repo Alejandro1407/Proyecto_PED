@@ -48,6 +48,23 @@ namespace AdministradorOrtopediaVelásquez.Servicios
                 }
             });
         }
+        public Task<bool> EliminarAdministrador(int id) {
+            return Task.Run(() =>
+            {
+                try
+                {
+                    using (OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities()) {
+                        usuario u = db.usuario.Find(id);
+                        db.usuario.Remove(u);
+                        db.SaveChanges();
+                        return true;
+                    } 
+                }
+                catch (Exception e) {
+                    return false;
+                }
+            });
+        }
 
         public Task<List<usuario>> ObtenerAdministradoresAsync()
         {

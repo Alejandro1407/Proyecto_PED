@@ -84,7 +84,10 @@ namespace AdministradorOrtopediaVelásquez
             }
             if (p.Count > 0)
             {
-                MainForm mf = new MainForm(p[0].id);
+                MainForm mf = new MainForm();
+                mf.id = p[0].id;
+                mf.nombre = p[0].nombres;
+                mf.email = p[0].email;
                 mf.Show();
                 this.Close();
             }

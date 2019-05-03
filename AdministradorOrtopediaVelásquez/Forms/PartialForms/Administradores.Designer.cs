@@ -133,6 +133,7 @@
             // 
             // pnelContenedor
             // 
+            this.pnelContenedor.AutoScroll = true;
             this.pnelContenedor.Controls.Add(this.Status);
             this.pnelContenedor.Controls.Add(this.panelDesign1);
             this.pnelContenedor.Controls.Add(this.btnReload);
@@ -332,6 +333,7 @@
             this.btnReload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReload.UseVisualStyleBackColor = false;
             this.btnReload.Visible = false;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // Administradores
             // 

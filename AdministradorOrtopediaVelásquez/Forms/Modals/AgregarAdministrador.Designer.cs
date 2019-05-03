@@ -30,29 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarAdministrador));
             this.panelDesign1 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.FNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.txtApellidos = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.BarraSuperior = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Status = new System.Windows.Forms.PictureBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BarraSuperior = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.panelDesign1.SuspendLayout();
-            this.BarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.BarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,12 +77,47 @@
             this.panelDesign1.Size = new System.Drawing.Size(301, 504);
             this.panelDesign1.TabIndex = 7;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Depth = 0;
+            this.txtEmail.Hint = "Email";
+            this.txtEmail.Location = new System.Drawing.Point(104, 236);
+            this.txtEmail.MaxLength = 32767;
+            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(152, 23);
+            this.txtEmail.TabIndex = 20;
+            this.txtEmail.TabStop = false;
+            this.txtEmail.UseSystemPasswordChar = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(49, 211);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox5.TabIndex = 19;
+            this.pictureBox5.TabStop = false;
+            // 
             // FNacimiento
             // 
             this.FNacimiento.Location = new System.Drawing.Point(103, 357);
             this.FNacimiento.Name = "FNacimiento";
             this.FNacimiento.Size = new System.Drawing.Size(152, 20);
             this.FNacimiento.TabIndex = 18;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.cumpleanios;
+            this.pictureBox4.Location = new System.Drawing.Point(48, 327);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox4.TabIndex = 17;
+            this.pictureBox4.TabStop = false;
             // 
             // cmbGenero
             // 
@@ -111,78 +146,6 @@
             this.txtApellidos.TabIndex = 15;
             this.txtApellidos.TabStop = false;
             this.txtApellidos.UseSystemPasswordChar = false;
-            // 
-            // BarraSuperior
-            // 
-            this.BarraSuperior.Controls.Add(this.materialLabel1);
-            this.BarraSuperior.Controls.Add(this.btnCerrar);
-            this.BarraSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraSuperior.Location = new System.Drawing.Point(0, 0);
-            this.BarraSuperior.Name = "BarraSuperior";
-            this.BarraSuperior.Size = new System.Drawing.Size(301, 40);
-            this.BarraSuperior.TabIndex = 2;
-            this.BarraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseDown);
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(3, 18);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(154, 18);
-            this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "Agregar Administrador";
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(76, 53);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(154, 18);
-            this.materialLabel2.TabIndex = 3;
-            this.materialLabel2.Text = "Agregar Administrador";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Depth = 0;
-            this.txtNombre.Hint = "Nombre";
-            this.txtNombre.Location = new System.Drawing.Point(104, 120);
-            this.txtNombre.MaxLength = 32767;
-            this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.PasswordChar = '\0';
-            this.txtNombre.SelectedText = "";
-            this.txtNombre.SelectionLength = 0;
-            this.txtNombre.SelectionStart = 0;
-            this.txtNombre.Size = new System.Drawing.Size(152, 23);
-            this.txtNombre.TabIndex = 5;
-            this.txtNombre.TabStop = false;
-            this.txtNombre.UseSystemPasswordChar = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(49, 211);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox5.TabIndex = 19;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.cumpleanios;
-            this.pictureBox4.Location = new System.Drawing.Point(48, 327);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox4.TabIndex = 17;
-            this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -231,6 +194,30 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
+            // BarraSuperior
+            // 
+            this.BarraSuperior.Controls.Add(this.materialLabel1);
+            this.BarraSuperior.Controls.Add(this.btnCerrar);
+            this.BarraSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BarraSuperior.Location = new System.Drawing.Point(0, 0);
+            this.BarraSuperior.Name = "BarraSuperior";
+            this.BarraSuperior.Size = new System.Drawing.Size(301, 40);
+            this.BarraSuperior.TabIndex = 2;
+            this.BarraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseDown);
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(3, 11);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(160, 19);
+            this.materialLabel1.TabIndex = 1;
+            this.materialLabel1.Text = "Agregar Administrador";
+            // 
             // btnCerrar
             // 
             this.btnCerrar.FlatAppearance.BorderSize = 0;
@@ -243,6 +230,36 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(76, 53);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(160, 19);
+            this.materialLabel2.TabIndex = 3;
+            this.materialLabel2.Text = "Agregar Administrador";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Depth = 0;
+            this.txtNombre.Hint = "Nombre";
+            this.txtNombre.Location = new System.Drawing.Point(104, 120);
+            this.txtNombre.MaxLength = 32767;
+            this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.PasswordChar = '\0';
+            this.txtNombre.SelectedText = "";
+            this.txtNombre.SelectionLength = 0;
+            this.txtNombre.SelectionStart = 0;
+            this.txtNombre.Size = new System.Drawing.Size(152, 23);
+            this.txtNombre.TabIndex = 5;
+            this.txtNombre.TabStop = false;
+            this.txtNombre.UseSystemPasswordChar = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Nombre;
@@ -251,23 +268,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(48, 48);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Depth = 0;
-            this.txtEmail.Hint = "Email";
-            this.txtEmail.Location = new System.Drawing.Point(104, 236);
-            this.txtEmail.MaxLength = 32767;
-            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.SelectedText = "";
-            this.txtEmail.SelectionLength = 0;
-            this.txtEmail.SelectionStart = 0;
-            this.txtEmail.Size = new System.Drawing.Size(152, 23);
-            this.txtEmail.TabIndex = 20;
-            this.txtEmail.TabStop = false;
-            this.txtEmail.UseSystemPasswordChar = false;
             // 
             // AgregarAdministrador
             // 
@@ -282,13 +282,13 @@
             this.Text = "AgregarTipo";
             this.panelDesign1.ResumeLayout(false);
             this.panelDesign1.PerformLayout();
-            this.BarraSuperior.ResumeLayout(false);
-            this.BarraSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.BarraSuperior.ResumeLayout(false);
+            this.BarraSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

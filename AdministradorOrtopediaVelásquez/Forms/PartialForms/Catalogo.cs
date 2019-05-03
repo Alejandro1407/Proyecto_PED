@@ -15,6 +15,9 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
         List<ortesis> Ortesis = new List<ortesis>(); //Lista con los Objetos
         List<protesis> Protesis = new List<protesis>(); //Lista con las protesis
         CatalogoServicio catalogoServicio = new CatalogoServicio();
+        public int id { get; set; } //Guarda el id del usuario que inicio sesion
+        public string email { get; set; } //Guarda el email del usuario que inicio sesion
+        public string nombre { get; set; } //Guarad el nombre del usuario
 
         public Catalogo()
         {

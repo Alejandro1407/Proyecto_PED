@@ -135,6 +135,12 @@
     <Compile Include="Forms\PartialForms\Horarios.Designer.cs">
       <DependentUpon>Horarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ShowDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowDialog.designer.cs">
+      <DependentUpon>ShowDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ShowConfirmDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     <EmbeddedResource Include="Forms\PartialForms\Horarios.resx">
       <DependentUpon>Horarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowDialog.resx">
+      <DependentUpon>ShowDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ShowConfirmDialog.resx">
       <DependentUpon>ShowConfirmDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +323,10 @@
       <DependentUpon>OrtopediaVelásquez.edmx</DependentUpon>
       <LastGenOutput>OrtopediaVelásquez.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Success.png" />
+    <None Include="Resources\Information.png" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\Contraseña.png" />
     <None Include="Resources\email.png" />
     <None Include="Resources\cumpleanios.png" />
     <None Include="Resources\Genero.png" />
@@ -325,7 +338,6 @@
     <None Include="Resources\Reload.png" />
     <None Include="Resources\Reload2.png" />
     <None Include="Resources\Reload1.png" />
-    <None Include="Resources\Contraseña.png" />
     <None Include="Resources\UserName.png" />
     <None Include="Resources\Experencia.png" />
     <None Include="Resources\precio.png" />

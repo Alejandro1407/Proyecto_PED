@@ -12,6 +12,10 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
     public partial class Administradores : Form
     {
         SesionServicio sesionServicio = new SesionServicio();
+        public int id { get; set; } //Guarda el id del usuario que inicio sesion
+        public string email { get; set; } //Guarda el email del usuario que inicio sesion
+        public string nombre { get; set; } //Guarad el nombre del usuario
+
         public Administradores()
         {
             InitializeComponent();
@@ -150,8 +154,13 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 Button btnBorrar = new Button();
                 btnBorrar.Image = Properties.Resources.Eliminar;
                 btnBorrar.Location = new Point(649, 64);
+                btnBorrar.FlatStyle = FlatStyle.Flat;
+                btnBorrar.FlatAppearance.BorderSize = 0;
+                btnBorrar.Size = new Size(59,61);
+                btnBorrar.Name = x.id.ToString();
+                btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
 
-                pnel.Controls.AddRange(new Control[] {btnBorrar, NombreImg, lblNombreTitle,lblNombre, ApellidosImg, lblApellidosTitle, lblApellidos, GeneroImg, lblGeneroTitle, lblGenero, FNacimientoImg,lblFNacimientoTitle ,lblFNacimiento });
+                pnel.Controls.AddRange(new Control[] {NombreImg, lblNombreTitle,lblNombre, ApellidosImg, lblApellidosTitle, lblApellidos, GeneroImg, lblGeneroTitle, lblGenero, FNacimientoImg,lblFNacimientoTitle ,lblFNacimiento, btnBorrar });
                 pnelContenedor.Controls.Add(pnel);
 
                 Y += 200;
@@ -180,8 +189,44 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
             AgregarAdministrador ad = new AgregarAdministrador();
+            ad.FormClosed += new FormClosedEventHandler(this.btnReload_Click);
             ad.Show();
         }
+
+        private async void btnBorrar_Click(object sender, System.EventArgs e) {
+            int id = int.Parse(((Button)sender).Name);
+            if ((id == this.id)) {
+                ShowDialog swd = new ShowDialog("No puede eliminarse a si mismo","Advertencia");
+                swd.ShowDialog(this);
+                return;
+            }
+            ShowConfirmDialog showConfirm = new ShowConfirmDialog("¿Seguro que desea Eliminar?", this.Height, this.Width); //Se instancia el formulario
+            this.Enabled = false;//Se desabilita el formulario actual
+            if (showConfirm.ShowDialog(this) == DialogResult.OK) //Se usa ShowDialog ya que este devuelve lo que se asigne a DialogResult, luego se compara
+            {
+                if (await sesionServicio.EliminarAdministrador(id))
+                {
+                    ShowDialog swd = new ShowDialog("Eliminado Exitosamente", "Success");
+                    swd.ShowDialog(this);
+                    this.Enabled = true;
+                }
+                else {
+                    ShowDialog swd = new ShowDialog("Ocurrio un error :c", "Error");
+                    swd.ShowDialog(this);
+                    this.Enabled = true;
+                }
+            }
+            else
+            {
+                this.Enabled = true; //Si cancelo se habilita el formulario actual
+            }
+        }
+
+        private void btnReload_Click(object sender, System.EventArgs e)
+        {
+            MostrarData();
+        }
+
     }//Clase
 }//NameSpace
 

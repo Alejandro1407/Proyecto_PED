@@ -102,13 +102,12 @@ namespace AdministradorOrtopediaVelásquez.Forms.Modals
 
             bool Answer = await sesionServicio.AgregarAdministrador(u);
             if (Answer) {
-                MessageBox.Show("Se Agrego Correctamente");
+                MessageBox.Show("Se agrego exitosamente");
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Lo sentimos ocurrio un error");
-                Status.Visible = false;
+                MessageBox.Show("Ocurrio un error");
                 btnAceptar.Visible = true;
             }
         }//btnAceptar

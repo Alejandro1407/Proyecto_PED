@@ -12,7 +12,9 @@ namespace AdministradorOrtopediaVelásquez
     {
         private Form formActual; //Guarda el PartialForm que esta abierto en ese momento
         private Button Actual; //Guarda el button que inicio la form actual para darle color
-        private int id = 0;
+        public int id { get; set; } //Guarda el id del usuario que inicio sesion
+        public string email { get; set; } //Guarda el email del usuario que inicio sesion
+        public string nombre { get; set; } //Guarad el nombre del usuario
             
         //Funcion para Arraste del Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -30,11 +32,10 @@ namespace AdministradorOrtopediaVelásquez
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-        public MainForm(int id)
+        public MainForm()
         {
             InitializeComponent();
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            this.id = id;
             Actual = btnCatalogo;
             AbrirFormInPanel(new Catalogo());
         }
@@ -115,7 +116,11 @@ namespace AdministradorOrtopediaVelásquez
             Actual.BackColor = Color.White;
             Actual = ((Button)sender);
             Actual.BackColor = Color.LightGray;
-            AbrirFormInPanel(new Catalogo());
+            Catalogo c = new Catalogo();
+            c.id = this.id;
+            c.nombre = this.nombre;
+            c.email = this.email;
+            AbrirFormInPanel(c);
         }
 
         private void btnCuenta_Click(object sender, EventArgs e)
@@ -123,7 +128,11 @@ namespace AdministradorOrtopediaVelásquez
             Actual.BackColor = Color.White;
             Actual = ((Button)sender);
             Actual.BackColor = Color.LightGray;
-            AbrirFormInPanel(new Cuenta(this.id));
+            Cuenta c = new Cuenta();
+            c.id = this.id;
+            c.nombre = this.nombre;
+            c.email = this.email;
+            AbrirFormInPanel(c);
         }
 
         private void btnTipo_Click(object sender, EventArgs e)
@@ -131,7 +140,11 @@ namespace AdministradorOrtopediaVelásquez
             Actual.BackColor = Color.White;
             Actual = ((Button)sender);
             Actual.BackColor = Color.LightGray;
-            AbrirFormInPanel(new Tipo());
+            Tipo t = new Tipo();
+            t.id = this.id;
+            t.nombre = this.nombre;
+            t.email = this.email;
+            AbrirFormInPanel(t);
         }
 
         private void btnHorarios_Click(object sender, EventArgs e)
@@ -139,7 +152,11 @@ namespace AdministradorOrtopediaVelásquez
             Actual.BackColor = Color.White;
             Actual = ((Button)sender);
             Actual.BackColor = Color.LightGray;
-            AbrirFormInPanel(new Horarios());
+            Horarios h = new Horarios();
+            h.id = this.id;
+            h.nombre = this.nombre;
+            h.email = this.email;
+            AbrirFormInPanel(h);
         }
 
         private void btnMedicos_Click(object sender, EventArgs e)
@@ -147,7 +164,9 @@ namespace AdministradorOrtopediaVelásquez
             Actual.BackColor = Color.White;
             Actual = ((Button)sender);
             Actual.BackColor = Color.LightGray;
-            AbrirFormInPanel(new Medicos());
+            Medicos m = new Medicos();
+      
+            AbrirFormInPanel(m);
         }
 
         private void btnAdmistradores_Click(object sender, EventArgs e)
@@ -155,7 +174,11 @@ namespace AdministradorOrtopediaVelásquez
             Actual.BackColor = Color.White;
             Actual = ((Button)sender);
             Actual.BackColor = Color.LightGray;
-            AbrirFormInPanel(new Administradores());
+            Administradores adm = new Administradores();
+            adm.id = this.id;
+            adm.nombre = this.nombre;
+            adm.email = this.email;
+            AbrirFormInPanel(adm);
         }
     }//Clase
 }//NameSpace
