@@ -37,6 +37,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             pnelContenedor.Controls.Clear();
             pnelContenedor.Controls.Add(lblStatus);
             pnelContenedor.Controls.Add(Status);
+            pnelContenedor.Controls.Add(btnReload);
             pnelContenedor.Refresh();
             Status.Image = Properties.Resources.Loading;
             lblStatus.Location = new Point(360,292);
@@ -58,7 +59,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                     Status.Image = Properties.Resources.Error;
                     lblStatus.Location = new Point(338,292);
                     lblStatus.Text = "Ha Ocurrido un error";
-                    //btnReload.Visible = true;
+                    btnReload.Visible = true;
                     return;
                 }
                 if ((Protesis.Count == 0 && Ortesis.Count == 0) && !IsSearch)
@@ -75,6 +76,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                     Status.Image = Properties.Resources.NoResult;
                     lblStatus.Location = new Point(307,292);
                     lblStatus.Text = "No hay resultado para " + param;
+                    btnReload.Visible = true;
                     return;
                 }
             

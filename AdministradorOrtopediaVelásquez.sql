@@ -50,6 +50,9 @@ GO
 INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Alejandro','Alejo','alejandroalejo714@gmail.com',1,'password','M','14-jul-2000')
 GO
 
+INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento, especialidad, experiencia)  VALUES ('Tigre','Toño','tigretoño@gmail.com',2,'password','M','14-jul-2000','Jefe','Jefe de Invalidos')
+GO
+
 create table tipoOrtesis(
 	id int primary key identity,
 	nombre varchar(35),

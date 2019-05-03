@@ -41,7 +41,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 //panel2.Location = new Point(32, 38);
                 txtNames.Text = x.nombres;
                 txtApe.Text = x.apellidos;
-                txtBirthDay.Text = x.fechaNacimiento.ToString();
+                txtBirthDay.Text = ((DateTime)x.fechaNacimiento).ToString("dd MMM yyyy");
                 txtEmail.Text = x.email;
                 txtPass.Text = "**********";
                 txtGenero.Text = x.sexo == "M" ? "Masculino" :"Femenino";

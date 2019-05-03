@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System;
 
 namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
 {
@@ -149,7 +150,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
 
                 MaterialLabel lblFNacimiento = new MaterialLabel();
                 lblFNacimiento.Location = new Point(81, 135);
-                lblFNacimiento.Text = x.fechaNacimiento.ToString();
+                lblFNacimiento.Text = ((DateTime)x.fechaNacimiento).ToString("dd MMM yyyy");
 
                 /* Email */
 

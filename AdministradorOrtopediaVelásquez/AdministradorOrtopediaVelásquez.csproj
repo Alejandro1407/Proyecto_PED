@@ -69,6 +69,12 @@
     <Compile Include="detalle_consulta.cs">
       <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Modals\AgregarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AgregarMedico.Designer.cs">
+      <DependentUpon>AgregarMedico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Modals\AgregarAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </Compile>
     <EmbeddedResource Include="CustomControls\PanelDesign.resx">
       <DependentUpon>PanelDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AgregarMedico.resx">
+      <DependentUpon>AgregarMedico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\AgregarAdministrador.resx">
       <DependentUpon>AgregarAdministrador.cs</DependentUpon>

@@ -34,47 +34,47 @@
             this.txtBusqueda = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnSearch = new System.Windows.Forms.Button();
             this.pnelContenedor = new System.Windows.Forms.Panel();
-            this.panelDesign1 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.txtEmail = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtPass = new MaterialSkin.Controls.MaterialLabel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.NombreImg = new System.Windows.Forms.PictureBox();
+            this.Status = new System.Windows.Forms.PictureBox();
             this.btnReload = new System.Windows.Forms.Button();
             this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pnel = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.lblExperencia = new System.Windows.Forms.RichTextBox();
+            this.lblExperenciaTitle = new System.Windows.Forms.Label();
+            this.ExperenciaImg = new System.Windows.Forms.PictureBox();
+            this.lblEspecialidad = new System.Windows.Forms.RichTextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.lblTitleEspecialidad = new System.Windows.Forms.Label();
+            this.EspecialidadImg = new System.Windows.Forms.PictureBox();
+            this.lblEmail = new System.Windows.Forms.RichTextBox();
+            this.lblEmailTitle = new System.Windows.Forms.Label();
+            this.EmailImg = new System.Windows.Forms.PictureBox();
+            this.lblContraseña = new MaterialSkin.Controls.MaterialLabel();
+            this.lblContraseñaTitle = new System.Windows.Forms.Label();
+            this.ContraseñaImg = new System.Windows.Forms.PictureBox();
+            this.lblApellidos = new System.Windows.Forms.RichTextBox();
+            this.lblNombre = new System.Windows.Forms.RichTextBox();
+            this.lblCumpleaños = new MaterialSkin.Controls.MaterialLabel();
+            this.lblTitleCumpleaños = new System.Windows.Forms.Label();
+            this.CumpleañosImg = new System.Windows.Forms.PictureBox();
+            this.lblGenero = new MaterialSkin.Controls.MaterialLabel();
+            this.lblGeneroTitle = new System.Windows.Forms.Label();
+            this.GeneroImg = new System.Windows.Forms.PictureBox();
+            this.lblTitleApellidos = new System.Windows.Forms.Label();
+            this.ApellidosImg = new System.Windows.Forms.PictureBox();
+            this.lblTitleNombre = new System.Windows.Forms.Label();
+            this.NombreImg = new System.Windows.Forms.PictureBox();
             this.BarraSuperior.SuspendLayout();
             this.pnelContenedor.SuspendLayout();
-            this.panelDesign1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
+            this.pnel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ExperenciaImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EspecialidadImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmailImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContraseñaImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CumpleañosImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GeneroImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApellidosImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BarraSuperior
@@ -135,306 +135,25 @@
             // 
             // pnelContenedor
             // 
-            this.pnelContenedor.Controls.Add(this.panelDesign1);
+            this.pnelContenedor.Controls.Add(this.Status);
+            this.pnelContenedor.Controls.Add(this.pnel);
             this.pnelContenedor.Controls.Add(this.btnReload);
             this.pnelContenedor.Controls.Add(this.lblStatus);
-            this.pnelContenedor.Controls.Add(this.pictureBox1);
             this.pnelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnelContenedor.Location = new System.Drawing.Point(0, 49);
             this.pnelContenedor.Name = "pnelContenedor";
             this.pnelContenedor.Size = new System.Drawing.Size(824, 551);
             this.pnelContenedor.TabIndex = 22;
             // 
-            // panelDesign1
+            // Status
             // 
-            this.panelDesign1.Controls.Add(this.richTextBox4);
-            this.panelDesign1.Controls.Add(this.label8);
-            this.panelDesign1.Controls.Add(this.pictureBox9);
-            this.panelDesign1.Controls.Add(this.richTextBox3);
-            this.panelDesign1.Controls.Add(this.button1);
-            this.panelDesign1.Controls.Add(this.label1);
-            this.panelDesign1.Controls.Add(this.pictureBox8);
-            this.panelDesign1.Controls.Add(this.txtEmail);
-            this.panelDesign1.Controls.Add(this.label7);
-            this.panelDesign1.Controls.Add(this.pictureBox2);
-            this.panelDesign1.Controls.Add(this.txtPass);
-            this.panelDesign1.Controls.Add(this.label6);
-            this.panelDesign1.Controls.Add(this.pictureBox6);
-            this.panelDesign1.Controls.Add(this.richTextBox2);
-            this.panelDesign1.Controls.Add(this.richTextBox1);
-            this.panelDesign1.Controls.Add(this.materialLabel5);
-            this.panelDesign1.Controls.Add(this.label5);
-            this.panelDesign1.Controls.Add(this.pictureBox5);
-            this.panelDesign1.Controls.Add(this.materialLabel4);
-            this.panelDesign1.Controls.Add(this.label4);
-            this.panelDesign1.Controls.Add(this.pictureBox4);
-            this.panelDesign1.Controls.Add(this.label3);
-            this.panelDesign1.Controls.Add(this.pictureBox3);
-            this.panelDesign1.Controls.Add(this.label2);
-            this.panelDesign1.Controls.Add(this.NombreImg);
-            this.panelDesign1.Location = new System.Drawing.Point(12, 24);
-            this.panelDesign1.Name = "panelDesign1";
-            this.panelDesign1.Size = new System.Drawing.Size(800, 181);
-            this.panelDesign1.TabIndex = 24;
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.richTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox4.Location = new System.Drawing.Point(596, 135);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.ReadOnly = true;
-            this.richTextBox4.Size = new System.Drawing.Size(138, 42);
-            this.richTextBox4.TabIndex = 77;
-            this.richTextBox4.Text = "Jefe de unos invalidos";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(596, 108);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 18);
-            this.label8.TabIndex = 76;
-            this.label8.Text = "Experiencia:";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Experience;
-            this.pictureBox9.Location = new System.Drawing.Point(542, 109);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 75;
-            this.pictureBox9.TabStop = false;
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox3.Location = new System.Drawing.Point(596, 55);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(138, 42);
-            this.richTextBox3.TabIndex = 74;
-            this.richTextBox3.Text = "Protesis";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(596, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 18);
-            this.label1.TabIndex = 73;
-            this.label1.Text = "Especialidad:";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Especialidad;
-            this.pictureBox8.Location = new System.Drawing.Point(542, 28);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 72;
-            this.pictureBox8.TabStop = false;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(407, 55);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(129, 42);
-            this.txtEmail.TabIndex = 71;
-            this.txtEmail.Text = "alejandroalejo714@gmail.com";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(407, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 18);
-            this.label7.TabIndex = 70;
-            this.label7.Text = "Email:";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.email;
-            this.pictureBox2.Location = new System.Drawing.Point(353, 28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 69;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txtPass
-            // 
-            this.txtPass.AutoSize = true;
-            this.txtPass.Depth = 0;
-            this.txtPass.Font = new System.Drawing.Font("Roboto", 11F);
-            this.txtPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtPass.Location = new System.Drawing.Point(407, 138);
-            this.txtPass.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(57, 19);
-            this.txtPass.TabIndex = 67;
-            this.txtPass.Text = "********";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(407, 108);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 18);
-            this.label6.TabIndex = 66;
-            this.label6.Text = "Contraseña:";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Contraseña;
-            this.pictureBox6.Location = new System.Drawing.Point(353, 108);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 65;
-            this.pictureBox6.TabStop = false;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(243, 55);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(104, 33);
-            this.richTextBox2.TabIndex = 16;
-            this.richTextBox2.Text = "Alejo Gálvez";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(70, 56);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(109, 33);
-            this.richTextBox1.TabIndex = 15;
-            this.richTextBox1.Text = "Victor Alejandro";
-            // 
-            // materialLabel5
-            // 
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(67, 135);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(81, 19);
-            this.materialLabel5.TabIndex = 14;
-            this.materialLabel5.Text = "2000-07-14";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(67, 108);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 18);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Cumpleaños:";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.cumpleanios;
-            this.pictureBox5.Location = new System.Drawing.Point(13, 108);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(239, 137);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(79, 19);
-            this.materialLabel4.TabIndex = 11;
-            this.materialLabel4.Text = "Masculino";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(240, 109);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 18);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Sexo:";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Genero;
-            this.pictureBox4.Location = new System.Drawing.Point(186, 108);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(239, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 18);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Apellidos:";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Apellidos;
-            this.pictureBox3.Location = new System.Drawing.Point(185, 28);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(67, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 18);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Nombre:";
-            // 
-            // NombreImg
-            // 
-            this.NombreImg.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Nombres;
-            this.NombreImg.Location = new System.Drawing.Point(13, 28);
-            this.NombreImg.Name = "NombreImg";
-            this.NombreImg.Size = new System.Drawing.Size(48, 48);
-            this.NombreImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.NombreImg.TabIndex = 3;
-            this.NombreImg.TabStop = false;
+            this.Status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
+            this.Status.Location = new System.Drawing.Point(342, 166);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(114, 111);
+            this.Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Status.TabIndex = 21;
+            this.Status.TabStop = false;
             // 
             // btnReload
             // 
@@ -446,47 +165,329 @@
             this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
             this.btnReload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReload.Location = new System.Drawing.Point(337, 400);
+            this.btnReload.Location = new System.Drawing.Point(327, 322);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(150, 53);
             this.btnReload.TabIndex = 23;
             this.btnReload.Text = "Reintentar";
             this.btnReload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReload.UseVisualStyleBackColor = false;
+            this.btnReload.Visible = false;
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Depth = 0;
-            this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(370, 370);
+            this.lblStatus.Location = new System.Drawing.Point(360, 292);
             this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(85, 19);
+            this.lblStatus.Size = new System.Drawing.Size(85, 18);
             this.lblStatus.TabIndex = 22;
             this.lblStatus.Text = "Cargando...";
             // 
-            // pictureBox1
+            // pnel
             // 
-            this.pictureBox1.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
-            this.pictureBox1.Location = new System.Drawing.Point(352, 244);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 111);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
+            this.pnel.Controls.Add(this.lblExperencia);
+            this.pnel.Controls.Add(this.lblExperenciaTitle);
+            this.pnel.Controls.Add(this.ExperenciaImg);
+            this.pnel.Controls.Add(this.lblEspecialidad);
+            this.pnel.Controls.Add(this.btnEliminar);
+            this.pnel.Controls.Add(this.lblTitleEspecialidad);
+            this.pnel.Controls.Add(this.EspecialidadImg);
+            this.pnel.Controls.Add(this.lblEmail);
+            this.pnel.Controls.Add(this.lblEmailTitle);
+            this.pnel.Controls.Add(this.EmailImg);
+            this.pnel.Controls.Add(this.lblContraseña);
+            this.pnel.Controls.Add(this.lblContraseñaTitle);
+            this.pnel.Controls.Add(this.ContraseñaImg);
+            this.pnel.Controls.Add(this.lblApellidos);
+            this.pnel.Controls.Add(this.lblNombre);
+            this.pnel.Controls.Add(this.lblCumpleaños);
+            this.pnel.Controls.Add(this.lblTitleCumpleaños);
+            this.pnel.Controls.Add(this.CumpleañosImg);
+            this.pnel.Controls.Add(this.lblGenero);
+            this.pnel.Controls.Add(this.lblGeneroTitle);
+            this.pnel.Controls.Add(this.GeneroImg);
+            this.pnel.Controls.Add(this.lblTitleApellidos);
+            this.pnel.Controls.Add(this.ApellidosImg);
+            this.pnel.Controls.Add(this.lblTitleNombre);
+            this.pnel.Controls.Add(this.NombreImg);
+            this.pnel.Location = new System.Drawing.Point(12, 24);
+            this.pnel.Name = "pnel";
+            this.pnel.Size = new System.Drawing.Size(800, 181);
+            this.pnel.TabIndex = 24;
             // 
-            // button1
+            // lblExperencia
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Eliminar;
-            this.button1.Location = new System.Drawing.Point(735, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 61);
-            this.button1.TabIndex = 17;
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblExperencia.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblExperencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblExperencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExperencia.Location = new System.Drawing.Point(596, 135);
+            this.lblExperencia.Name = "lblExperencia";
+            this.lblExperencia.ReadOnly = true;
+            this.lblExperencia.Size = new System.Drawing.Size(138, 42);
+            this.lblExperencia.TabIndex = 77;
+            this.lblExperencia.Text = "Jefe de unos invalidos";
+            // 
+            // lblExperenciaTitle
+            // 
+            this.lblExperenciaTitle.AutoSize = true;
+            this.lblExperenciaTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExperenciaTitle.Location = new System.Drawing.Point(596, 108);
+            this.lblExperenciaTitle.Name = "lblExperenciaTitle";
+            this.lblExperenciaTitle.Size = new System.Drawing.Size(88, 18);
+            this.lblExperenciaTitle.TabIndex = 76;
+            this.lblExperenciaTitle.Text = "Experiencia:";
+            // 
+            // ExperenciaImg
+            // 
+            this.ExperenciaImg.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Experience;
+            this.ExperenciaImg.Location = new System.Drawing.Point(542, 109);
+            this.ExperenciaImg.Name = "ExperenciaImg";
+            this.ExperenciaImg.Size = new System.Drawing.Size(48, 48);
+            this.ExperenciaImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ExperenciaImg.TabIndex = 75;
+            this.ExperenciaImg.TabStop = false;
+            // 
+            // lblEspecialidad
+            // 
+            this.lblEspecialidad.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEspecialidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEspecialidad.Location = new System.Drawing.Point(596, 55);
+            this.lblEspecialidad.Name = "lblEspecialidad";
+            this.lblEspecialidad.ReadOnly = true;
+            this.lblEspecialidad.Size = new System.Drawing.Size(138, 42);
+            this.lblEspecialidad.TabIndex = 74;
+            this.lblEspecialidad.Text = "Protesis";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Eliminar;
+            this.btnEliminar.Location = new System.Drawing.Point(735, 64);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(59, 61);
+            this.btnEliminar.TabIndex = 17;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // lblTitleEspecialidad
+            // 
+            this.lblTitleEspecialidad.AutoSize = true;
+            this.lblTitleEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleEspecialidad.Location = new System.Drawing.Point(596, 28);
+            this.lblTitleEspecialidad.Name = "lblTitleEspecialidad";
+            this.lblTitleEspecialidad.Size = new System.Drawing.Size(95, 18);
+            this.lblTitleEspecialidad.TabIndex = 73;
+            this.lblTitleEspecialidad.Text = "Especialidad:";
+            // 
+            // EspecialidadImg
+            // 
+            this.EspecialidadImg.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Especialidad;
+            this.EspecialidadImg.Location = new System.Drawing.Point(542, 28);
+            this.EspecialidadImg.Name = "EspecialidadImg";
+            this.EspecialidadImg.Size = new System.Drawing.Size(48, 48);
+            this.EspecialidadImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.EspecialidadImg.TabIndex = 72;
+            this.EspecialidadImg.TabStop = false;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(407, 55);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.ReadOnly = true;
+            this.lblEmail.Size = new System.Drawing.Size(129, 42);
+            this.lblEmail.TabIndex = 71;
+            this.lblEmail.Text = "alejandroalejo714@gmail.com";
+            // 
+            // lblEmailTitle
+            // 
+            this.lblEmailTitle.AutoSize = true;
+            this.lblEmailTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailTitle.Location = new System.Drawing.Point(407, 28);
+            this.lblEmailTitle.Name = "lblEmailTitle";
+            this.lblEmailTitle.Size = new System.Drawing.Size(49, 18);
+            this.lblEmailTitle.TabIndex = 70;
+            this.lblEmailTitle.Text = "Email:";
+            // 
+            // EmailImg
+            // 
+            this.EmailImg.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.email;
+            this.EmailImg.Location = new System.Drawing.Point(353, 28);
+            this.EmailImg.Name = "EmailImg";
+            this.EmailImg.Size = new System.Drawing.Size(48, 48);
+            this.EmailImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.EmailImg.TabIndex = 69;
+            this.EmailImg.TabStop = false;
+            // 
+            // lblContraseña
+            // 
+            this.lblContraseña.AutoSize = true;
+            this.lblContraseña.Depth = 0;
+            this.lblContraseña.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblContraseña.Location = new System.Drawing.Point(407, 138);
+            this.lblContraseña.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblContraseña.Name = "lblContraseña";
+            this.lblContraseña.Size = new System.Drawing.Size(57, 19);
+            this.lblContraseña.TabIndex = 67;
+            this.lblContraseña.Text = "********";
+            // 
+            // lblContraseñaTitle
+            // 
+            this.lblContraseñaTitle.AutoSize = true;
+            this.lblContraseñaTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContraseñaTitle.Location = new System.Drawing.Point(407, 108);
+            this.lblContraseñaTitle.Name = "lblContraseñaTitle";
+            this.lblContraseñaTitle.Size = new System.Drawing.Size(89, 18);
+            this.lblContraseñaTitle.TabIndex = 66;
+            this.lblContraseñaTitle.Text = "Contraseña:";
+            // 
+            // ContraseñaImg
+            // 
+            this.ContraseñaImg.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Contraseña;
+            this.ContraseñaImg.Location = new System.Drawing.Point(353, 108);
+            this.ContraseñaImg.Name = "ContraseñaImg";
+            this.ContraseñaImg.Size = new System.Drawing.Size(48, 48);
+            this.ContraseñaImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ContraseñaImg.TabIndex = 65;
+            this.ContraseñaImg.TabStop = false;
+            // 
+            // lblApellidos
+            // 
+            this.lblApellidos.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblApellidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidos.Location = new System.Drawing.Point(243, 55);
+            this.lblApellidos.Name = "lblApellidos";
+            this.lblApellidos.ReadOnly = true;
+            this.lblApellidos.Size = new System.Drawing.Size(104, 33);
+            this.lblApellidos.TabIndex = 16;
+            this.lblApellidos.Text = "Alejo Gálvez";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(70, 56);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.ReadOnly = true;
+            this.lblNombre.Size = new System.Drawing.Size(109, 33);
+            this.lblNombre.TabIndex = 15;
+            this.lblNombre.Text = "Victor Alejandro";
+            // 
+            // lblCumpleaños
+            // 
+            this.lblCumpleaños.AutoSize = true;
+            this.lblCumpleaños.Depth = 0;
+            this.lblCumpleaños.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblCumpleaños.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblCumpleaños.Location = new System.Drawing.Point(67, 135);
+            this.lblCumpleaños.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblCumpleaños.Name = "lblCumpleaños";
+            this.lblCumpleaños.Size = new System.Drawing.Size(81, 19);
+            this.lblCumpleaños.TabIndex = 14;
+            this.lblCumpleaños.Text = "2000-07-14";
+            // 
+            // lblTitleCumpleaños
+            // 
+            this.lblTitleCumpleaños.AutoSize = true;
+            this.lblTitleCumpleaños.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleCumpleaños.Location = new System.Drawing.Point(67, 108);
+            this.lblTitleCumpleaños.Name = "lblTitleCumpleaños";
+            this.lblTitleCumpleaños.Size = new System.Drawing.Size(96, 18);
+            this.lblTitleCumpleaños.TabIndex = 13;
+            this.lblTitleCumpleaños.Text = "Cumpleaños:";
+            // 
+            // CumpleañosImg
+            // 
+            this.CumpleañosImg.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.cumpleanios;
+            this.CumpleañosImg.Location = new System.Drawing.Point(13, 108);
+            this.CumpleañosImg.Name = "CumpleañosImg";
+            this.CumpleañosImg.Size = new System.Drawing.Size(48, 48);
+            this.CumpleañosImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CumpleañosImg.TabIndex = 12;
+            this.CumpleañosImg.TabStop = false;
+            // 
+            // lblGenero
+            // 
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.Depth = 0;
+            this.lblGenero.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblGenero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblGenero.Location = new System.Drawing.Point(239, 137);
+            this.lblGenero.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(79, 19);
+            this.lblGenero.TabIndex = 11;
+            this.lblGenero.Text = "Masculino";
+            // 
+            // lblGeneroTitle
+            // 
+            this.lblGeneroTitle.AutoSize = true;
+            this.lblGeneroTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeneroTitle.Location = new System.Drawing.Point(240, 109);
+            this.lblGeneroTitle.Name = "lblGeneroTitle";
+            this.lblGeneroTitle.Size = new System.Drawing.Size(46, 18);
+            this.lblGeneroTitle.TabIndex = 10;
+            this.lblGeneroTitle.Text = "Sexo:";
+            // 
+            // GeneroImg
+            // 
+            this.GeneroImg.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Genero;
+            this.GeneroImg.Location = new System.Drawing.Point(186, 108);
+            this.GeneroImg.Name = "GeneroImg";
+            this.GeneroImg.Size = new System.Drawing.Size(48, 48);
+            this.GeneroImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GeneroImg.TabIndex = 9;
+            this.GeneroImg.TabStop = false;
+            // 
+            // lblTitleApellidos
+            // 
+            this.lblTitleApellidos.AutoSize = true;
+            this.lblTitleApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleApellidos.Location = new System.Drawing.Point(239, 28);
+            this.lblTitleApellidos.Name = "lblTitleApellidos";
+            this.lblTitleApellidos.Size = new System.Drawing.Size(71, 18);
+            this.lblTitleApellidos.TabIndex = 6;
+            this.lblTitleApellidos.Text = "Apellidos:";
+            // 
+            // ApellidosImg
+            // 
+            this.ApellidosImg.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Apellidos;
+            this.ApellidosImg.Location = new System.Drawing.Point(185, 28);
+            this.ApellidosImg.Name = "ApellidosImg";
+            this.ApellidosImg.Size = new System.Drawing.Size(48, 48);
+            this.ApellidosImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ApellidosImg.TabIndex = 5;
+            this.ApellidosImg.TabStop = false;
+            // 
+            // lblTitleNombre
+            // 
+            this.lblTitleNombre.AutoSize = true;
+            this.lblTitleNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleNombre.Location = new System.Drawing.Point(67, 28);
+            this.lblTitleNombre.Name = "lblTitleNombre";
+            this.lblTitleNombre.Size = new System.Drawing.Size(66, 18);
+            this.lblTitleNombre.TabIndex = 4;
+            this.lblTitleNombre.Text = "Nombre:";
+            // 
+            // NombreImg
+            // 
+            this.NombreImg.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Nombres;
+            this.NombreImg.Location = new System.Drawing.Point(13, 28);
+            this.NombreImg.Name = "NombreImg";
+            this.NombreImg.Size = new System.Drawing.Size(48, 48);
+            this.NombreImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.NombreImg.TabIndex = 3;
+            this.NombreImg.TabStop = false;
             // 
             // Medicos
             // 
@@ -502,17 +503,17 @@
             this.BarraSuperior.ResumeLayout(false);
             this.pnelContenedor.ResumeLayout(false);
             this.pnelContenedor.PerformLayout();
-            this.panelDesign1.ResumeLayout(false);
-            this.panelDesign1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
+            this.pnel.ResumeLayout(false);
+            this.pnel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ExperenciaImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EspecialidadImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmailImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContraseñaImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CumpleañosImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GeneroImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApellidosImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -525,32 +526,32 @@
         private System.Windows.Forms.Panel pnelContenedor;
         private System.Windows.Forms.Button btnReload;
         private MaterialSkin.Controls.MaterialLabel lblStatus;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private CustomControls.PanelDesign panelDesign1;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.RichTextBox txtEmail;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private MaterialSkin.Controls.MaterialLabel txtPass;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox Status;
+        private CustomControls.PanelDesign pnel;
+        private System.Windows.Forms.RichTextBox lblEspecialidad;
+        private System.Windows.Forms.Label lblTitleEspecialidad;
+        private System.Windows.Forms.PictureBox EspecialidadImg;
+        private System.Windows.Forms.RichTextBox lblEmail;
+        private System.Windows.Forms.Label lblEmailTitle;
+        private System.Windows.Forms.PictureBox EmailImg;
+        private MaterialSkin.Controls.MaterialLabel lblContraseña;
+        private System.Windows.Forms.Label lblContraseñaTitle;
+        private System.Windows.Forms.PictureBox ContraseñaImg;
+        private System.Windows.Forms.RichTextBox lblApellidos;
+        private System.Windows.Forms.RichTextBox lblNombre;
+        private MaterialSkin.Controls.MaterialLabel lblCumpleaños;
+        private System.Windows.Forms.Label lblTitleCumpleaños;
+        private System.Windows.Forms.PictureBox CumpleañosImg;
+        private MaterialSkin.Controls.MaterialLabel lblGenero;
+        private System.Windows.Forms.Label lblGeneroTitle;
+        private System.Windows.Forms.PictureBox GeneroImg;
+        private System.Windows.Forms.Label lblTitleApellidos;
+        private System.Windows.Forms.PictureBox ApellidosImg;
+        private System.Windows.Forms.Label lblTitleNombre;
         private System.Windows.Forms.PictureBox NombreImg;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.RichTextBox lblExperencia;
+        private System.Windows.Forms.Label lblExperenciaTitle;
+        private System.Windows.Forms.PictureBox ExperenciaImg;
     }
 }

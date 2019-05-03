@@ -122,6 +122,29 @@ namespace AdministradorOrtopediaVelásquez.Servicios
             });
         }//ObtenerAdminsitradorAsync
 
+        public Task<List<usuario>> ObtenerMedicosAsync(String param)
+        {
+
+            return Task.Run(() =>
+            {
+                List<usuario> Medicos = new List<usuario>();
+                OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities();
+                try
+                {
+                    Medicos = (from medicos in db.usuario
+                               where medicos.nombres.Contains(param) && medicos.tipoUsuario.Value.Equals(2)
+                               select medicos).ToList();
+                    return Medicos;
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
+
+            });
+
+        }//ObtenerMedicosAsync
+
 
     }//Clase
 }//NameSpace

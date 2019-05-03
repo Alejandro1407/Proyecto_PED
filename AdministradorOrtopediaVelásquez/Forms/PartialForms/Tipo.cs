@@ -28,6 +28,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             pnelContenedor.Controls.Clear();
             pnelContenedor.Controls.Add(lblStatus);
             pnelContenedor.Controls.Add(Status);
+            pnelContenedor.Controls.Add(btnReload);
             pnelContenedor.Refresh();
             lblStatus.Location = new Point(360, 292);
             lblStatus.Text = "Cargando...";
@@ -63,6 +64,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 Status.Image = Properties.Resources.NoResult;
                 lblStatus.Location = new Point(307, 292);
                 lblStatus.Text = "No hay resultado para " + param;
+                btnReload.Visible = true;
                 return;
             }
             pnelContenedor.Controls.Clear();
