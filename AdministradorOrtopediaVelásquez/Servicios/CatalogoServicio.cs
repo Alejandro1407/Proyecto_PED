@@ -147,6 +147,7 @@ namespace AdministradorOrtopediaVelásquez.Servicios
                         tipoProtesis x = db.tipoProtesis.Find(id);
                         x.nombre = tp.nombre;
                         x.descripcion = tp.descripcion;
+                        x.foto = tp.foto;
                         db.SaveChanges();
                         return true;
                     }
@@ -184,6 +185,7 @@ namespace AdministradorOrtopediaVelásquez.Servicios
                         tipoOrtesis x = db.tipoOrtesis.Find(id);
                         x.nombre = tp.nombre;
                         x.descripcion = tp.descripcion;
+                        x.foto = tp.foto;
                         db.SaveChanges();
                         return true;
                     }

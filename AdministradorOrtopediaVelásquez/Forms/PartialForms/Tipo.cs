@@ -5,6 +5,7 @@ using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
@@ -75,7 +76,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 foreach (tipoProtesis x in TProtesis)
                 {
                     PrintData(x, Y, ToShow);
-                    Y += 150;
+                    Y += 215;
                 }
             }
             else
@@ -83,9 +84,15 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 foreach (tipoOrtesis x in TOrtesis)
                 {
                     PrintData(x, Y, ToShow);
-                    Y += 150;
+                    Y += 215;
                 }
             }
+        }
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
         }
 
         private void PrintData(object x, int Y, String ToShow) {
@@ -102,53 +109,70 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             }
            
                 Panel pnel = new PanelDesign();
-                pnel.Size = new Size(757,130);
+                pnel.Size = new Size(757, 199);
                 pnel.Location = new Point(35, Y);
 
+                //
+                // ProductoImg
+                //
+                PictureBox TipoImg = new PictureBox();
+                TipoImg.Image = byteArrayToImage(ToShow == "protesis" ? tp.foto : to.foto);
+                TipoImg.Location = new Point(15, 17);
+                TipoImg.Size = new Size(188, 165);
+                TipoImg.SizeMode = PictureBoxSizeMode.StretchImage;
                 /* Nombre */
                 PictureBox NombreImg = new PictureBox();
                 NombreImg.Image = Properties.Resources.Nombre_Objeto;
-                NombreImg.Location = new Point(14, 35);
+                NombreImg.Location = new Point(223, 17);
                 NombreImg.Size = new Size(48, 48);
                 NombreImg.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 Label lblNombre_Titile = new Label();
-                lblNombre_Titile.Location = new Point(68,36);
+                lblNombre_Titile.Location = new Point(277, 18);
                 lblNombre_Titile.AutoSize = true;
                 lblNombre_Titile.Text = "Nombre: ";
                 //lblCode_Titile.ForeColor = Color.Gray;14; 35
-                lblNombre_Titile.Font = new Font("Times New Roman", 9, FontStyle.Bold);
+                lblNombre_Titile.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
 
-                MaterialLabel lblNombre = new MaterialLabel();
-                lblNombre.Location = new Point(67, 65);
-                lblNombre.AutoSize = true;
+                RichTextBox lblNombre = new RichTextBox();
+                lblNombre.BackColor = System.Drawing.SystemColors.ControlLightLight;
+                lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                lblNombre.Location = new System.Drawing.Point(280, 48);
+                lblNombre.Name = "lblNombre";
+                lblNombre.ReadOnly = true;
+                lblNombre.Size = new System.Drawing.Size(225, 44);
+                lblNombre.TabIndex = 15;
                 lblNombre.Text = ToShow == "protesis" ? tp.nombre : to.nombre;
 
                 PictureBox DescripcionImg = new PictureBox();
                 DescripcionImg.Image = Properties.Resources.Descripcion;
-                DescripcionImg.Location = new Point(253,35);
+                DescripcionImg.Location = new Point(223, 103);
                 DescripcionImg.Size = new Size(48, 48);
                 DescripcionImg.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 Label lblDescripcion_Title = new Label();
-                lblDescripcion_Title.Location = new Point(307,36);
+                lblDescripcion_Title.Location = new Point(277, 103);
                 lblDescripcion_Title.AutoSize = true;
                 lblDescripcion_Title.Text = "Descripcion: ";
                 //lblCode_Titile.ForeColor = Color.Gray;
-                lblDescripcion_Title.Font = new Font("Times New Roman", 9, FontStyle.Bold);
+                lblDescripcion_Title.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
 
                 RichTextBox lblDescripcion = new RichTextBox();
-                lblDescripcion.Location = new Point(310, 65);
-                lblDescripcion.Size = new Size(296,54);
-                lblDescripcion.BorderStyle = BorderStyle.None;
+                lblDescripcion.BackColor = System.Drawing.SystemColors.ControlLightLight;
+                lblDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                lblDescripcion.Location = new System.Drawing.Point(277, 133);
+                lblDescripcion.Name = "lblNombre";
+                lblDescripcion.ReadOnly = true;
+                lblDescripcion.Size = new System.Drawing.Size(240, 50);
+                lblDescripcion.TabIndex = 15;
                 lblDescripcion.Text = ToShow == "protesis" ? tp.descripcion : to.descripcion;
-                lblDescripcion.Font = new Font("Times New Roman", 10, FontStyle.Bold);
 
-                
                 Button EditBtn = new Button();
                 EditBtn.FlatStyle = FlatStyle.Flat;
                 EditBtn.FlatAppearance.BorderSize = 0;
-                EditBtn.Location = new Point(634,36);
+                EditBtn.Location = new Point(620, 65);
                 EditBtn.Size = new Size(48, 48);
                 EditBtn.Image = Properties.Resources.Editar;
                 EditBtn.Name = ToShow == "protesis" ? tp.id.ToString() : to.id.ToString(); ;
@@ -157,13 +181,13 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 Button EliminarBtn = new Button();
                 EliminarBtn.FlatStyle = FlatStyle.Flat;
                 EliminarBtn.FlatAppearance.BorderSize = 0;
-                EliminarBtn.Location = new Point(688,35);
+                EliminarBtn.Location = new Point(687, 65);
                 EliminarBtn.Size = new Size(48, 48);
                 EliminarBtn.Image = Properties.Resources.Eliminar;
                 EliminarBtn.Name = ToShow == "protesis" ? tp.id.ToString() : to.id.ToString();
                 EliminarBtn.Click += new System.EventHandler(this.EliminarBtn_Click);
                
-                pnel.Controls.AddRange(new Control[] { NombreImg, lblNombre_Titile, lblNombre, DescripcionImg, lblDescripcion_Title, lblDescripcion,EditBtn,EliminarBtn });
+                pnel.Controls.AddRange(new Control[] { TipoImg,NombreImg, lblNombre_Titile, lblNombre, DescripcionImg, lblDescripcion_Title, lblDescripcion,EditBtn,EliminarBtn });
                 pnelContenedor.Controls.Add(pnel);
                 
             

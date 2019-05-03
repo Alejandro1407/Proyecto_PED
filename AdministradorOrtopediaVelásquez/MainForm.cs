@@ -127,11 +127,11 @@ namespace AdministradorOrtopediaVelásquez
             Actual.BackColor = Color.White;
             Actual = ((Button)sender);
             Actual.BackColor = Color.LightGray;
-            Horarios h = new Horarios();
-            h.id = this.id;
-            h.nombre = this.nombre;
-            h.email = this.email;
-            AbrirFormInPanel(h);
+            Citas c = new Citas();
+            c.id = this.id;
+            c.nombre = this.nombre;
+            c.email = this.email;
+            AbrirFormInPanel(c);
         }
 
         private void btnMedicos_Click(object sender, EventArgs e)

@@ -12,18 +12,14 @@ namespace AdministradorOrtopediaVelásquez
     using System;
     using System.Collections.Generic;
     
-    public partial class tipoOrtesis
+    public partial class Horarios
     {
-        public tipoOrtesis()
-        {
-            this.ortesis = new HashSet<ortesis>();
-        }
+        public int Id { get; set; }
+        public Nullable<int> Dia { get; set; }
+        public Nullable<int> Ortopeda { get; set; }
+        public Nullable<System.TimeSpan> Hora { get; set; }
     
-        public int id { get; set; }
-        public string nombre { get; set; }
-        public string descripcion { get; set; }
-        public byte[] foto { get; set; }
-    
-        public virtual ICollection<ortesis> ortesis { get; set; }
+        public virtual Dias Dias { get; set; }
+        public virtual usuario usuario { get; set; }
     }
 }

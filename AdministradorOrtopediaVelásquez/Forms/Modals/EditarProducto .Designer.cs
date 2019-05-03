@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.Subir = new System.Windows.Forms.OpenFileDialog();
-            this.panelDesign1 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
-            this.txtPrecio = new System.Windows.Forms.NumericUpDown();
+            this.panelDesign1 = new System.Windows.Forms.Panel();
+            this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
+            this.Status = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnUpload = new System.Windows.Forms.Button();
             this.lblImagen = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
-            this.Status = new System.Windows.Forms.PictureBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -45,18 +44,19 @@
             this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new MaterialSkin.Controls.MaterialLabel();
-            this.BarraSuperior = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.BarraSuperior = new System.Windows.Forms.Panel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.txtPrecio = new System.Windows.Forms.NumericUpDown();
             this.panelDesign1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.BarraSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // Subir
@@ -86,25 +86,28 @@
             this.panelDesign1.Size = new System.Drawing.Size(324, 503);
             this.panelDesign1.TabIndex = 1;
             // 
-            // txtPrecio
+            // lblStatus
             // 
-            this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrecio.DecimalPlaces = 2;
-            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Increment = new decimal(new int[] {
-            25,
-            0,
-            0,
-            131072});
-            this.txtPrecio.Location = new System.Drawing.Point(100, 283);
-            this.txtPrecio.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(120, 22);
-            this.txtPrecio.TabIndex = 18;
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Depth = 0;
+            this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblStatus.Location = new System.Drawing.Point(119, 283);
+            this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(85, 19);
+            this.lblStatus.TabIndex = 13;
+            this.lblStatus.Text = "Cargando...";
+            // 
+            // Status
+            // 
+            this.Status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
+            this.Status.Location = new System.Drawing.Point(121, 199);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(83, 78);
+            this.Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Status.TabIndex = 12;
+            this.Status.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -150,29 +153,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 14;
             this.pictureBox5.TabStop = false;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Depth = 0;
-            this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(119, 283);
-            this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(85, 19);
-            this.lblStatus.TabIndex = 13;
-            this.lblStatus.Text = "Cargando...";
-            // 
-            // Status
-            // 
-            this.Status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
-            this.Status.Location = new System.Drawing.Point(121, 199);
-            this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(83, 78);
-            this.Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Status.TabIndex = 12;
-            this.Status.TabStop = false;
             // 
             // btnAceptar
             // 
@@ -285,6 +265,8 @@
             this.BarraSuperior.Size = new System.Drawing.Size(324, 40);
             this.BarraSuperior.TabIndex = 1;
             this.BarraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseDown);
+            this.BarraSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseMove);
+            this.BarraSuperior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseUp);
             // 
             // materialLabel1
             // 
@@ -311,6 +293,26 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // txtPrecio
+            // 
+            this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrecio.DecimalPlaces = 2;
+            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Increment = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.txtPrecio.Location = new System.Drawing.Point(100, 283);
+            this.txtPrecio.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(120, 22);
+            this.txtPrecio.TabIndex = 18;
+            // 
             // EditarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,24 +326,24 @@
             this.Text = "AgregarProducto";
             this.panelDesign1.ResumeLayout(false);
             this.panelDesign1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.BarraSuperior.ResumeLayout(false);
             this.BarraSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CustomControls.PanelDesign panelDesign1;
+        private System.Windows.Forms.Panel panelDesign1;
         private System.Windows.Forms.Button btnCerrar;
-        private CustomControls.PanelDesign BarraSuperior;
+        private System.Windows.Forms.Panel BarraSuperior;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel lblTitle;
         private System.Windows.Forms.PictureBox pictureBox3;

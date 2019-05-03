@@ -1,6 +1,6 @@
 ﻿namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
 {
-    partial class Horarios
+    partial class Citas
     {
         /// <summary>
         /// Required designer variable.

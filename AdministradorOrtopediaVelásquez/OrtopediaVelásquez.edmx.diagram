@@ -21,6 +21,10 @@
         <AssociationConnector Association="OrtopediaVelásquezModel.FK__protesis__tipo__45F365D3" ManuallyRouted="false" />
         <AssociationConnector Association="OrtopediaVelásquezModel.FK__usuario__tipoUsu__3A81B327" ManuallyRouted="false" />
         <AssociationConnector Association="OrtopediaVelásquezModel.FK__detalle_c__idMed__4D94879B" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="OrtopediaVelásquezModel.Dias" Width="1.5" PointX="3" PointY="16.875" />
+        <EntityTypeShape EntityType="OrtopediaVelásquezModel.Horarios" Width="1.5" PointX="5.25" PointY="0.75" />
+        <AssociationConnector Association="OrtopediaVelásquezModel.FK__Horarios__Dia__412EB0B6" />
+        <AssociationConnector Association="OrtopediaVelásquezModel.FK__Horarios__Ortope__4222D4EF" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

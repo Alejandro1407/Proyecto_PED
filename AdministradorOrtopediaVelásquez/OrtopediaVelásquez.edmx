@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OrtopediaVelásquezModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="OrtopediaVelásquezModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="consulta">
           <Key>
             <PropertyRef Name="id" />
@@ -25,6 +25,22 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
           <Property Name="idOrtesis" Type="int" />
           <Property Name="idMedico" Type="int" Nullable="false" />
           <Property Name="idConsulta" Type="int" />
+        </EntityType>
+        <EntityType Name="Dias">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dia" Type="varchar" MaxLength="35" />
+        </EntityType>
+        <EntityType Name="Horarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dia" Type="int" />
+          <Property Name="Ortopeda" Type="int" />
+          <Property Name="Hora" Type="time" Precision="7" />
         </EntityType>
         <EntityType Name="ortesis">
           <Key>
@@ -56,6 +72,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="35" />
+          <Property Name="foto" Type="image" />
           <Property Name="descripcion" Type="varchar" MaxLength="75" />
         </EntityType>
         <EntityType Name="tipoProtesis">
@@ -64,6 +81,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="35" />
+          <Property Name="foto" Type="image" />
           <Property Name="descripcion" Type="varchar" MaxLength="75" />
         </EntityType>
         <EntityType Name="TipoUsuario">
@@ -89,7 +107,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
           <Property Name="especialidad" Type="varchar" MaxLength="500" />
           <Property Name="experiencia" Type="varchar" MaxLength="500" />
         </EntityType>
-        <Association Name="FK__consulta__idClie__49C3F6B7">
+        <Association Name="FK__consulta__idClie__4F7CD00D">
           <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
           <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -101,7 +119,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__detalle_c__idCon__4E88ABD4">
+        <Association Name="FK__detalle_c__idCon__5441852A">
           <End Role="consulta" Type="Self.consulta" Multiplicity="0..1" />
           <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -113,7 +131,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__detalle_c__idMed__4D94879B">
+        <Association Name="FK__detalle_c__idMed__534D60F1">
           <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
           <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -125,7 +143,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__detalle_c__idOrt__4CA06362">
+        <Association Name="FK__detalle_c__idOrt__52593CB8">
           <End Role="ortesis" Type="Self.ortesis" Multiplicity="0..1" />
           <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -137,7 +155,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__detalle_c__idPro__4BAC3F29">
+        <Association Name="FK__detalle_c__idPro__5165187F">
           <End Role="protesis" Type="Self.protesis" Multiplicity="0..1" />
           <End Role="detalle_consulta" Type="Self.detalle_consulta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -149,7 +167,31 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ortesis__tipo__412EB0B6">
+        <Association Name="FK__Horarios__Dia__412EB0B6">
+          <End Role="Dias" Type="Self.Dias" Multiplicity="0..1" />
+          <End Role="Horarios" Type="Self.Horarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dias">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Horarios">
+              <PropertyRef Name="Dia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Horarios__Ortope__4222D4EF">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="Horarios" Type="Self.Horarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Horarios">
+              <PropertyRef Name="Ortopeda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ortesis__tipo__46E78A0C">
           <End Role="tipoOrtesis" Type="Self.tipoOrtesis" Multiplicity="0..1" />
           <End Role="ortesis" Type="Self.ortesis" Multiplicity="*" />
           <ReferentialConstraint>
@@ -161,7 +203,7 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__protesis__tipo__45F365D3">
+        <Association Name="FK__protesis__tipo__4BAC3F29">
           <End Role="tipoProtesis" Type="Self.tipoProtesis" Multiplicity="0..1" />
           <End Role="protesis" Type="Self.protesis" Multiplicity="*" />
           <ReferentialConstraint>
@@ -187,6 +229,8 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
         </Association>
         <EntityContainer Name="OrtopediaVelásquezModelStoreContainer">
           <EntitySet Name="consulta" EntityType="Self.consulta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dias" EntityType="Self.Dias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Horarios" EntityType="Self.Horarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ortesis" EntityType="Self.ortesis" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="protesis" EntityType="Self.protesis" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipoOrtesis" EntityType="Self.tipoOrtesis" Schema="dbo" store:Type="Tables" />
@@ -201,31 +245,39 @@ advertencia 6002: La tabla o vista 'OrtopediaVelásquez.dbo.detalle_consulta' no
 [detalle_consulta].[idConsulta] AS [idConsulta]
 FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__consulta__idClie__49C3F6B7" Association="Self.FK__consulta__idClie__49C3F6B7">
+          <AssociationSet Name="FK__consulta__idClie__4F7CD00D" Association="Self.FK__consulta__idClie__4F7CD00D">
             <End Role="usuario" EntitySet="usuario" />
             <End Role="consulta" EntitySet="consulta" />
           </AssociationSet>
-          <AssociationSet Name="FK__detalle_c__idCon__4E88ABD4" Association="Self.FK__detalle_c__idCon__4E88ABD4">
+          <AssociationSet Name="FK__detalle_c__idCon__5441852A" Association="Self.FK__detalle_c__idCon__5441852A">
             <End Role="consulta" EntitySet="consulta" />
             <End Role="detalle_consulta" EntitySet="detalle_consulta" />
           </AssociationSet>
-          <AssociationSet Name="FK__detalle_c__idMed__4D94879B" Association="Self.FK__detalle_c__idMed__4D94879B">
+          <AssociationSet Name="FK__detalle_c__idMed__534D60F1" Association="Self.FK__detalle_c__idMed__534D60F1">
             <End Role="usuario" EntitySet="usuario" />
             <End Role="detalle_consulta" EntitySet="detalle_consulta" />
           </AssociationSet>
-          <AssociationSet Name="FK__detalle_c__idOrt__4CA06362" Association="Self.FK__detalle_c__idOrt__4CA06362">
+          <AssociationSet Name="FK__detalle_c__idOrt__52593CB8" Association="Self.FK__detalle_c__idOrt__52593CB8">
             <End Role="ortesis" EntitySet="ortesis" />
             <End Role="detalle_consulta" EntitySet="detalle_consulta" />
           </AssociationSet>
-          <AssociationSet Name="FK__detalle_c__idPro__4BAC3F29" Association="Self.FK__detalle_c__idPro__4BAC3F29">
+          <AssociationSet Name="FK__detalle_c__idPro__5165187F" Association="Self.FK__detalle_c__idPro__5165187F">
             <End Role="protesis" EntitySet="protesis" />
             <End Role="detalle_consulta" EntitySet="detalle_consulta" />
           </AssociationSet>
-          <AssociationSet Name="FK__ortesis__tipo__412EB0B6" Association="Self.FK__ortesis__tipo__412EB0B6">
+          <AssociationSet Name="FK__Horarios__Dia__412EB0B6" Association="Self.FK__Horarios__Dia__412EB0B6">
+            <End Role="Dias" EntitySet="Dias" />
+            <End Role="Horarios" EntitySet="Horarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Horarios__Ortope__4222D4EF" Association="Self.FK__Horarios__Ortope__4222D4EF">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="Horarios" EntitySet="Horarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ortesis__tipo__46E78A0C" Association="Self.FK__ortesis__tipo__46E78A0C">
             <End Role="tipoOrtesis" EntitySet="tipoOrtesis" />
             <End Role="ortesis" EntitySet="ortesis" />
           </AssociationSet>
-          <AssociationSet Name="FK__protesis__tipo__45F365D3" Association="Self.FK__protesis__tipo__45F365D3">
+          <AssociationSet Name="FK__protesis__tipo__4BAC3F29" Association="Self.FK__protesis__tipo__4BAC3F29">
             <End Role="tipoProtesis" EntitySet="tipoProtesis" />
             <End Role="protesis" EntitySet="protesis" />
           </AssociationSet>
@@ -234,8 +286,7 @@ FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
             <End Role="usuario" EntitySet="usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OrtopediaVelásquezModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -287,6 +338,7 @@ FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
           <Property Name="nombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
           <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ortesis" Relationship="Self.FK__ortesis__tipo__412EB0B6" FromRole="tipoOrtesis" ToRole="ortesis" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="tipoProtesis">
           <Key>
@@ -296,6 +348,7 @@ FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
           <Property Name="nombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
           <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="protesis" Relationship="Self.FK__protesis__tipo__45F365D3" FromRole="tipoProtesis" ToRole="protesis" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="TipoUsuario">
           <Key>
@@ -323,6 +376,7 @@ FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
           <NavigationProperty Name="consulta" Relationship="Self.FK__consulta__idClie__49C3F6B7" FromRole="usuario" ToRole="consulta" />
           <NavigationProperty Name="TipoUsuario1" Relationship="Self.FK__usuario__tipoUsu__3A81B327" FromRole="usuario" ToRole="TipoUsuario" />
           <NavigationProperty Name="detalle_consulta" Relationship="Self.FK__detalle_c__idMed__4D94879B" FromRole="usuario" ToRole="detalle_consulta" />
+          <NavigationProperty Name="Horarios" Relationship="OrtopediaVelásquezModel.FK__Horarios__Ortope__4222D4EF" FromRole="usuario" ToRole="Horarios" />
         </EntityType>
         <EntityType Name="detalle_consulta">
           <Key>
@@ -474,7 +528,60 @@ FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
             <End Role="usuario" EntitySet="usuario" />
             <End Role="detalle_consulta" EntitySet="detalle_consulta" />
           </AssociationSet>
+          <EntitySet Name="Dias" EntityType="OrtopediaVelásquezModel.Dias" />
+          <EntitySet Name="Horarios" EntityType="OrtopediaVelásquezModel.Horarios" />
+          <AssociationSet Name="FK__Horarios__Dia__412EB0B6" Association="OrtopediaVelásquezModel.FK__Horarios__Dia__412EB0B6">
+            <End Role="Dias" EntitySet="Dias" />
+            <End Role="Horarios" EntitySet="Horarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Horarios__Ortope__4222D4EF" Association="OrtopediaVelásquezModel.FK__Horarios__Ortope__4222D4EF">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="Horarios" EntitySet="Horarios" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Dias">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dia" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Horarios" Relationship="OrtopediaVelásquezModel.FK__Horarios__Dia__412EB0B6" FromRole="Dias" ToRole="Horarios" />
+        </EntityType>
+        <EntityType Name="Horarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dia" Type="Int32" />
+          <Property Name="Ortopeda" Type="Int32" />
+          <Property Name="Hora" Type="Time" Precision="7" />
+          <NavigationProperty Name="Dias" Relationship="OrtopediaVelásquezModel.FK__Horarios__Dia__412EB0B6" FromRole="Horarios" ToRole="Dias" />
+          <NavigationProperty Name="usuario" Relationship="OrtopediaVelásquezModel.FK__Horarios__Ortope__4222D4EF" FromRole="Horarios" ToRole="usuario" />
+        </EntityType>
+        <Association Name="FK__Horarios__Dia__412EB0B6">
+          <End Type="OrtopediaVelásquezModel.Dias" Role="Dias" Multiplicity="0..1" />
+          <End Type="OrtopediaVelásquezModel.Horarios" Role="Horarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dias">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Horarios">
+              <PropertyRef Name="Dia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Horarios__Ortope__4222D4EF">
+          <End Type="OrtopediaVelásquezModel.usuario" Role="usuario" Multiplicity="0..1" />
+          <End Type="OrtopediaVelásquezModel.Horarios" Role="Horarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Horarios">
+              <PropertyRef Name="Ortopeda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -521,6 +628,7 @@ FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
           <EntitySetMapping Name="tipoOrtesis">
             <EntityTypeMapping TypeName="OrtopediaVelásquezModel.tipoOrtesis">
               <MappingFragment StoreEntitySet="tipoOrtesis">
+                <ScalarProperty Name="foto" ColumnName="foto" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -530,6 +638,7 @@ FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
           <EntitySetMapping Name="tipoProtesis">
             <EntityTypeMapping TypeName="OrtopediaVelásquezModel.tipoProtesis">
               <MappingFragment StoreEntitySet="tipoProtesis">
+                <ScalarProperty Name="foto" ColumnName="foto" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -568,6 +677,24 @@ FROM [dbo].[detalle_consulta] AS [detalle_consulta]</DefiningQuery>
                 <ScalarProperty Name="idOrtesis" ColumnName="idOrtesis" />
                 <ScalarProperty Name="idMedico" ColumnName="idMedico" />
                 <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dias">
+            <EntityTypeMapping TypeName="OrtopediaVelásquezModel.Dias">
+              <MappingFragment StoreEntitySet="Dias">
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Horarios">
+            <EntityTypeMapping TypeName="OrtopediaVelásquezModel.Horarios">
+              <MappingFragment StoreEntitySet="Horarios">
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Ortopeda" ColumnName="Ortopeda" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

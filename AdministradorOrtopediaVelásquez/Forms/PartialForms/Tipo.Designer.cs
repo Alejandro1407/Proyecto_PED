@@ -36,22 +36,24 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.pnelContenedor = new System.Windows.Forms.Panel();
+            this.btnReload = new System.Windows.Forms.Button();
             this.Status = new System.Windows.Forms.PictureBox();
             this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
-            this.btnReload = new System.Windows.Forms.Button();
             this.panelDesign3 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.txtNombre = new System.Windows.Forms.RichTextBox();
+            this.imagen = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtDescrip = new System.Windows.Forms.RichTextBox();
+            this.txttiledes = new System.Windows.Forms.Label();
+            this.txttitlename = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.BarraSuperior.SuspendLayout();
             this.pnelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
             this.panelDesign3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
@@ -131,6 +133,16 @@
             this.pnelContenedor.Controls.Add(this.panelDesign3);
             this.pnelContenedor.Name = "pnelContenedor";
             // 
+            // btnReload
+            // 
+            this.btnReload.BackColor = System.Drawing.Color.White;
+            this.btnReload.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnReload, "btnReload");
+            this.btnReload.ForeColor = System.Drawing.Color.Gray;
+            this.btnReload.Name = "btnReload";
+            this.btnReload.UseVisualStyleBackColor = false;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
             // Status
             // 
             this.Status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
@@ -146,28 +158,33 @@
             this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblStatus.Name = "lblStatus";
             // 
-            // btnReload
-            // 
-            this.btnReload.BackColor = System.Drawing.Color.White;
-            this.btnReload.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnReload, "btnReload");
-            this.btnReload.ForeColor = System.Drawing.Color.Gray;
-            this.btnReload.Name = "btnReload";
-            this.btnReload.UseVisualStyleBackColor = false;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
             // panelDesign3
             // 
+            this.panelDesign3.Controls.Add(this.txtNombre);
+            this.panelDesign3.Controls.Add(this.imagen);
             this.panelDesign3.Controls.Add(this.button2);
             this.panelDesign3.Controls.Add(this.button1);
-            this.panelDesign3.Controls.Add(this.materialLabel3);
-            this.panelDesign3.Controls.Add(this.richTextBox3);
-            this.panelDesign3.Controls.Add(this.label5);
-            this.panelDesign3.Controls.Add(this.label6);
+            this.panelDesign3.Controls.Add(this.txtDescrip);
+            this.panelDesign3.Controls.Add(this.txttiledes);
+            this.panelDesign3.Controls.Add(this.txttitlename);
             this.panelDesign3.Controls.Add(this.pictureBox5);
             this.panelDesign3.Controls.Add(this.pictureBox6);
             resources.ApplyResources(this.panelDesign3, "panelDesign3");
             this.panelDesign3.Name = "panelDesign3";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txtNombre, "txtNombre");
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            // 
+            // imagen
+            // 
+            resources.ApplyResources(this.imagen, "imagen");
+            this.imagen.Name = "imagen";
+            this.imagen.TabStop = false;
             // 
             // button2
             // 
@@ -181,29 +198,22 @@
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // materialLabel3
+            // txtDescrip
             // 
-            resources.ApplyResources(this.materialLabel3, "materialLabel3");
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
+            this.txtDescrip.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txtDescrip, "txtDescrip");
+            this.txtDescrip.Name = "txtDescrip";
             // 
-            // richTextBox3
+            // txttiledes
             // 
-            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.richTextBox3, "richTextBox3");
-            this.richTextBox3.Name = "richTextBox3";
+            resources.ApplyResources(this.txttiledes, "txttiledes");
+            this.txttiledes.Name = "txttiledes";
             // 
-            // label5
+            // txttitlename
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.txttitlename, "txttitlename");
+            this.txttitlename.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txttitlename.Name = "txttitlename";
             // 
             // pictureBox5
             // 
@@ -235,6 +245,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
             this.panelDesign3.ResumeLayout(false);
             this.panelDesign3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
@@ -253,14 +264,15 @@
         private MaterialSkin.Controls.MaterialLabel lblStatus;
         private System.Windows.Forms.PictureBox Status;
         private CustomControls.PanelDesign panelDesign3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RichTextBox txtDescrip;
+        private System.Windows.Forms.Label txttiledes;
+        private System.Windows.Forms.Label txttitlename;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.PictureBox imagen;
+        private System.Windows.Forms.RichTextBox txtNombre;
     }
 }

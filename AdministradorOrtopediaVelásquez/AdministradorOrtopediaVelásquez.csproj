@@ -69,6 +69,9 @@
     <Compile Include="detalle_consulta.cs">
       <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dias.cs">
+      <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Modals\AgregarMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,11 +138,11 @@
     <Compile Include="Forms\PartialForms\Cuenta.designer.cs">
       <DependentUpon>Cuenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PartialForms\Horarios.cs">
+    <Compile Include="Forms\PartialForms\Citas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PartialForms\Horarios.Designer.cs">
-      <DependentUpon>Horarios.cs</DependentUpon>
+    <Compile Include="Forms\PartialForms\Citas.Designer.cs">
+      <DependentUpon>Citas.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ShowInputDialog.cs">
       <SubType>Form</SubType>
@@ -158,6 +161,9 @@
     </Compile>
     <Compile Include="Forms\ShowConfirmDialog.designer.cs">
       <DependentUpon>ShowConfirmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Horarios.cs">
+      <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -249,8 +255,8 @@
     <EmbeddedResource Include="Forms\PartialForms\Cuenta.resx">
       <DependentUpon>Cuenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PartialForms\Horarios.resx">
-      <DependentUpon>Horarios.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PartialForms\Citas.resx">
+      <DependentUpon>Citas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ShowInputDialog.resx">
       <DependentUpon>ShowInputDialog.cs</DependentUpon>

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarAdministrador));
-            this.panelDesign1 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.panelDesign1 = new System.Windows.Forms.Panel();
             this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.FNacimiento = new System.Windows.Forms.DateTimePicker();
@@ -40,7 +40,7 @@
             this.Status = new System.Windows.Forms.PictureBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.BarraSuperior = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.BarraSuperior = new System.Windows.Forms.Panel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -204,6 +204,8 @@
             this.BarraSuperior.Size = new System.Drawing.Size(301, 40);
             this.BarraSuperior.TabIndex = 2;
             this.BarraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseDown);
+            this.BarraSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseMove);
+            this.BarraSuperior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseUp);
             // 
             // materialLabel1
             // 
@@ -296,14 +298,14 @@
 
         #endregion
 
-        private CustomControls.PanelDesign BarraSuperior;
+        private System.Windows.Forms.Panel BarraSuperior;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Button btnCerrar;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombre;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private CustomControls.PanelDesign panelDesign1;
+        private System.Windows.Forms.Panel panelDesign1;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.PictureBox Status;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtApellidos;

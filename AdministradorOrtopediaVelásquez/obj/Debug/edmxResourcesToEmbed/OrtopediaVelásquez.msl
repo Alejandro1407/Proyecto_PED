@@ -41,6 +41,7 @@
     <EntitySetMapping Name="tipoOrtesis">
       <EntityTypeMapping TypeName="OrtopediaVelásquezModel.tipoOrtesis">
         <MappingFragment StoreEntitySet="tipoOrtesis">
+          <ScalarProperty Name="foto" ColumnName="foto" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -50,6 +51,7 @@
     <EntitySetMapping Name="tipoProtesis">
       <EntityTypeMapping TypeName="OrtopediaVelásquezModel.tipoProtesis">
         <MappingFragment StoreEntitySet="tipoProtesis">
+          <ScalarProperty Name="foto" ColumnName="foto" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -88,6 +90,24 @@
           <ScalarProperty Name="idOrtesis" ColumnName="idOrtesis" />
           <ScalarProperty Name="idMedico" ColumnName="idMedico" />
           <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dias">
+      <EntityTypeMapping TypeName="OrtopediaVelásquezModel.Dias">
+        <MappingFragment StoreEntitySet="Dias">
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horarios">
+      <EntityTypeMapping TypeName="OrtopediaVelásquezModel.Horarios">
+        <MappingFragment StoreEntitySet="Horarios">
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Ortopeda" ColumnName="Ortopeda" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

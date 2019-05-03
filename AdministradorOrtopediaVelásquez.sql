@@ -46,16 +46,45 @@ CREATE TABLE usuario
 );
 GO
 
-
 INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Alejandro','Alejo','alejandroalejo714@gmail.com',1,'password','M','14-jul-2000')
 GO
 
 INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento, especialidad, experiencia)  VALUES ('Tigre','Toño','tigretoño@gmail.com',2,'password','M','14-jul-2000','Jefe','Jefe de Invalidos')
 GO
 
+--Horarios
+
+CREATE TABLE Dias(
+	Id INT PRIMARY KEY IDENTITY,
+	Dia VARCHAR(35)
+);
+GO
+
+INSERT INTO Dias VALUES ('Lunes'),
+						('Martes'),
+						('Miercoles'),
+						('Jueves'),
+						('Viernes');
+GO
+CREATE TABLE Horarios(
+	Id INT PRIMARY KEY IDENTITY,
+	Dia INT,
+	Ortopeda INT,
+	Hora TIME,
+	FOREIGN KEY (Dia) REFERENCES Dias(Id),
+	FOREIGN KEY (Ortopeda) REFERENCES usuario(id)
+);
+GO
+
+--INSERT INTO Horarios VALUES (1,4,'7:00');
+--GO
+
+--SELECT d.Dia, u.nombres, h.Hora FROM Horarios h INNER JOIN usuario u ON h.Ortopeda = u.id INNER JOIN Dias d ON h.Dia = d.Id
+
 create table tipoOrtesis(
 	id int primary key identity,
 	nombre varchar(35),
+	foto image,
 	descripcion varchar(75)
 );
 GO
@@ -74,6 +103,7 @@ GO
 create table tipoProtesis(
 	id int primary key identity,
 	nombre varchar(35),
+	foto image,
 	descripcion varchar(75)
 );
 GO
@@ -113,41 +143,3 @@ use OrtopediaVelásquez
 
 select * from usuario;
 GO
-
-/*create trigger AsignarCodigo on usuario INSTEAD OF INSERT
-as
-begin
-	declare @tipo int,
-	@tipoS varchar(20),
-	@id int,
-	@nombres varchar(50),
-	@apellidos varchar(50),
-	@email varchar(50),
-	@codigoUsuario varchar(20),
-	@contrasenya varchar(30),
-	@sexo char(1),
-	@fechaNacimiento date,
-	@alergias varchar(500),
-	@especialidad varchar(500),
-	@experiencia varchar(500);
-
-	set @id = (select id from inserted);
-	select @tipo = tipoUsuario from inserted;
-	select @tipoS = tipoUsuario from TipoUsuario where id = @tipo;
-	select @nombres = nombres from inserted;
-	select @apellidos = apellidos from inserted;
-	select @email = email from inserted;
-	select @codigoUsuario = codigoUsuario from inserted;
-	select @contrasenya = contrasenya from inserted;
-	select @sexo = sexo from inserted;
-	select @fechaNacimiento = fechaNacimiento from inserted;
-	select @alergias = alergias from inserted;
-	select @especialidad =  especialidad from inserted;
-	select @experiencia = experiencia from inserted;
-
-	INSERT into usuario VALUES (@nombres,@apellidos,@email,CONCAT(UPPER(SUBSTRING(@tipoS,1,3)),FORMAT(@id,'####')),@tipo,@contrasenya,@sexo,@fechaNacimiento,@alergias,@especialidad,@experiencia);
-	
-end;
-GO*/
-
---drop trigger AsignarCodigo

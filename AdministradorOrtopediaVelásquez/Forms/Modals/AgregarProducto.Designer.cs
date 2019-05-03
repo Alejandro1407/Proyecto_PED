@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.Subir = new System.Windows.Forms.OpenFileDialog();
-            this.panelDesign1 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.panelDesign1 = new System.Windows.Forms.Panel();
+            this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
             this.Status = new System.Windows.Forms.PictureBox();
             this.txtPrecio = new System.Windows.Forms.NumericUpDown();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnUpload = new System.Windows.Forms.Button();
             this.lblImagen = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -45,7 +45,7 @@
             this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new MaterialSkin.Controls.MaterialLabel();
-            this.BarraSuperior = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
+            this.BarraSuperior = new System.Windows.Forms.Panel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelDesign1.SuspendLayout();
@@ -85,6 +85,20 @@
             this.panelDesign1.Name = "panelDesign1";
             this.panelDesign1.Size = new System.Drawing.Size(324, 498);
             this.panelDesign1.TabIndex = 1;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Depth = 0;
+            this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblStatus.Location = new System.Drawing.Point(122, 271);
+            this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(85, 19);
+            this.lblStatus.TabIndex = 13;
+            this.lblStatus.Text = "Cargando...";
             // 
             // Status
             // 
@@ -160,20 +174,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 14;
             this.pictureBox5.TabStop = false;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Depth = 0;
-            this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(122, 271);
-            this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(85, 19);
-            this.lblStatus.TabIndex = 13;
-            this.lblStatus.Text = "Cargando...";
             // 
             // btnAceptar
             // 
@@ -287,6 +287,8 @@
             this.BarraSuperior.Size = new System.Drawing.Size(324, 40);
             this.BarraSuperior.TabIndex = 1;
             this.BarraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseDown);
+            this.BarraSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseMove);
+            this.BarraSuperior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseUp);
             // 
             // materialLabel1
             // 
@@ -340,10 +342,7 @@
         }
 
         #endregion
-
-        private CustomControls.PanelDesign panelDesign1;
         private System.Windows.Forms.Button btnCerrar;
-        private CustomControls.PanelDesign BarraSuperior;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel lblTitle;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -361,5 +360,7 @@
         private System.Windows.Forms.OpenFileDialog Subir;
         private System.Windows.Forms.NumericUpDown txtPrecio;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Panel panelDesign1;
+        private System.Windows.Forms.Panel BarraSuperior;
     }
 }

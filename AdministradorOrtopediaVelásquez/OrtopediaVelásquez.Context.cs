@@ -33,5 +33,7 @@ namespace AdministradorOrtopediaVelásquez
         public DbSet<TipoUsuario> TipoUsuario { get; set; }
         public DbSet<usuario> usuario { get; set; }
         public DbSet<detalle_consulta> detalle_consulta { get; set; }
+        public DbSet<Dias> Dias { get; set; }
+        public DbSet<Horarios> Horarios { get; set; }
     }
 }

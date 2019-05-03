@@ -48,6 +48,7 @@
     <Property Name="nombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
     <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ortesis" Relationship="Self.FK__ortesis__tipo__412EB0B6" FromRole="tipoOrtesis" ToRole="ortesis" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="tipoProtesis">
     <Key>
@@ -57,6 +58,7 @@
     <Property Name="nombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
     <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="protesis" Relationship="Self.FK__protesis__tipo__45F365D3" FromRole="tipoProtesis" ToRole="protesis" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="TipoUsuario">
     <Key>
@@ -84,6 +86,7 @@
     <NavigationProperty Name="consulta" Relationship="Self.FK__consulta__idClie__49C3F6B7" FromRole="usuario" ToRole="consulta" />
     <NavigationProperty Name="TipoUsuario1" Relationship="Self.FK__usuario__tipoUsu__3A81B327" FromRole="usuario" ToRole="TipoUsuario" />
     <NavigationProperty Name="detalle_consulta" Relationship="Self.FK__detalle_c__idMed__4D94879B" FromRole="usuario" ToRole="detalle_consulta" />
+    <NavigationProperty Name="Horarios" Relationship="OrtopediaVelásquezModel.FK__Horarios__Ortope__4222D4EF" FromRole="usuario" ToRole="Horarios" />
   </EntityType>
   <EntityType Name="detalle_consulta">
     <Key>
@@ -235,5 +238,58 @@
       <End Role="usuario" EntitySet="usuario" />
       <End Role="detalle_consulta" EntitySet="detalle_consulta" />
     </AssociationSet>
+    <EntitySet Name="Dias" EntityType="OrtopediaVelásquezModel.Dias" />
+    <EntitySet Name="Horarios" EntityType="OrtopediaVelásquezModel.Horarios" />
+    <AssociationSet Name="FK__Horarios__Dia__412EB0B6" Association="OrtopediaVelásquezModel.FK__Horarios__Dia__412EB0B6">
+      <End Role="Dias" EntitySet="Dias" />
+      <End Role="Horarios" EntitySet="Horarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Horarios__Ortope__4222D4EF" Association="OrtopediaVelásquezModel.FK__Horarios__Ortope__4222D4EF">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="Horarios" EntitySet="Horarios" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Dias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dia" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Horarios" Relationship="OrtopediaVelásquezModel.FK__Horarios__Dia__412EB0B6" FromRole="Dias" ToRole="Horarios" />
+  </EntityType>
+  <EntityType Name="Horarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dia" Type="Int32" />
+    <Property Name="Ortopeda" Type="Int32" />
+    <Property Name="Hora" Type="Time" Precision="7" />
+    <NavigationProperty Name="Dias" Relationship="OrtopediaVelásquezModel.FK__Horarios__Dia__412EB0B6" FromRole="Horarios" ToRole="Dias" />
+    <NavigationProperty Name="usuario" Relationship="OrtopediaVelásquezModel.FK__Horarios__Ortope__4222D4EF" FromRole="Horarios" ToRole="usuario" />
+  </EntityType>
+  <Association Name="FK__Horarios__Dia__412EB0B6">
+    <End Type="OrtopediaVelásquezModel.Dias" Role="Dias" Multiplicity="0..1" />
+    <End Type="OrtopediaVelásquezModel.Horarios" Role="Horarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dias">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Horarios">
+        <PropertyRef Name="Dia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Horarios__Ortope__4222D4EF">
+    <End Type="OrtopediaVelásquezModel.usuario" Role="usuario" Multiplicity="0..1" />
+    <End Type="OrtopediaVelásquezModel.Horarios" Role="Horarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Horarios">
+        <PropertyRef Name="Ortopeda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
