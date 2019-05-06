@@ -52,6 +52,9 @@ GO
 INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento, especialidad, experiencia)  VALUES ('Tigre','Toño','tigretoño@gmail.com',2,'password','M','14-jul-2000','Jefe','Jefe de Invalidos')
 GO
 
+INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Alejandro','Alejo','alejandroalejo@gmail.com',3,'Password01','M','14-jul-2000')
+GO
+
 --Horarios
 
 CREATE TABLE Dias(
@@ -119,27 +122,22 @@ create table protesis(
 );
 GO
 
-create table consulta(
+create table cita(
 	id int primary key identity,
-	codigo as 'CON' + cast(id as varchar(5)),
-	fecha date default getdate(),
-	idCliente int not null foreign key references usuario(id),
-	descripcion varchar(500)
+	codigo as 'CITA' + cast(id as varchar(5)),
+	fecha date,
+	idPaciente int not null foreign key references usuario(id),
+	idMedico int foreign key references usuario(id),
+    idHorario INT FOREIGN KEY REFERENCES Horarios(id)
 );
 GO
 
-create table detalle_consulta(
+create table detalle_cita(
+	id int primary key identity,
+	idCita INT FOREIGN KEY REFERENCES cita(id),
 	idProtesis int foreign key references protesis (id),
 	idOrtesis int foreign key references ortesis (id),
-	idMedico int foreign key references usuario(id) not null,
+	
+	observaciones varchar(500) null
 );
-GO
-
-alter table detalle_consulta
-add idConsulta int foreign key references consulta(id);
-GO
-
-use OrtopediaVelásquez
-
-select * from usuario;
 GO
