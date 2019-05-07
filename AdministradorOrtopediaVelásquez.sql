@@ -73,7 +73,7 @@ CREATE TABLE Horarios(
 	Id INT PRIMARY KEY IDENTITY,
 	Dia INT,
 	Ortopeda INT,
-	Hora TIME,
+	Hora VARCHAR(4),
 	FOREIGN KEY (Dia) REFERENCES Dias(Id),
 	FOREIGN KEY (Ortopeda) REFERENCES usuario(id)
 );
@@ -128,16 +128,8 @@ create table cita(
 	fecha date,
 	idPaciente int not null foreign key references usuario(id),
 	idMedico int foreign key references usuario(id),
-    idHorario INT FOREIGN KEY REFERENCES Horarios(id)
-);
-GO
-
-create table detalle_cita(
-	id int primary key identity,
-	idCita INT FOREIGN KEY REFERENCES cita(id),
-	idProtesis int foreign key references protesis (id),
-	idOrtesis int foreign key references ortesis (id),
-	
+    idHorario INT FOREIGN KEY REFERENCES Horarios(id),
 	observaciones varchar(500) null
 );
 GO
+
