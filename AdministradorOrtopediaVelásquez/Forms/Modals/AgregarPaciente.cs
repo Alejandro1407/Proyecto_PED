@@ -1,31 +1,28 @@
-﻿using AdministradorOrtopediaVelásquez.Forms;
-using AdministradorOrtopediaVelásquez.Servicios;
+﻿using AdministradorOrtopediaVelásquez.Servicios;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
-namespace AdministradorOrtopediaVelásquez
+namespace AdministradorOrtopediaVelásquez.Forms.Modals
 {
-    public partial class LoginForm : Form
+    public partial class AgregarPaciente : Form
     {
         SesionServicio sesionServicio = new SesionServicio();
-       
 
-        public LoginForm()
+        public AgregarPaciente()
         {
             InitializeComponent();
-            this.Region = Region.FromHrgn(CreateRoundRectRgn(0,0, Width, Height, 20, 20));
+            //this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        //Listener para btnCerrar
         private void btnCerrar_Click(object sender, EventArgs e)
-        {   //Se invoca a ShowConfirmDialog para que muestre al usario un mensaje y dos botones para cerrar y otro para cancelar
-            ShowConfirmDialog showConfirm = new ShowConfirmDialog("¿Seguro que desea Salir?", this.Height, this.Width); //Se instancia el formulario
+        {
+            ShowConfirmDialog showConfirm = new ShowConfirmDialog("¿Seguro que desea Cancelar?", this.Height, this.Width); //Se instancia el formulario
             this.Enabled = false;//Se desabilita el formulario actual
             if (showConfirm.ShowDialog(this) == DialogResult.OK) //Se usa ShowDialog ya que este devuelve lo que se asigne a DialogResult, luego se compara
             {
-                Application.Exit(); //Si dio aceptar se finaliza el programa
+                this.Close(); //Si dio aceptar se finaliza el programa
             }
             else
             {
@@ -33,78 +30,79 @@ namespace AdministradorOrtopediaVelásquez
             }
 
         }
-
-        //Listener para minimizar el formulario
-        private void btnMin_Click(object sender, EventArgs e)
+      
+        private async void btnAceptar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
-        }//Listener
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BarraSuperior_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private async void btnIniciar_Click(object sender, EventArgs e)
-        {
-            btnIniciar.Visible = false;
-            Status.Image = Properties.Resources.Loading;
+            btnAceptar.Visible = false;
             Status.Visible = true;
 
-            usuario p = await sesionServicio.LoguearseAsync(txtUser.Text, txtPassword.Text);
-            if (p == null)
-            {
-                MessageBox.Show("Usuario y/o contraseña incorecto");
-                btnIniciar.Visible = true;
+            if (txtNombre.Text == "" || IsNumeric(txtNombre.Text)) {
+                MessageBox.Show("Nombre Invalido");
                 Status.Visible = false;
+                btnAceptar.Visible = true;
                 return;
             }
-            else if (p.nombres == "Exception")
+            if (txtApellidos.Text == "" || IsNumeric(txtApellidos.Text)) {
+                MessageBox.Show("Apellidos Invalidos");
+                Status.Visible = false;
+                btnAceptar.Visible = true;
+                return;
+            }
+            string pattern = @"^\w{5,}@\w{3,}((\.)[A-Za-z]{2,3}){1,}$";
+            if (!Regex.IsMatch(txtEmail.Text,pattern) ||  txtEmail.Text == "") {
+                MessageBox.Show("Correo ingesado invalido");
+                Status.Visible = false;
+                btnAceptar.Visible = true;
+                return;
+            }
+            if (cmbGenero.SelectedIndex == -1) {
+                MessageBox.Show("Debe seleccionar un genero");
+                Status.Visible = false;
+                btnAceptar.Visible = true;
+                return;
+            }
+            DateTime dt = FNacimiento.Value;
+            double edad = ((DateTime.Now - dt).Days / 365.25);
+            /*if (edad <= 18) {
+                MessageBox.Show("No puede ser menor de edad!");
+                Status.Visible = false;
+                btnAceptar.Visible = true;
+                return;
+            }*/
+            usuario u = new usuario();
+            u.nombres = txtNombre.Text;
+            u.apellidos = txtApellidos.Text;
+            u.email = txtEmail.Text;
+            u.contrasenya = "administrador";
+            u.sexo = cmbGenero.SelectedIndex == 0 ? "M" : "F";
+            u.tipoUsuario = 4;
+            u.fechaNacimiento = FNacimiento.Value;
+
+            bool Answer = await sesionServicio.AgregarAdministrador(u);
+            if (Answer) {
+                MessageBox.Show("Se agrego exitosamente");
+                this.Close();
+            }
+            else
             {
-                Status.Image = Properties.Resources.Error;
-                Status.Visible = true;
                 MessageBox.Show("Ocurrio un error");
+                Status.Visible = false;
+                btnAceptar.Visible = true;
             }
-            else {
+        }//btnAceptar
 
-                if (p.tipoUsuario == 1)
-                {
-                    MainForm_Administrador mf = new MainForm_Administrador((int)p.tipoUsuario);
-                    mf.id = p.id;
-                    mf.nombre = p.nombres;
-                    mf.email = p.email;
-                    mf.Show();
-                    this.Close();
-                }
-                else if(p.tipoUsuario == 2) {
-                    MainForm_Medico mf = new MainForm_Medico((int)p.tipoUsuario);
-                    mf.id = p.id;
-                    mf.nombre = p.nombres;
-                    mf.email = p.email;
-                    mf.Show();
-                    this.Close();
-                }
-                else if (p.tipoUsuario == 3)
-                {
-                    MainForm_Secretaria mf = new MainForm_Secretaria((int)p.tipoUsuario);
-                    mf.id = p.id;
-                    mf.nombre = p.nombres;
-                    mf.email = p.email;
-                    mf.Show();
-                    this.Close();
-                }
-
-
+        private bool IsNumeric(String param) {
+            try{
+                int x = int.Parse(param);
+                return true;
             }
+            catch (Exception e) {
+                return false;
+            }
+
         }
-
         /* Codigo para las sombras y redondeo */
-
+        //No comprendo como funciona pero lo hace
         private bool Drag;
         private int MouseX;
         private int MouseY;
@@ -200,6 +198,5 @@ namespace AdministradorOrtopediaVelásquez
             }
         }
         private void BarraSuperior_MouseUp(object sender, MouseEventArgs e) { Drag = false; }
-
     }//Clase
 }//NameSpace

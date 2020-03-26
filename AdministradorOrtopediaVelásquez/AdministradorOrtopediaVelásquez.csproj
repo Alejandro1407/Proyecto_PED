@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Lista.cs" />
     <Compile Include="consulta.cs">
       <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
     </Compile>
@@ -78,11 +79,17 @@
     <Compile Include="Forms\Modals\AgregarMedico.Designer.cs">
       <DependentUpon>AgregarMedico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Modals\AgregarAdministrador.cs">
+    <Compile Include="Forms\Modals\AgregarPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Modals\AgregarAdministrador.Designer.cs">
-      <DependentUpon>AgregarAdministrador.cs</DependentUpon>
+    <Compile Include="Forms\Modals\AgregarPaciente.Designer.cs">
+      <DependentUpon>AgregarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AgregarUsuario.Designer.cs">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Modals\EditarTipo.cs">
       <SubType>Form</SubType>
@@ -108,11 +115,17 @@
     <Compile Include="Forms\Modals\AgregarTipo.Designer.cs">
       <DependentUpon>AgregarTipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PartialForms\Administradores.cs">
+    <Compile Include="Forms\PartialForms\Pacientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PartialForms\Administradores.Designer.cs">
-      <DependentUpon>Administradores.cs</DependentUpon>
+    <Compile Include="Forms\PartialForms\Pacientes.Designer.cs">
+      <DependentUpon>Pacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PartialForms\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PartialForms\Medicos.cs">
       <SubType>Form</SubType>
@@ -171,11 +184,23 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="MainForm_Medico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="MainForm_Medico.Designer.cs">
+      <DependentUpon>MainForm_Medico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_Secretaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm_Secretaria.Designer.cs">
+      <DependentUpon>MainForm_Secretaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_Administrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm_Administrador.Designer.cs">
+      <DependentUpon>MainForm_Administrador.cs</DependentUpon>
     </Compile>
     <Compile Include="ortesis.cs">
       <DependentUpon>OrtopediaVelásquez.tt</DependentUpon>
@@ -225,8 +250,11 @@
     <EmbeddedResource Include="Forms\Modals\AgregarMedico.resx">
       <DependentUpon>AgregarMedico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Modals\AgregarAdministrador.resx">
-      <DependentUpon>AgregarAdministrador.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Modals\AgregarPaciente.resx">
+      <DependentUpon>AgregarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\EditarTipo.resx">
       <DependentUpon>EditarTipo.cs</DependentUpon>
@@ -240,8 +268,11 @@
     <EmbeddedResource Include="Forms\Modals\AgregarTipo.resx">
       <DependentUpon>AgregarTipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PartialForms\Administradores.resx">
-      <DependentUpon>Administradores.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PartialForms\Pacientes.resx">
+      <DependentUpon>Pacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PartialForms\Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PartialForms\Medicos.resx">
       <DependentUpon>Medicos.cs</DependentUpon>
@@ -270,8 +301,14 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm_Medico.resx">
+      <DependentUpon>MainForm_Medico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Secretaria.resx">
+      <DependentUpon>MainForm_Secretaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Administrador.resx">
+      <DependentUpon>MainForm_Administrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -347,6 +384,7 @@
       <DependentUpon>OrtopediaVelásquez.edmx</DependentUpon>
       <LastGenOutput>OrtopediaVelásquez.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-maletín-30.png" />
     <None Include="Resources\Experience.png" />
     <None Include="Resources\Especialidad.png" />
     <None Include="Resources\CerrarSesion.png" />

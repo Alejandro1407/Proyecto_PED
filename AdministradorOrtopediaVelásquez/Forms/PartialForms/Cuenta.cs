@@ -1,4 +1,5 @@
 ﻿using AdministradorOrtopediaVelásquez.Servicios;
+using Desafio.Clases;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -28,7 +29,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
         private async void MostrarData()
         {
             btnReload.Visible = false;
-            List<usuario> administradores = await sesionServicio.ObtenerAdministradorAsync(id);
+            Lista<usuario> administradores = await sesionServicio.ObtenerUsuarioAsync(id);
 
             if(administradores == null)
             {
@@ -90,19 +91,25 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                     swd.ShowDialog();
                 }
                 else {
-                    ShowInputDialog sd = new ShowInputDialog("Ingrese nueva contraseña", "Cambiar Contraseña", "********", "password");
-                    var rs = sd.ShowDialog();
-                    if (rs == DialogResult.OK) {
-                        string newpass = sd.data;
-                        bool answer = await sesionServicio.ChangePass(this.id,newpass);
-                        if (answer)
-                        {
-                            ShowDialog swd = new ShowDialog("Contraseña actualizada", "Success");
-                            swd.ShowDialog();
-                        }
-                        else {
-                            ShowDialog swd = new ShowDialog("Ocurrio un error", "Error");
-                            swd.ShowDialog();
+                    ShowInputDialog sd_ = new ShowInputDialog("Ingrese nueva contraseña", "Cambiar Contraseña", "********", "password");
+                    var rs_ = sd_.ShowDialog();
+                    if (rs_ == DialogResult.OK)
+                    { 
+                        ShowInputDialog sd = new ShowInputDialog("Confirme conraseña", "Cambiar Contraseña", "********", "password");
+                        var rs = sd.ShowDialog();
+                        if (rs == DialogResult.OK) {
+                            if (sd_.data != sd.data) { MessageBox.Show("¡Error! Contraseñas no coinciden"); return; }
+                            string newpass = sd.data;
+                            bool answer = await sesionServicio.ChangePass(this.id,newpass);
+                            if (answer)
+                            {
+                                ShowDialog swd = new ShowDialog("Contraseña actualizada", "Success");
+                                swd.ShowDialog();
+                            }
+                            else {
+                                ShowDialog swd = new ShowDialog("Ocurrio un error", "Error");
+                                swd.ShowDialog();
+                            }
                         }
                     }
                 }

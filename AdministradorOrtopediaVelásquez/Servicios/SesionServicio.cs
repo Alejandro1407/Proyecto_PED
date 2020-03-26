@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desafio.Clases;
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace AdministradorOrtopediaVelásquez.Servicios
                 {
                     try {
                        usuario p = (from usuarios in db.usuario
-                                           where usuarios.email.Equals(user) && usuarios.contrasenya.Equals(contrasenia) && usuarios.tipoUsuario.Value.Equals(1)
+                                           where usuarios.email.Equals(user) && usuarios.contrasenya.Equals(contrasenia)
                                            select usuarios).FirstOrDefault();
                         return p;
                     }
@@ -86,16 +87,16 @@ namespace AdministradorOrtopediaVelásquez.Servicios
             });
         }
 
-        public Task<List<usuario>> ObtenerAdministradoresAsync()
+        public Task<Lista<usuario>> ObtenerAdministradoresAsync()
         {
             return Task.Run(() =>
             {
                 OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities();
                 try
                 {
-                    List<usuario> administradores = (from usuarios in db.usuario
+                    Lista<usuario> administradores = (from usuarios in db.usuario
                                                      where usuarios.tipoUsuario.Value.Equals(1)
-                                                     select usuarios).ToList();
+                                                     select usuarios).ToArray();
                     return administradores;
                 }
                 catch (Exception e)
@@ -105,15 +106,54 @@ namespace AdministradorOrtopediaVelásquez.Servicios
             });
         }//ObtenerAdminsitradoresAsync
 
-        public Task<List<usuario>> ObtenerAdministradorAsync(int id) {
+
+        public Task<Lista<usuario>> ObtenerUsuariosAsync() {
             return Task.Run(() =>
             {
                 OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities();
                 try
                 {
-                    List<usuario> administradores = (from usuarios in db.usuario
-                                                     where usuarios.tipoUsuario.Value.Equals(1) && usuarios.id.Equals(id)
-                                                     select usuarios).ToList();
+                    Lista<usuario> administradores = (from usuarios in db.usuario
+                                                      where usuarios.tipoUsuario.Value.Equals(1) || usuarios.tipoUsuario.Value.Equals(3) || usuarios.tipoUsuario.Value.Equals(4)
+                                                      select usuarios).ToArray();
+                    return administradores;
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
+
+            });
+        }
+        public Task<Lista<usuario>> ObtenerPacientesAsync()
+        {
+            return Task.Run(() =>
+            {
+                OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities();
+                try
+                {
+                    Lista<usuario> administradores = (from usuarios in db.usuario
+                                                      where usuarios.tipoUsuario.Value.Equals(4)
+                                                      select usuarios).ToArray();
+                    return administradores;
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
+
+            });
+        }
+
+        public Task<Lista<usuario>> ObtenerUsuarioAsync(int id) {
+            return Task.Run(() =>
+            {
+                OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities();
+                try
+                {
+                    Lista<usuario> administradores = (from usuarios in db.usuario
+                                                     where usuarios.id.Equals(id)
+                                                     select usuarios).ToArray();
                     return administradores;
                 }
                 catch (Exception e) {
@@ -122,18 +162,18 @@ namespace AdministradorOrtopediaVelásquez.Servicios
             });
         }//ObtenerAdminsitradorAsync
 
-        public Task<List<usuario>> ObtenerMedicosAsync(String param)
+        public Task<Lista<usuario>> ObtenerMedicosAsync(String param)
         {
 
             return Task.Run(() =>
             {
-                List<usuario> Medicos = new List<usuario>();
+                Lista<usuario> Medicos = new Lista<usuario>();
                 OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities();
                 try
                 {
                     Medicos = (from medicos in db.usuario
                                where medicos.nombres.Contains(param) && medicos.tipoUsuario.Value.Equals(2)
-                               select medicos).ToList();
+                               select medicos).ToArray();
                     return Medicos;
                 }
                 catch (Exception e)

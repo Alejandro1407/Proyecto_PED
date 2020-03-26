@@ -7,13 +7,14 @@ using MaterialSkin.Controls;
 using AdministradorOrtopediaVelásquez.Servicios;
 using System;
 using AdministradorOrtopediaVelásquez.Forms.Modals;
+using Desafio.Clases;
 
 namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
 {
     public partial class Catalogo : Form
     {
-        List<ortesis> Ortesis = new List<ortesis>(); //Lista con los Objetos
-        List<protesis> Protesis = new List<protesis>(); //Lista con las protesis
+        Lista<ortesis> Ortesis = new Lista<ortesis>(); //Lista con los Objetos
+        Lista<protesis> Protesis = new Lista<protesis>(); //Lista con las protesis
         CatalogoServicio catalogoServicio = new CatalogoServicio();
         public int id { get; set; } //Guarda el id del usuario que inicio sesion
         public string email { get; set; } //Guarda el email del usuario que inicio sesion
@@ -46,12 +47,12 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             if (ToShow == "protesis")
             {
                 Protesis =  await catalogoServicio.ObtenerProtesisAsync(param);
-                Ortesis = new List<ortesis>();
+                Ortesis = new Lista<ortesis>();
             }
             else
             {
                 Ortesis =  await catalogoServicio.ObtenerOrtesisAsync(param);
-                Protesis = new List<protesis>();
+                Protesis = new Lista<protesis>();
             }
 
             if (Protesis == null || Ortesis == null)

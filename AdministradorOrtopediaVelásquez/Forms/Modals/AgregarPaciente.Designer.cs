@@ -1,6 +1,6 @@
 ﻿namespace AdministradorOrtopediaVelásquez.Forms.Modals
 {
-    partial class AgregarAdministrador
+    partial class AgregarPaciente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarAdministrador));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarPaciente));
             this.panelDesign1 = new System.Windows.Forms.Panel();
             this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -74,7 +74,7 @@
             this.panelDesign1.Controls.Add(this.pictureBox1);
             this.panelDesign1.Location = new System.Drawing.Point(0, 0);
             this.panelDesign1.Name = "panelDesign1";
-            this.panelDesign1.Size = new System.Drawing.Size(301, 504);
+            this.panelDesign1.Size = new System.Drawing.Size(301, 496);
             this.panelDesign1.TabIndex = 7;
             // 
             // txtEmail
@@ -97,7 +97,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(49, 211);
+            this.pictureBox5.Location = new System.Drawing.Point(49, 209);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(48, 48);
             this.pictureBox5.TabIndex = 19;
@@ -105,7 +105,7 @@
             // 
             // FNacimiento
             // 
-            this.FNacimiento.Location = new System.Drawing.Point(103, 357);
+            this.FNacimiento.Location = new System.Drawing.Point(103, 350);
             this.FNacimiento.Name = "FNacimiento";
             this.FNacimiento.Size = new System.Drawing.Size(152, 20);
             this.FNacimiento.TabIndex = 18;
@@ -113,7 +113,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.cumpleanios;
-            this.pictureBox4.Location = new System.Drawing.Point(48, 327);
+            this.pictureBox4.Location = new System.Drawing.Point(48, 323);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(48, 48);
             this.pictureBox4.TabIndex = 17;
@@ -125,7 +125,7 @@
             this.cmbGenero.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.cmbGenero.Location = new System.Drawing.Point(103, 293);
+            this.cmbGenero.Location = new System.Drawing.Point(103, 294);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(121, 21);
             this.cmbGenero.TabIndex = 16;
@@ -134,7 +134,7 @@
             // 
             this.txtApellidos.Depth = 0;
             this.txtApellidos.Hint = "Apellidos";
-            this.txtApellidos.Location = new System.Drawing.Point(103, 183);
+            this.txtApellidos.Location = new System.Drawing.Point(103, 178);
             this.txtApellidos.MaxLength = 32767;
             this.txtApellidos.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtApellidos.Name = "txtApellidos";
@@ -150,7 +150,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Apellidos;
-            this.pictureBox3.Location = new System.Drawing.Point(49, 153);
+            this.pictureBox3.Location = new System.Drawing.Point(49, 152);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(48, 48);
             this.pictureBox3.TabIndex = 14;
@@ -159,7 +159,7 @@
             // Status
             // 
             this.Status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
-            this.Status.Location = new System.Drawing.Point(103, 407);
+            this.Status.Location = new System.Drawing.Point(103, 399);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(83, 78);
             this.Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -176,7 +176,7 @@
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAceptar.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Aceptar;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(92, 425);
+            this.btnAceptar.Location = new System.Drawing.Point(92, 417);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(103, 46);
             this.btnAceptar.TabIndex = 8;
@@ -188,7 +188,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Genero;
-            this.pictureBox2.Location = new System.Drawing.Point(49, 269);
+            this.pictureBox2.Location = new System.Drawing.Point(49, 266);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
             this.pictureBox2.TabIndex = 6;
@@ -216,9 +216,9 @@
             this.materialLabel1.Location = new System.Drawing.Point(3, 11);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(160, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(123, 19);
             this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "Agregar Administrador";
+            this.materialLabel1.Text = "Agregar Paciente";
             // 
             // btnCerrar
             // 
@@ -238,12 +238,12 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(76, 53);
+            this.materialLabel2.Location = new System.Drawing.Point(88, 53);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(160, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(123, 19);
             this.materialLabel2.TabIndex = 3;
-            this.materialLabel2.Text = "Agregar Administrador";
+            this.materialLabel2.Text = "Agregar Paciente";
             // 
             // txtNombre
             // 
@@ -271,15 +271,15 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // AgregarAdministrador
+            // AgregarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(302, 506);
+            this.ClientSize = new System.Drawing.Size(302, 498);
             this.Controls.Add(this.panelDesign1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AgregarAdministrador";
+            this.Name = "AgregarPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarTipo";
             this.panelDesign1.ResumeLayout(false);

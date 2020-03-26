@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Desafio.Clases;
 
 namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
 {
@@ -30,7 +31,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             lblStatus.Location = new Point(360, 292);
             lblStatus.Text = "Cargando...";
 
-            List<usuario> medicos = await sesionServicio.ObtenerMedicosAsync(param);
+            Lista<usuario> medicos = await sesionServicio.ObtenerMedicosAsync(param);
             if (medicos == null)
             {
                 Status.Image = Properties.Resources.Error;

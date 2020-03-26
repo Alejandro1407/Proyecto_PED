@@ -1,6 +1,6 @@
 ﻿namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
 {
-    partial class Administradores
+    partial class Usuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administradores));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
             this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
             this.BarraSuperior = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();

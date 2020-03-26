@@ -8,20 +8,24 @@ using System.Drawing;
 
 namespace AdministradorOrtopediaVelásquez
 {
-    public partial class MainForm : Form
+    public partial class MainForm_Administrador : Form
     {
         private Form formActual; //Guarda el PartialForm que esta abierto en ese momento
         private Button Actual; //Guarda el button que inicio la form actual para darle color
         public int id { get; set; } //Guarda el id del usuario que inicio sesion
         public string email { get; set; } //Guarda el email del usuario que inicio sesion
         public string nombre { get; set; } //Guarad el nombre del usuario
-            
-        public MainForm()
+    
+        private int UserType { get; set; }
+        public MainForm_Administrador(int Type)
         {
             InitializeComponent();
+            UserType = Type;
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             Actual = btnCatalogo;
             AbrirFormInPanel(new Catalogo());
+
+
         }
 
         private void AbrirFormInPanel(object formulario)
@@ -149,7 +153,19 @@ namespace AdministradorOrtopediaVelásquez
             Actual.BackColor = Color.White;
             Actual = ((Button)sender);
             Actual.BackColor = Color.LightGray;
-            Administradores adm = new Administradores();
+            Usuarios adm = new Usuarios();
+            adm.id = this.id;
+            adm.nombre = this.nombre;
+            adm.email = this.email;
+            AbrirFormInPanel(adm);
+        }
+
+        private void btnPacientes_Click(object sender, EventArgs e)
+        {
+            Actual.BackColor = Color.White;
+            Actual = ((Button)sender);
+            Actual.BackColor = Color.LightGray;
+            Pacientes adm = new Pacientes();
             adm.id = this.id;
             adm.nombre = this.nombre;
             adm.email = this.email;
@@ -252,5 +268,6 @@ namespace AdministradorOrtopediaVelásquez
             }
         }
         private void BarraSuperior_MouseUp(object sender, MouseEventArgs e) { Drag = false; }
+
     }//Clase
 }//NameSpace

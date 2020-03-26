@@ -1,6 +1,6 @@
 ﻿namespace AdministradorOrtopediaVelásquez
 {
-    partial class MainForm
+    partial class MainForm_Secretaria
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm_Secretaria));
             this.pnelContenedor = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
             this.BarraSuperior = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -37,12 +37,9 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnMin = new System.Windows.Forms.Button();
             this.panelDesign1 = new AdministradorOrtopediaVelásquez.CustomControls.PanelDesign();
-            this.btnMedicos = new System.Windows.Forms.Button();
-            this.btnTipo = new System.Windows.Forms.Button();
+            this.btnPacientes = new System.Windows.Forms.Button();
             this.btnHorarios = new System.Windows.Forms.Button();
-            this.btnAdmistradores = new System.Windows.Forms.Button();
             this.btnCuenta = new System.Windows.Forms.Button();
-            this.btnCatalogo = new System.Windows.Forms.Button();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.BarraSuperior.SuspendLayout();
@@ -140,12 +137,9 @@
             // panelDesign1
             // 
             this.panelDesign1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panelDesign1.Controls.Add(this.btnMedicos);
-            this.panelDesign1.Controls.Add(this.btnTipo);
+            this.panelDesign1.Controls.Add(this.btnPacientes);
             this.panelDesign1.Controls.Add(this.btnHorarios);
-            this.panelDesign1.Controls.Add(this.btnAdmistradores);
             this.panelDesign1.Controls.Add(this.btnCuenta);
-            this.panelDesign1.Controls.Add(this.btnCatalogo);
             this.panelDesign1.Controls.Add(this.materialLabel1);
             this.panelDesign1.Controls.Add(this.pctLogo);
             this.panelDesign1.Location = new System.Drawing.Point(0, 0);
@@ -153,43 +147,22 @@
             this.panelDesign1.Size = new System.Drawing.Size(200, 639);
             this.panelDesign1.TabIndex = 3;
             // 
-            // btnMedicos
+            // btnPacientes
             // 
-            this.btnMedicos.BackColor = System.Drawing.Color.White;
-            this.btnMedicos.FlatAppearance.BorderSize = 0;
-            this.btnMedicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMedicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedicos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnMedicos.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Medicos;
-            this.btnMedicos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMedicos.Location = new System.Drawing.Point(5, 401);
-            this.btnMedicos.Name = "btnMedicos";
-            this.btnMedicos.Size = new System.Drawing.Size(190, 50);
-            this.btnMedicos.TabIndex = 9;
-            this.btnMedicos.Text = "Medicos";
-            this.btnMedicos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedicos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnMedicos.UseVisualStyleBackColor = false;
-            this.btnMedicos.Click += new System.EventHandler(this.btnMedicos_Click);
-            // 
-            // btnTipo
-            // 
-            this.btnTipo.BackColor = System.Drawing.Color.White;
-            this.btnTipo.FlatAppearance.BorderSize = 0;
-            this.btnTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTipo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnTipo.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Categoria;
-            this.btnTipo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTipo.Location = new System.Drawing.Point(5, 265);
-            this.btnTipo.Name = "btnTipo";
-            this.btnTipo.Size = new System.Drawing.Size(190, 50);
-            this.btnTipo.TabIndex = 8;
-            this.btnTipo.Text = "Tipos";
-            this.btnTipo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTipo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnTipo.UseVisualStyleBackColor = false;
-            this.btnTipo.Click += new System.EventHandler(this.btnTipo_Click);
+            this.btnPacientes.FlatAppearance.BorderSize = 0;
+            this.btnPacientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPacientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPacientes.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.admins;
+            this.btnPacientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPacientes.Location = new System.Drawing.Point(3, 243);
+            this.btnPacientes.Name = "btnPacientes";
+            this.btnPacientes.Size = new System.Drawing.Size(190, 50);
+            this.btnPacientes.TabIndex = 10;
+            this.btnPacientes.Text = "Pacientes";
+            this.btnPacientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPacientes.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnPacientes.UseVisualStyleBackColor = true;
+            this.btnPacientes.Click += new System.EventHandler(this.btnPacientes_Click);
             // 
             // btnHorarios
             // 
@@ -200,7 +173,7 @@
             this.btnHorarios.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnHorarios.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Horarios;
             this.btnHorarios.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHorarios.Location = new System.Drawing.Point(5, 333);
+            this.btnHorarios.Location = new System.Drawing.Point(3, 187);
             this.btnHorarios.Name = "btnHorarios";
             this.btnHorarios.Size = new System.Drawing.Size(190, 50);
             this.btnHorarios.TabIndex = 7;
@@ -210,23 +183,6 @@
             this.btnHorarios.UseVisualStyleBackColor = false;
             this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
             // 
-            // btnAdmistradores
-            // 
-            this.btnAdmistradores.FlatAppearance.BorderSize = 0;
-            this.btnAdmistradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmistradores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmistradores.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.admins;
-            this.btnAdmistradores.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdmistradores.Location = new System.Drawing.Point(5, 469);
-            this.btnAdmistradores.Name = "btnAdmistradores";
-            this.btnAdmistradores.Size = new System.Drawing.Size(190, 50);
-            this.btnAdmistradores.TabIndex = 3;
-            this.btnAdmistradores.Text = "Administradores";
-            this.btnAdmistradores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmistradores.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnAdmistradores.UseVisualStyleBackColor = true;
-            this.btnAdmistradores.Click += new System.EventHandler(this.btnAdmistradores_Click);
-            // 
             // btnCuenta
             // 
             this.btnCuenta.FlatAppearance.BorderSize = 0;
@@ -234,7 +190,7 @@
             this.btnCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCuenta.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Ajustes;
             this.btnCuenta.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnCuenta.Location = new System.Drawing.Point(5, 537);
+            this.btnCuenta.Location = new System.Drawing.Point(3, 299);
             this.btnCuenta.Name = "btnCuenta";
             this.btnCuenta.Size = new System.Drawing.Size(190, 60);
             this.btnCuenta.TabIndex = 6;
@@ -243,25 +199,6 @@
             this.btnCuenta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCuenta.UseVisualStyleBackColor = true;
             this.btnCuenta.Click += new System.EventHandler(this.btnCuenta_Click);
-            // 
-            // btnCatalogo
-            // 
-            this.btnCatalogo.BackColor = System.Drawing.Color.LightGray;
-            this.btnCatalogo.FlatAppearance.BorderSize = 0;
-            this.btnCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCatalogo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCatalogo.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Inventory;
-            this.btnCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCatalogo.Location = new System.Drawing.Point(5, 197);
-            this.btnCatalogo.Name = "btnCatalogo";
-            this.btnCatalogo.Size = new System.Drawing.Size(190, 50);
-            this.btnCatalogo.TabIndex = 2;
-            this.btnCatalogo.Text = "Catalogo";
-            this.btnCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCatalogo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnCatalogo.UseVisualStyleBackColor = false;
-            this.btnCatalogo.Click += new System.EventHandler(this.btnCatalogo_Click);
             // 
             // materialLabel1
             // 
@@ -286,7 +223,7 @@
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
             // 
-            // MainForm
+            // MainForm_Secretaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -297,7 +234,7 @@
             this.Controls.Add(this.panelDesign1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MainForm";
+            this.Name = "MainForm_Secretaria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -321,12 +258,9 @@
         private System.Windows.Forms.Button btnMin;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.PictureBox pctLogo;
-        private System.Windows.Forms.Button btnCatalogo;
         private System.Windows.Forms.Button btnCuenta;
-        private System.Windows.Forms.Button btnAdmistradores;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.Button btnHorarios;
-        private System.Windows.Forms.Button btnTipo;
-        private System.Windows.Forms.Button btnMedicos;
+        private System.Windows.Forms.Button btnPacientes;
     }
 }

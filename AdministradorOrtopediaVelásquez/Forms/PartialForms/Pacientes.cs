@@ -7,17 +7,18 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System;
+using Desafio.Clases;
 
 namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
 {
-    public partial class Administradores : Form
+    public partial class Pacientes : Form
     {
         SesionServicio sesionServicio = new SesionServicio();
         public int id { get; set; } //Guarda el id del usuario que inicio sesion
         public string email { get; set; } //Guarda el email del usuario que inicio sesion
         public string nombre { get; set; } //Guarad el nombre del usuario
 
-        public Administradores()
+        public Pacientes()
         {
             InitializeComponent();
             MostrarData();
@@ -32,7 +33,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             lblStatus.Location = new Point(360, 292);
             lblStatus.Text = "Cargando...";
 
-            List<usuario> administradores = await sesionServicio.ObtenerAdministradoresAsync();
+            Lista<usuario> administradores = await sesionServicio.ObtenerPacientesAsync();
 
             if (administradores == null)
             {
@@ -232,7 +233,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
-            AgregarAdministrador ad = new AgregarAdministrador();
+            AgregarPaciente ad = new AgregarPaciente();
             ad.FormClosed += new FormClosedEventHandler(this.btnReload_Click);
             ad.Show();
         }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cuenta));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
             this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
             this.status = new System.Windows.Forms.PictureBox();
@@ -54,7 +55,6 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.status)).BeginInit();
             this.panelDesign1.SuspendLayout();
@@ -71,7 +71,6 @@
             this.panel2.Controls.Add(this.btnLogOut);
             this.panel2.Controls.Add(this.btnReload);
             this.panel2.Controls.Add(this.lblStatus);
-            this.panel2.Controls.Add(this.status);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.panelDesign1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -79,6 +78,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(824, 551);
             this.panel2.TabIndex = 42;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.CerrarSesion;
+            this.btnLogOut.Location = new System.Drawing.Point(718, 12);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(63, 54);
+            this.btnLogOut.TabIndex = 54;
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnReload
             // 
@@ -105,17 +116,17 @@
             this.lblStatus.Depth = 0;
             this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(360, 292);
+            this.lblStatus.Location = new System.Drawing.Point(344, 300);
             this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(85, 19);
+            this.lblStatus.Size = new System.Drawing.Size(84, 19);
             this.lblStatus.TabIndex = 52;
             this.lblStatus.Text = "Cargando...";
             // 
             // status
             // 
             this.status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
-            this.status.Location = new System.Drawing.Point(342, 166);
+            this.status.Location = new System.Drawing.Point(298, 107);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(114, 111);
             this.status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -135,6 +146,7 @@
             // 
             // panelDesign1
             // 
+            this.panelDesign1.Controls.Add(this.status);
             this.panelDesign1.Controls.Add(this.txtEmail);
             this.panelDesign1.Controls.Add(this.label7);
             this.panelDesign1.Controls.Add(this.pictureBox4);
@@ -212,7 +224,7 @@
             this.txtPass.Location = new System.Drawing.Point(543, 137);
             this.txtPass.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(57, 19);
+            this.txtPass.Size = new System.Drawing.Size(56, 19);
             this.txtPass.TabIndex = 60;
             this.txtPass.Text = "********";
             // 
@@ -245,7 +257,7 @@
             this.txtGenero.Location = new System.Drawing.Point(337, 137);
             this.txtGenero.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(79, 19);
+            this.txtGenero.Size = new System.Drawing.Size(78, 19);
             this.txtGenero.TabIndex = 57;
             this.txtGenero.Text = "Masculino";
             // 
@@ -290,7 +302,7 @@
             this.txtBirthDay.Location = new System.Drawing.Point(106, 136);
             this.txtBirthDay.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtBirthDay.Name = "txtBirthDay";
-            this.txtBirthDay.Size = new System.Drawing.Size(81, 19);
+            this.txtBirthDay.Size = new System.Drawing.Size(80, 19);
             this.txtBirthDay.TabIndex = 53;
             this.txtBirthDay.Text = "2000-07-14";
             // 
@@ -365,18 +377,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 41;
             this.pictureBox5.TabStop = false;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.FlatAppearance.BorderSize = 0;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.CerrarSesion;
-            this.btnLogOut.Location = new System.Drawing.Point(718, 12);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(63, 54);
-            this.btnLogOut.TabIndex = 54;
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // Cuenta
             // 

@@ -6,11 +6,11 @@ using System.Text.RegularExpressions;
 
 namespace AdministradorOrtopediaVelásquez.Forms.Modals
 {
-    public partial class AgregarAdministrador : Form
+    public partial class AgregarUsuario : Form
     {
         SesionServicio sesionServicio = new SesionServicio();
 
-        public AgregarAdministrador()
+        public AgregarUsuario()
         {
             InitializeComponent();
             //this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -30,7 +30,6 @@ namespace AdministradorOrtopediaVelásquez.Forms.Modals
             }
 
         }
-
       
         private async void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -70,13 +69,21 @@ namespace AdministradorOrtopediaVelásquez.Forms.Modals
                 btnAceptar.Visible = true;
                 return;
             }
+            if (cmbRango.SelectedIndex == -1) {
+                MessageBox.Show("Debe Seleccionar un rango");
+                Status.Visible = false;
+                btnAceptar.Visible = true;
+                return;
+            }
+            int Rango = 4;
+            if (cmbRango.SelectedIndex == 0) { Rango = 1; } if (cmbRango.SelectedIndex == 1) { Rango = 3; } if (cmbRango.SelectedIndex == 2) { Rango = 4; }
             usuario u = new usuario();
             u.nombres = txtNombre.Text;
             u.apellidos = txtApellidos.Text;
             u.email = txtEmail.Text;
-            u.contrasenya = "administrador";
+            u.contrasenya = "Password01";
             u.sexo = cmbGenero.SelectedIndex == 0 ? "M" : "F";
-            u.tipoUsuario = 1;
+            u.tipoUsuario = Rango;
             u.fechaNacimiento = FNacimiento.Value;
 
             bool Answer = await sesionServicio.AgregarAdministrador(u);

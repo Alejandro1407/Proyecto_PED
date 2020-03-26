@@ -27,8 +27,12 @@ values
 	'Ortopedista'
 ),
 (
+	'Secretaria'
+),
+(
 	'Paciente'
 );
+
 
 CREATE TABLE usuario
 (
@@ -46,13 +50,16 @@ CREATE TABLE usuario
 );
 GO
 
-INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Alejandro','Alejo','alejandroalejo714@gmail.com',1,'password','M','14-jul-2000')
+INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Administrador','01','administrador_1@gmail.com',1,'password','M','10-jul-2000')
 GO
 
-INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento, especialidad, experiencia)  VALUES ('Tigre','Toño','tigretoño@gmail.com',2,'password','M','14-jul-2000','Jefe','Jefe de Invalidos')
+INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento, especialidad, experiencia)  VALUES ('Medico','01','medico_1@gmail.com',2,'password','M','12-jul-2000','Jefe','Jefe de Invalidos')
 GO
 
-INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Alejandro','Alejo','alejandroalejo@gmail.com',3,'Password01','M','14-jul-2000')
+INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Secretaria','01','secretaria_1@gmail.com',3,'Password01','M','13-jul-2000')
+GO
+
+INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Paciente','01','paciente_1@gmail.com',3,'Password01','M','14-jul-2000')
 GO
 
 --Horarios

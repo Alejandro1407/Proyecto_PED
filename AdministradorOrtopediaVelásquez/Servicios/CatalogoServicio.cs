@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desafio.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,17 +8,17 @@ namespace AdministradorOrtopediaVelásquez.Servicios
 {
     class CatalogoServicio
     {
-        public Task<List<ortesis>> ObtenerOrtesisAsync(String param) {
+        public Task<Lista<ortesis>> ObtenerOrtesisAsync(String param) {
 
             return Task.Run(() =>
            {
-               List<ortesis> Ortesis = new List<ortesis>();
+               Lista<ortesis> Ortesis = new Lista<ortesis>();
                OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities();
                try {
                    Ortesis = (from ortesis in db.ortesis
                               join t in db.tipoOrtesis on ortesis.tipo equals t.id
                               where ortesis.nombre.Contains(param)
-                              select ortesis).ToList();
+                              select ortesis).ToArray();
                    return Ortesis;
                }
                catch (Exception e) {
@@ -280,18 +281,18 @@ namespace AdministradorOrtopediaVelásquez.Servicios
 
         }
 
-        public Task<List<protesis>> ObtenerProtesisAsync(String param) {
+        public Task<Lista<protesis>> ObtenerProtesisAsync(String param) {
 
             return Task.Run(() =>
             {
-                List<protesis> Protesis = new List<protesis>();
+                Lista<protesis> Protesis = new Lista<protesis>();
                 OrtopediaVelásquezEntities db = new OrtopediaVelásquezEntities();
                 try
                 {
                     Protesis = (from protesis in db.protesis
                                 join t in db.tipoProtesis on protesis.tipo equals t.id
                                 where protesis.nombre.Contains(param)
-                                select protesis).ToList();
+                                select protesis).ToArray();
                     return Protesis;
                 }
                 catch (Exception e)
