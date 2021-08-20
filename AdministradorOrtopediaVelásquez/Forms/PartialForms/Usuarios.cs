@@ -30,15 +30,15 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             pnelContenedor.Controls.Add(lblStatus);
             pnelContenedor.Controls.Add(Status);
             pnelContenedor.Refresh();
-            lblStatus.Location = new Point(360, 292);
+            //lblStatus.Location = new Point(360, 292);
             lblStatus.Text = "Cargando...";
 
-            Lista<usuario> administradores = await sesionServicio.ObtenerUsuariosAsync();
+            Lista<usuario> administradores = await sesionServicio.ObtenerUsuariosAsync(param);
 
             if (administradores == null)
             {
                 Status.Image = Properties.Resources.Error;
-                lblStatus.Location = new Point(338, 292);
+               // lblStatus.Location = new Point(338, 292);
                 lblStatus.Text = "Ha Ocurrido un error";
                 //btnReload.Visible = true;
                 return;
@@ -46,7 +46,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             if (administradores.Count == 0 && !IsSearch)
             {
                 Status.Image = Properties.Resources.Empty;
-                lblStatus.Location = new Point(298, 291);
+                //lblStatus.Location = new Point(298, 291);
                 lblStatus.Text = "¡Oh No, No hay administradores?";
                 btnReload.Visible = true;
                 return;
@@ -55,7 +55,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             if (administradores.Count == 0  && IsSearch)
             {
                 Status.Image = Properties.Resources.NoResult;
-                lblStatus.Location = new Point(307, 292);
+                //lblStatus.Location = new Point(307, 292);
                 lblStatus.Text = "No hay resultado para " + param;
                 return;
             }
@@ -276,6 +276,11 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            MostrarData(txtBusqueda.Text, true);
         }
     }//Clase
 }//NameSpace

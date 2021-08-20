@@ -95,7 +95,7 @@
             this.lblStatus.Location = new System.Drawing.Point(119, 283);
             this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(85, 19);
+            this.lblStatus.Size = new System.Drawing.Size(85, 18);
             this.lblStatus.TabIndex = 13;
             this.lblStatus.Text = "Cargando...";
             // 
@@ -140,7 +140,7 @@
             this.lblImagen.Location = new System.Drawing.Point(96, 224);
             this.lblImagen.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(64, 19);
+            this.lblImagen.Size = new System.Drawing.Size(64, 18);
             this.lblImagen.TabIndex = 15;
             this.lblImagen.Text = "Ninguna";
             // 

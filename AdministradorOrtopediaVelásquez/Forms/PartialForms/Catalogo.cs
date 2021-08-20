@@ -290,8 +290,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
       
         private void txtBusqueda_KeyDown(object sender, KeyEventArgs e)
         {
-            string Ischecked = RdoProtesis.Checked ? "protesis" : "ortesis";
-            MostrarData(Ischecked, txtBusqueda.Text, true);
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -326,6 +325,12 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             string Ischecked = RdoProtesis.Checked ? "protesis" : "ortesis";
             txtBusqueda.Text = "";
             MostrarData(Ischecked);
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            string Ischecked = RdoProtesis.Checked ? "protesis" : "ortesis";
+            MostrarData(Ischecked, txtBusqueda.Text,true);
         }
     }//Clase
 }//NameSpace

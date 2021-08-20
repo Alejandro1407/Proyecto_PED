@@ -120,6 +120,7 @@
             this.txtBusqueda.TabIndex = 2;
             this.txtBusqueda.TabStop = false;
             this.txtBusqueda.UseSystemPasswordChar = false;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // btnSearch
             // 
@@ -136,6 +137,7 @@
             // 
             // pnelContenedor
             // 
+            this.pnelContenedor.AutoScroll = true;
             this.pnelContenedor.Controls.Add(this.Status);
             this.pnelContenedor.Controls.Add(this.pnel);
             this.pnelContenedor.Controls.Add(this.btnReload);
@@ -185,7 +187,7 @@
             this.pnel.Controls.Add(this.NombreImg);
             this.pnel.Location = new System.Drawing.Point(12, 24);
             this.pnel.Name = "pnel";
-            this.pnel.Size = new System.Drawing.Size(800, 181);
+            this.pnel.Size = new System.Drawing.Size(767, 181);
             this.pnel.TabIndex = 24;
             // 
             // lblExperencia
@@ -196,7 +198,7 @@
             this.lblExperencia.Location = new System.Drawing.Point(596, 135);
             this.lblExperencia.Name = "lblExperencia";
             this.lblExperencia.ReadOnly = true;
-            this.lblExperencia.Size = new System.Drawing.Size(138, 42);
+            this.lblExperencia.Size = new System.Drawing.Size(95, 42);
             this.lblExperencia.TabIndex = 77;
             this.lblExperencia.Text = "Jefe de unos invalidos";
             // 
@@ -228,7 +230,7 @@
             this.lblEspecialidad.Location = new System.Drawing.Point(596, 55);
             this.lblEspecialidad.Name = "lblEspecialidad";
             this.lblEspecialidad.ReadOnly = true;
-            this.lblEspecialidad.Size = new System.Drawing.Size(138, 42);
+            this.lblEspecialidad.Size = new System.Drawing.Size(95, 42);
             this.lblEspecialidad.TabIndex = 74;
             this.lblEspecialidad.Text = "Protesis";
             // 
@@ -237,9 +239,9 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(735, 64);
+            this.btnEliminar.Location = new System.Drawing.Point(715, 69);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(59, 61);
+            this.btnEliminar.Size = new System.Drawing.Size(48, 48);
             this.btnEliminar.TabIndex = 17;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -469,7 +471,7 @@
             this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
             this.btnReload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReload.Location = new System.Drawing.Point(327, 322);
+            this.btnReload.Location = new System.Drawing.Point(326, 322);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(150, 53);
             this.btnReload.TabIndex = 23;
@@ -481,16 +483,16 @@
             // 
             // lblStatus
             // 
-            this.lblStatus.AutoSize = true;
             this.lblStatus.Depth = 0;
             this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(360, 292);
+            this.lblStatus.Location = new System.Drawing.Point(311, 292);
             this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(85, 19);
+            this.lblStatus.Size = new System.Drawing.Size(188, 27);
             this.lblStatus.TabIndex = 22;
             this.lblStatus.Text = "Cargando...";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Medicos
             // 
@@ -505,7 +507,6 @@
             this.Text = "Medicos";
             this.BarraSuperior.ResumeLayout(false);
             this.pnelContenedor.ResumeLayout(false);
-            this.pnelContenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
             this.pnel.ResumeLayout(false);
             this.pnel.PerformLayout();

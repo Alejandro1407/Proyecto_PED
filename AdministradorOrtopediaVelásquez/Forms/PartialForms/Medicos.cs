@@ -28,25 +28,25 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             pnelContenedor.Controls.Add(btnReload);
             pnelContenedor.Refresh();
             Status.Image = Properties.Resources.Loading;
-            lblStatus.Location = new Point(360, 292);
+            //lblStatus.Location = new Point(360, 292);
             lblStatus.Text = "Cargando...";
 
-            Lista<usuario> medicos = await sesionServicio.ObtenerMedicosAsync(param);
+            Lista<usuario> medicos = await sesionServicio.ObtenerMedicoAsync(param);
             if (medicos == null)
             {
                 Status.Image = Properties.Resources.Error;
-                lblStatus.Location = new Point(338, 292);
+                //lblStatus.Location = new Point(338, 292);
                 lblStatus.Text = "Ha Ocurrido un error";
-                btnReload.Location = new Point(327, 322);
+                //btnReload.Location = new Point(327, 322);
                 btnReload.Visible = true;
                 return;
             }
             if (medicos.Count == 0 && !IsSearch)
             {
                 Status.Image = Properties.Resources.Empty;
-                lblStatus.Location = new Point(293, 291);
+                //lblStatus.Location = new Point(293, 291);
                 lblStatus.Text = "¡Oh No, Aun no hay ningun medico!";
-                btnReload.Location = new Point(327, 322);
+                //btnReload.Location = new Point(327, 322);
                 btnReload.Visible = true;
                 return;
             }
@@ -54,8 +54,8 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             if (medicos.Count == 0 && IsSearch)
             {
                 Status.Image = Properties.Resources.NoResult;
-                lblStatus.Location = new Point(307, 292);
-                btnReload.Location = new Point(327, 322);
+               // lblStatus.Location = new Point(307, 292);
+                //btnReload.Location = new Point(327, 322);
                 lblStatus.Text = "No hay resultado para " + param;
                 btnReload.Visible = true;
                 return;
@@ -71,7 +71,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
                 //
             CustomControls.PanelDesign pnel = new CustomControls.PanelDesign();
             pnel.Location = new System.Drawing.Point(12,Y);
-            pnel.Size = new System.Drawing.Size(800, 181);
+            pnel.Size = new System.Drawing.Size(767, 181);
             pnel.TabIndex = 24;
             // 
             // NombreImg
@@ -210,7 +210,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             lblEspecialidad.Location = new System.Drawing.Point(596, 55);
             lblEspecialidad.Name = "lblEspecialidad";
             lblEspecialidad.ReadOnly = true;
-            lblEspecialidad.Size = new System.Drawing.Size(138, 42);
+            lblEspecialidad.Size = new System.Drawing.Size(95, 42);
             lblEspecialidad.TabIndex = 74;
             lblEspecialidad.Text = m.especialidad;
             // 
@@ -353,7 +353,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             lblExperencia.Location = new System.Drawing.Point(596, 135);
             lblExperencia.Name = "lblExperencia";
             lblExperencia.ReadOnly = true;
-            lblExperencia.Size = new System.Drawing.Size(138, 42);
+            lblExperencia.Size = new System.Drawing.Size(95, 42);
             lblExperencia.TabIndex = 77;
             lblExperencia.Text = m.experiencia;
             // 
@@ -363,9 +363,9 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnEliminar.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Eliminar;
-            btnEliminar.Location = new System.Drawing.Point(735, 64);
+            btnEliminar.Location = new System.Drawing.Point(715, 69);
             btnEliminar.Name = m.id.ToString();
-            btnEliminar.Size = new System.Drawing.Size(59, 61);
+            btnEliminar.Size = new System.Drawing.Size(48, 48);
             btnEliminar.TabIndex = 17;
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += new EventHandler(this.btnEliminar_Click);
@@ -415,6 +415,11 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             {
                 this.Enabled = true; //Si cancelo se habilita el formulario actual
             }
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            MostrarData(txtBusqueda.Text, true);
         }
     }//Clase
 }//NameSpace

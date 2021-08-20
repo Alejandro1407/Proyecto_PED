@@ -66,9 +66,11 @@ namespace AdministradorOrtopediaVelásquez
             }
             else if (p.nombres == "Exception")
             {
-                Status.Image = Properties.Resources.Error;
-                Status.Visible = true;
+                //Status.Image = Properties.Resources.Error;
+                //Status.Visible = true;
                 MessageBox.Show("Ocurrio un error");
+                btnIniciar.Visible = true;
+                Status.Visible = false;
             }
             else {
 

@@ -73,7 +73,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.Modals
             u.nombres = txtNombre.Text;
             u.apellidos = txtApellidos.Text;
             u.email = txtEmail.Text;
-            u.contrasenya = "medico";
+            u.contrasenya = "Password01";
             u.sexo = cmbGenero.SelectedIndex == 0 ? "M" : "F";
             u.especialidad = txtEspecialidad.Text == "Especialidad" ? "" : txtEspecialidad.Text;
             u.experiencia = txtExperencia.Text == "Experencia" ? "" : txtExperencia.Text;

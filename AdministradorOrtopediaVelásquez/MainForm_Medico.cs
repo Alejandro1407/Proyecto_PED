@@ -23,7 +23,7 @@ namespace AdministradorOrtopediaVelásquez
             UserType = Type;
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             Actual = btnHorarios;
-            AbrirFormInPanel(new Citas());
+            
         }
 
         private void AbrirFormInPanel(object formulario)
@@ -81,6 +81,7 @@ namespace AdministradorOrtopediaVelásquez
         private void MainForm_Load(object sender, EventArgs e)
         {
             PrivateFontCollection pF = new PrivateFontCollection();
+            AbrirFormInPanel(new CitasM(id));
         }
 
         private void BarraSuperior_Paint(object sender, PaintEventArgs e)
@@ -129,7 +130,7 @@ namespace AdministradorOrtopediaVelásquez
             Actual.BackColor = Color.White;
             Actual = ((Button)sender);
             Actual.BackColor = Color.LightGray;
-            Citas c = new Citas();
+            CitasM c = new CitasM(id);
             c.id = this.id;
             c.nombre = this.nombre;
             c.email = this.email;

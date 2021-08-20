@@ -78,6 +78,7 @@ namespace AdministradorOrtopediaVelásquez.Forms.Modals
                 MessageBox.Show("Debe Seleccionar una Imagen");
                 Status.Visible = false;
                 btnAceptar.Visible = true;
+                return;
             }
             bool Answer;
             if (toAdd == "protesis")

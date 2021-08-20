@@ -75,7 +75,7 @@
             this.lblStatus.Depth = 0;
             this.lblStatus.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(355, 387);
+            this.lblStatus.Location = new System.Drawing.Point(349, 288);
             this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(85, 19);
@@ -125,6 +125,7 @@
             this.txtBusqueda.TabIndex = 2;
             this.txtBusqueda.TabStop = false;
             this.txtBusqueda.UseSystemPasswordChar = false;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // btnSearch
             // 
@@ -155,7 +156,7 @@
             // Status
             // 
             this.Status.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Loading;
-            this.Status.Location = new System.Drawing.Point(337, 261);
+            this.Status.Location = new System.Drawing.Point(331, 162);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(114, 111);
             this.Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -405,7 +406,7 @@
             this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
             this.btnReload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReload.Location = new System.Drawing.Point(322, 417);
+            this.btnReload.Location = new System.Drawing.Point(316, 318);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(150, 53);
             this.btnReload.TabIndex = 20;
@@ -415,7 +416,7 @@
             this.btnReload.Visible = false;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // Administradores
+            // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -424,7 +425,7 @@
             this.Controls.Add(this.pnelContenedor);
             this.Controls.Add(this.BarraSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Administradores";
+            this.Name = "Usuarios";
             this.Text = "Administradores";
             this.BarraSuperior.ResumeLayout(false);
             this.pnelContenedor.ResumeLayout(false);

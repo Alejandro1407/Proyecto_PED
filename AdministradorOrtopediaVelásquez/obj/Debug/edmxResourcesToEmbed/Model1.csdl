@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OrtopediaVelásquezModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cita">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo" Type="String" MaxLength="9" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="idPaciente" Type="Int32" Nullable="false" />
+    <Property Name="idMedico" Type="Int32" />
+    <Property Name="idHorario" Type="Int32" />
+    <Property Name="observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Horarios" Relationship="Self.FK__cita__idHorario__398D8EEE" FromRole="cita" ToRole="Horarios" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__cita__idMedico__38996AB5" FromRole="cita" ToRole="usuario" />
+    <NavigationProperty Name="usuario1" Relationship="Self.FK__cita__idPaciente__37A5467C" FromRole="cita" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="Horarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hora" MaxLength="6" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="cita" Relationship="Self.FK__cita__idHorario__398D8EEE" FromRole="Horarios" ToRole="cita" />
+  </EntityType>
+  <EntityType Name="ortesis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="Int32" />
+    <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="tipoOrtesis" Relationship="Self.FK__ortesis__tipo__300424B4" FromRole="ortesis" ToRole="tipoOrtesis" />
+  </EntityType>
+  <EntityType Name="protesis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="Int32" />
+    <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="tipoProtesis" Relationship="Self.FK__protesis__tipo__34C8D9D1" FromRole="protesis" ToRole="tipoProtesis" />
+  </EntityType>
+  <EntityType Name="tipoOrtesis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ortesis" Relationship="Self.FK__ortesis__tipo__300424B4" FromRole="tipoOrtesis" ToRole="ortesis" />
+  </EntityType>
+  <EntityType Name="tipoProtesis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="protesis" Relationship="Self.FK__protesis__tipo__34C8D9D1" FromRole="tipoProtesis" ToRole="protesis" />
+  </EntityType>
+  <EntityType Name="TipoUsuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoUsuario1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__usuario__tipoUsu__276EDEB3" FromRole="TipoUsuario" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipoUsuario" Type="Int32" />
+    <Property Name="contrasenya" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sexo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="fechaNacimiento" Type="DateTime" Precision="0" />
+    <Property Name="alergias" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="especialidad" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="experiencia" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cita" Relationship="Self.FK__cita__idMedico__38996AB5" FromRole="usuario" ToRole="cita" />
+    <NavigationProperty Name="cita1" Relationship="Self.FK__cita__idPaciente__37A5467C" FromRole="usuario" ToRole="cita" />
+    <NavigationProperty Name="TipoUsuario1" Relationship="Self.FK__usuario__tipoUsu__276EDEB3" FromRole="usuario" ToRole="TipoUsuario" />
+  </EntityType>
+  <Association Name="FK__cita__idHorario__398D8EEE">
+    <End Role="Horarios" Type="Self.Horarios" Multiplicity="0..1" />
+    <End Role="cita" Type="Self.cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Horarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="cita">
+        <PropertyRef Name="idHorario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cita__idMedico__38996AB5">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="cita" Type="Self.cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cita">
+        <PropertyRef Name="idMedico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cita__idPaciente__37A5467C">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="cita" Type="Self.cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cita">
+        <PropertyRef Name="idPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ortesis__tipo__300424B4">
+    <End Role="tipoOrtesis" Type="Self.tipoOrtesis" Multiplicity="0..1" />
+    <End Role="ortesis" Type="Self.ortesis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipoOrtesis">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ortesis">
+        <PropertyRef Name="tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__protesis__tipo__34C8D9D1">
+    <End Role="tipoProtesis" Type="Self.tipoProtesis" Multiplicity="0..1" />
+    <End Role="protesis" Type="Self.protesis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipoProtesis">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="protesis">
+        <PropertyRef Name="tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__usuario__tipoUsu__276EDEB3">
+    <End Role="TipoUsuario" Type="Self.TipoUsuario" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoUsuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="tipoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OrtopediaVelásquezEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cita" EntityType="Self.cita" />
+    <EntitySet Name="Horarios" EntityType="Self.Horarios" />
+    <EntitySet Name="ortesis" EntityType="Self.ortesis" />
+    <EntitySet Name="protesis" EntityType="Self.protesis" />
+    <EntitySet Name="tipoOrtesis" EntityType="Self.tipoOrtesis" />
+    <EntitySet Name="tipoProtesis" EntityType="Self.tipoProtesis" />
+    <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <AssociationSet Name="FK__cita__idHorario__398D8EEE" Association="Self.FK__cita__idHorario__398D8EEE">
+      <End Role="Horarios" EntitySet="Horarios" />
+      <End Role="cita" EntitySet="cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cita__idMedico__38996AB5" Association="Self.FK__cita__idMedico__38996AB5">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="cita" EntitySet="cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cita__idPaciente__37A5467C" Association="Self.FK__cita__idPaciente__37A5467C">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="cita" EntitySet="cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ortesis__tipo__300424B4" Association="Self.FK__ortesis__tipo__300424B4">
+      <End Role="tipoOrtesis" EntitySet="tipoOrtesis" />
+      <End Role="ortesis" EntitySet="ortesis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__protesis__tipo__34C8D9D1" Association="Self.FK__protesis__tipo__34C8D9D1">
+      <End Role="tipoProtesis" EntitySet="tipoProtesis" />
+      <End Role="protesis" EntitySet="protesis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__usuario__tipoUsu__276EDEB3" Association="Self.FK__usuario__tipoUsu__276EDEB3">
+      <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

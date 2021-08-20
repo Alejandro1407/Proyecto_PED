@@ -25,15 +25,13 @@ namespace AdministradorOrtopediaVelásquez
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<consulta> consulta { get; set; }
+        public DbSet<cita> cita { get; set; }
+        public DbSet<Horarios> Horarios { get; set; }
         public DbSet<ortesis> ortesis { get; set; }
         public DbSet<protesis> protesis { get; set; }
         public DbSet<tipoOrtesis> tipoOrtesis { get; set; }
         public DbSet<tipoProtesis> tipoProtesis { get; set; }
         public DbSet<TipoUsuario> TipoUsuario { get; set; }
         public DbSet<usuario> usuario { get; set; }
-        public DbSet<detalle_consulta> detalle_consulta { get; set; }
-        public DbSet<Dias> Dias { get; set; }
-        public DbSet<Horarios> Horarios { get; set; }
     }
 }

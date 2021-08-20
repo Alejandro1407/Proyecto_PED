@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarMedico));
             this.panelDesign1 = new System.Windows.Forms.Panel();
+            this.txtExperencia = new System.Windows.Forms.RichTextBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.txtEspecialidad = new System.Windows.Forms.RichTextBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.FNacimiento = new System.Windows.Forms.DateTimePicker();
@@ -46,11 +50,9 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.txtEspecialidad = new System.Windows.Forms.RichTextBox();
-            this.txtExperencia = new System.Windows.Forms.RichTextBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panelDesign1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -58,8 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.BarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDesign1
@@ -86,6 +86,50 @@
             this.panelDesign1.Name = "panelDesign1";
             this.panelDesign1.Size = new System.Drawing.Size(520, 521);
             this.panelDesign1.TabIndex = 7;
+            // 
+            // txtExperencia
+            // 
+            this.txtExperencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtExperencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExperencia.ForeColor = System.Drawing.Color.Gray;
+            this.txtExperencia.Location = new System.Drawing.Point(232, 354);
+            this.txtExperencia.Name = "txtExperencia";
+            this.txtExperencia.Size = new System.Drawing.Size(151, 48);
+            this.txtExperencia.TabIndex = 24;
+            this.txtExperencia.Text = "Experencia";
+            this.txtExperencia.Click += new System.EventHandler(this.txtExperencia_Click);
+            this.txtExperencia.Leave += new System.EventHandler(this.txtExperencia_Leave);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Experience;
+            this.pictureBox7.Location = new System.Drawing.Point(178, 326);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox7.TabIndex = 23;
+            this.pictureBox7.TabStop = false;
+            // 
+            // txtEspecialidad
+            // 
+            this.txtEspecialidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEspecialidad.ForeColor = System.Drawing.Color.Gray;
+            this.txtEspecialidad.Location = new System.Drawing.Point(327, 271);
+            this.txtEspecialidad.Name = "txtEspecialidad";
+            this.txtEspecialidad.Size = new System.Drawing.Size(151, 48);
+            this.txtEspecialidad.TabIndex = 22;
+            this.txtEspecialidad.Text = "Especialidad";
+            this.txtEspecialidad.Click += new System.EventHandler(this.txtEspecialidad_Click);
+            this.txtEspecialidad.Leave += new System.EventHandler(this.txtEspecialidad_Leave);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Especialidad;
+            this.pictureBox6.Location = new System.Drawing.Point(273, 243);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox6.TabIndex = 21;
+            this.pictureBox6.TabStop = false;
             // 
             // txtEmail
             // 
@@ -281,50 +325,6 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Especialidad;
-            this.pictureBox6.Location = new System.Drawing.Point(273, 243);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox6.TabIndex = 21;
-            this.pictureBox6.TabStop = false;
-            // 
-            // txtEspecialidad
-            // 
-            this.txtEspecialidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEspecialidad.ForeColor = System.Drawing.Color.Gray;
-            this.txtEspecialidad.Location = new System.Drawing.Point(327, 271);
-            this.txtEspecialidad.Name = "txtEspecialidad";
-            this.txtEspecialidad.Size = new System.Drawing.Size(151, 48);
-            this.txtEspecialidad.TabIndex = 22;
-            this.txtEspecialidad.Text = "Especialidad";
-            this.txtEspecialidad.Click += new System.EventHandler(this.txtEspecialidad_Click);
-            this.txtEspecialidad.Leave += new System.EventHandler(this.txtEspecialidad_Leave);
-            // 
-            // txtExperencia
-            // 
-            this.txtExperencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtExperencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExperencia.ForeColor = System.Drawing.Color.Gray;
-            this.txtExperencia.Location = new System.Drawing.Point(232, 354);
-            this.txtExperencia.Name = "txtExperencia";
-            this.txtExperencia.Size = new System.Drawing.Size(151, 48);
-            this.txtExperencia.TabIndex = 24;
-            this.txtExperencia.Text = "Experencia";
-            this.txtExperencia.Click += new System.EventHandler(this.txtExperencia_Click);
-            this.txtExperencia.Leave += new System.EventHandler(this.txtExperencia_Leave);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::AdministradorOrtopediaVelásquez.Properties.Resources.Experience;
-            this.pictureBox7.Location = new System.Drawing.Point(178, 326);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox7.TabIndex = 23;
-            this.pictureBox7.TabStop = false;
-            // 
             // AgregarMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,6 +339,8 @@
             this.Load += new System.EventHandler(this.AgregarMedico_Load);
             this.panelDesign1.ResumeLayout(false);
             this.panelDesign1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -347,8 +349,6 @@
             this.BarraSuperior.ResumeLayout(false);
             this.BarraSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -14,11 +14,6 @@ namespace AdministradorOrtopediaVelásquez
     
     public partial class ortesis
     {
-        public ortesis()
-        {
-            this.detalle_consulta = new HashSet<detalle_consulta>();
-        }
-    
         public int id { get; set; }
         public string codigo { get; set; }
         public string nombre { get; set; }
@@ -27,7 +22,6 @@ namespace AdministradorOrtopediaVelásquez
         public byte[] foto { get; set; }
         public Nullable<decimal> precio { get; set; }
     
-        public virtual ICollection<detalle_consulta> detalle_consulta { get; set; }
         public virtual tipoOrtesis tipoOrtesis { get; set; }
     }
 }

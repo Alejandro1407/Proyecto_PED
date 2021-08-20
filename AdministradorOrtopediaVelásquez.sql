@@ -50,20 +50,20 @@ CREATE TABLE usuario
 );
 GO
 
-INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Administrador','01','administrador_1@gmail.com',1,'password','M','10-jul-2000')
+INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Administrador','01','administrador_1@gmail.com',1,'Password01','M','10-jul-2000')
 GO
 
-INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento, especialidad, experiencia)  VALUES ('Medico','01','medico_1@gmail.com',2,'password','M','12-jul-2000','Jefe','Jefe de Invalidos')
+INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento, especialidad, experiencia)  VALUES ('Medico','01','medico_1@gmail.com',2,'Password01','M','12-jul-2000','Jefe','Jefe de Invalidos')
 GO
 
 INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Secretaria','01','secretaria_1@gmail.com',3,'Password01','M','13-jul-2000')
 GO
 
-INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Paciente','01','paciente_1@gmail.com',3,'Password01','M','14-jul-2000')
+INSERT INTO usuario (nombres,apellidos,email,tipoUsuario,contrasenya,sexo,fechaNacimiento)  VALUES ('Paciente','01','paciente_1@gmail.com',4,'Password01','M','14-jul-2000')
 GO
 
 --Horarios
-
+/*
 CREATE TABLE Dias(
 	Id INT PRIMARY KEY IDENTITY,
 	Dia VARCHAR(35)
@@ -76,15 +76,19 @@ INSERT INTO Dias VALUES ('Lunes'),
 						('Jueves'),
 						('Viernes');
 GO
+*/
 CREATE TABLE Horarios(
 	Id INT PRIMARY KEY IDENTITY,
-	Dia INT,
-	Ortopeda INT,
-	Hora VARCHAR(4),
-	FOREIGN KEY (Dia) REFERENCES Dias(Id),
-	FOREIGN KEY (Ortopeda) REFERENCES usuario(id)
+	/*Dia INT,*/
+	/*Ortopeda INT,*/
+	Hora VARCHAR(6),
+	Fecha date,
+	/*FOREIGN KEY (Dia) REFERENCES Dias(Id),*/
+	/*FOREIGN KEY (Ortopeda) REFERENCES usuario(id)*/
 );
 GO
+
+ALTER TABLE Horarios ALTER COLUMN Hora VARCHAR(6)
 
 --INSERT INTO Horarios VALUES (1,4,'7:00');
 --GO
@@ -95,9 +99,8 @@ create table tipoOrtesis(
 	id int primary key identity,
 	nombre varchar(35),
 	foto image,
-	descripcion varchar(75)
+	descripcion varchar(500)
 );
-GO
 
 create table ortesis(
 	id int primary key identity,
@@ -114,7 +117,7 @@ create table tipoProtesis(
 	id int primary key identity,
 	nombre varchar(35),
 	foto image,
-	descripcion varchar(75)
+	descripcion varchar(500)
 );
 GO
 
@@ -132,7 +135,6 @@ GO
 create table cita(
 	id int primary key identity,
 	codigo as 'CITA' + cast(id as varchar(5)),
-	fecha date,
 	idPaciente int not null foreign key references usuario(id),
 	idMedico int foreign key references usuario(id),
     idHorario INT FOREIGN KEY REFERENCES Horarios(id),

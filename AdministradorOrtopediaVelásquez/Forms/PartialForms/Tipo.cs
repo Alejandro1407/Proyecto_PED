@@ -278,5 +278,11 @@ namespace AdministradorOrtopediaVelásquez.Forms.PartialForms
             txtBusqueda.Text = "";
             MostrarData(Ischecked);
         }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            string Ischecked = RdoProtesis.Checked ? "protesis" : "ortesis";
+            MostrarData(Ischecked, txtBusqueda.Text, true);
+        }
     }
 }

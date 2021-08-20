@@ -16,8 +16,8 @@ namespace AdministradorOrtopediaVelásquez
     {
         public usuario()
         {
-            this.consulta = new HashSet<consulta>();
-            this.Horarios = new HashSet<Horarios>();
+            this.cita = new HashSet<cita>();
+            this.cita1 = new HashSet<cita>();
         }
     
         public int id { get; set; }
@@ -32,9 +32,8 @@ namespace AdministradorOrtopediaVelásquez
         public string especialidad { get; set; }
         public string experiencia { get; set; }
     
-        public virtual ICollection<consulta> consulta { get; set; }
+        public virtual ICollection<cita> cita { get; set; }
+        public virtual ICollection<cita> cita1 { get; set; }
         public virtual TipoUsuario TipoUsuario1 { get; set; }
-        public virtual detalle_consulta detalle_consulta { get; set; }
-        public virtual ICollection<Horarios> Horarios { get; set; }
     }
 }

@@ -21,8 +21,8 @@ namespace AdministradorOrtopediaVelásquez
     
         public int id { get; set; }
         public string nombre { get; set; }
-        public string descripcion { get; set; }
         public byte[] foto { get; set; }
+        public string descripcion { get; set; }
     
         public virtual ICollection<ortesis> ortesis { get; set; }
     }

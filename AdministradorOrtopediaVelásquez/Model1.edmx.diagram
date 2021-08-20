@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="173e6e01416e4c60b48810bde8f6a8bd" Name="Diagram1">
+        <EntityTypeShape EntityType="OrtopediaVelásquezModel.cita" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OrtopediaVelásquezModel.Horarios" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="OrtopediaVelásquezModel.ortesis" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OrtopediaVelásquezModel.protesis" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="OrtopediaVelásquezModel.tipoOrtesis" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OrtopediaVelásquezModel.tipoProtesis" Width="1.5" PointX="5.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OrtopediaVelásquezModel.TipoUsuario" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OrtopediaVelásquezModel.usuario" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="OrtopediaVelásquezModel.FK__cita__idHorario__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="OrtopediaVelásquezModel.FK__cita__idMedico__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="OrtopediaVelásquezModel.FK__cita__idPaciente__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="OrtopediaVelásquezModel.FK__ortesis__tipo__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="OrtopediaVelásquezModel.FK__protesis__tipo__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="OrtopediaVelásquezModel.FK__usuario__tipoUsu__276EDEB3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

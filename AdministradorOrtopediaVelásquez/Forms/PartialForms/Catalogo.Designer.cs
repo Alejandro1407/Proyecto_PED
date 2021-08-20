@@ -124,7 +124,7 @@
             this.txtBusqueda.SelectionStart = 0;
             this.txtBusqueda.TabStop = false;
             this.txtBusqueda.UseSystemPasswordChar = false;
-            this.txtBusqueda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBusqueda_KeyDown);
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // BarraSuperior
             // 

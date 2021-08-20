@@ -14,12 +14,15 @@ namespace AdministradorOrtopediaVelásquez
     
     public partial class Horarios
     {
-        public int Id { get; set; }
-        public Nullable<int> Dia { get; set; }
-        public Nullable<int> Ortopeda { get; set; }
-        public Nullable<System.TimeSpan> Hora { get; set; }
+        public Horarios()
+        {
+            this.cita = new HashSet<cita>();
+        }
     
-        public virtual Dias Dias { get; set; }
-        public virtual usuario usuario { get; set; }
+        public int Id { get; set; }
+        public string Hora { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
+    
+        public virtual ICollection<cita> cita { get; set; }
     }
 }
